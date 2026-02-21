@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codex 开发者文档 - OpenAI Developers</title>
+    <meta name="description" content="Codex 开发者官方文档。了解如何配置、使用及集成 Codex 软件工程智能体。">
+    <link rel="stylesheet" href="docs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="top-nav">
+        <div class="top-nav-left">
+            <a href="javascript:void(0)" class="logo" style="cursor: default;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0339 6.0339 0 0 0 5.7718-4.2057 5.9847 5.9847 0 0 0 3.989-2.9001 6.0462 6.0462 0 0 0-.7388-7.0731z" />
+                </svg>
+                <span>OpenAI Developers</span>
+            </a>
+        </div>
+        <div class="top-nav-right">
+            <button class="theme-toggle" id="theme-toggle-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="layout-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="search-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" placeholder="搜索文档...">
+                <span class="shortcut">⌘ K</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>快速入门 (Getting Started)</h3>
+                    <ul>
+                        <li><a href="#overview" class="doc-link active" data-target="overview">总览 (Overview)</a></li>
+                        <li><a href="#quickstart" class="doc-link" data-target="quickstart">快速开始 (Quickstart)</a></li>
+                        <li><a href="#explore" class="doc-link" data-target="explore">探索 (Explore)</a></li>
+                        <li><a href="#pricing" class="doc-link" data-target="pricing">价格 (Pricing)</a></li>
+                        <li><a href="#prompting" class="doc-link with-arrow" data-target="prompting">核心概念 (Concepts)
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg></a>
+                            <ul class="sub-nav">
+                                <li><a href="#prompting" class="doc-link" data-target="prompting">提示词 (Prompting)</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>使用 Codex (Using Codex)</h3>
+                    <ul>
+                        <li><a href="#app-features" class="doc-link with-arrow" data-target="app-features">客户端 (App)
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg></a>
+                            <ul class="sub-nav active">
+                                <li><a href="#app-features" class="doc-link" data-target="app-features">特性
+                                        (Features)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#extension" class="doc-link with-arrow" data-target="extension">IDE 插件 (Extension)
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg></a></li>
+                        <li><a href="#cli" class="doc-link with-arrow" data-target="cli">命令行 (CLI) <svg
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg></a></li>
+                        <li><a href="#web" class="doc-link with-arrow" data-target="web">网页版 (Web) <svg
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg></a></li>
+                        <li><a href="#integrations" class="doc-link with-arrow" data-target="integrations">集成
+                                (Integrations) <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg></a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>配置选项 (Configuration)</h3>
+                    <ul>
+                        <li><a href="#config-file" class="doc-link with-arrow" data-target="config-file">配置文件 (Config
+                                File) <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg></a></li>
+                        <li><a href="#rules" class="doc-link" data-target="rules">规则设定 (Rules)</a></li>
+                        <li><a href="#agents-md" class="doc-link" data-target="agents-md">AGENTS.md 指南</a></li>
+                        <li><a href="#mcp" class="doc-link" data-target="mcp">MCP 协议</a></li>
+                        <li><a href="#skills" class="doc-link" data-target="skills">自定义技能 (Skills)</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main SPA Content Area -->
+        <main class="content-area" id="main-content">
+            <div class="content-header">
+                <button class="btn-copy-page">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    复制当前页
+                </button>
+            </div>
+
+            <div class="sections-wrapper">
+
+                <!-- UNDER CONSTRUCTION (Fallback Section) -->
+                <section id="under-construction" class="doc-section">
+                    <article class="document-content">
+                        <h1>正在加紧制版中 🚧</h1>
+                        <p class="subtitle">当前所选版块的内容正在火热编写和排版中，敬请期待！</p>
+                        <div class="intro-block">
+                            <p>Codex 开发者文档在持续迭代中。如果您对本部分有急切的业务需求，请持续关注我们的官方更新日志。</p>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- OVERVIEW SECTION -->
+                <section id="overview" class="doc-section active">
+                    <article class="document-content">
+                        <h1>Codex 总览</h1>
+                        <p class="subtitle">一个智能体，满足你所有编码场景的需求。</p>
+
+                        <div class="intro-block">
+                            <p>Codex 是 OpenAI 专为软件开发打造的编码智能体。包含在 ChatGPT Plus、Pro、Business、Edu 及 Enterprise
+                                订阅计划中。它可以帮助你：</p>
+
+                            <ul class="feature-list">
+                                <li><strong>编写代码：</strong>描述你想要构建的核心功能，Codex 能够自动生成符合你意图的代码，并完美自适应你现有的工程结构和编码约定。</li>
+                                <li><strong>解析未知代码库：</strong>阅读和解释复杂架构或历史遗留代码，帮助你快速理解团队组织复杂系统的方式。</li>
+                                <li><strong>代码审查：</strong>通过静态分析与逻辑推演，有效识别潜在错误、逻辑缺陷及未处理边界。</li>
+                                <li><strong>调试与修复：</strong>当系统崩溃时，Codex 会协助追溯故障栈、诊断原因并给出直接的修复补丁。</li>
+                                <li><strong>自动化开发任务：</strong>主导执行高重复性的重构、测试、环境配置等工作流。</li>
+                            </ul>
+
+                            <button class="btn-get-started"
+                                onclick="document.querySelector('[data-target=\'quickstart\']').click()">
+                                开始使用 Codex <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </article>
+
+                    <aside class="content-visual">
+                        <div class="mockup-container">
+                            <div class="mac-window">
+                                <div class="mac-header">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                    <div class="mac-title">New Thread</div>
+                                </div>
+                                <div class="mac-body">
+                                    <div class="mock-sidebar">
+                                        <div class="mock-item skeleton"></div>
+                                        <div class="mock-item skeleton short"></div>
+                                        <div class="mock-item skeleton"></div>
+                                    </div>
+                                    <div class="mock-main">
+                                        <div class="agent-avatar">
+                                            <svg width="32" height="32" viewBox="0 0 24 24" fill="#ffffff"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M22.28 9.82a6 6 0 00-7.02-7.81 6 6 0 00-11.02 9.99 6 6 0 007.02 7.81 6 6 0 0011.02-9.99z" />
+                                            </svg>
+                                        </div>
+                                        <div class="mock-title">我们来构建<br>recipe-app</div>
+                                        <div class="mock-chat-input"><span class="placeholder">Chat with Codex
+                                                (Cmd+K)</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </section>
+
+                <!-- QUICKSTART SECTION -->
+                <section id="quickstart" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>快速开始 (Quickstart)</h1>
+                        <p class="subtitle">在你的 IDE、CLI 或者云端直接开始使用 Codex。</p>
+
+                        <div class="intro-block">
+                            <h2>1. Codex 桌面级应用 (macOS)</h2>
+                            <p>Codex 客户端目前专属提供给 macOS (Apple Silicon) 用户，为你提供一个独立的、悬浮于任何工作流之上的终极结对编程环境。</p>
+                            <ol>
+                                <li><strong>下载并安装：</strong> 运行并在弹出的窗口中通过 ChatGPT 或 OpenAI API Key 登录。</li>
+                                <li><strong>选择工作区：</strong> 挑选一个你需要 Codex 介入的本地工程文件夹。</li>
+                                <li><strong>发送你的第一条消息：</strong> 确保模式选定为 <code>Local</code>（让 Codex
+                                    原生运行在你机器上），然后随便问它关于代码的问题，比如：<em>“向我解释一下这个项目架构”</em> 或 <em>“在这个 repo 下写一个贪吃蛇游戏”</em>。
+                                </li>
+                            </ol>
+
+                            <h2>2. IDE 插件 (VS Code, Cursor, Windsurf)</h2>
+                            <p>让 Codex 常驻在你的代码编辑器侧边栏中。</p>
+                            <ol>
+                                <li>在插件市场搜索并下载 <strong>Codex / ChatGPT</strong> 官方插件。</li>
+                                <li><strong>打开侧边栏面板：</strong> 登录后，Codex 默认会以 <strong>Agent 模式</strong>
+                                    启动。这意味着它不仅能对话，更能自主阅读文件、在你的终端跑指令，以及直接拉起 Diff 试图修改你的代码。</li>
+                                <li><strong>建立 Git 快照：</strong> 既然 Codex 有能力直接改写代码，我们强烈建议你在交办任务前后提交 Git
+                                    记录，就像打游戏时的存盘点（Save point），以便随时撤销“翻车”操作。</li>
+                            </ol>
+
+                            <h2>3. 命令行工具 (CLI)</h2>
+                            <p>这是开放给所有终端黑客（macOS, Windows, Linux 全平台）的最原生体验：</p>
+                            <pre><code>npm install -g @openai/codex<br># 或者使用 Homebrew 安装<br>brew install codex</code></pre>
+                            <p>安装完成后，在所在的项目目录下敲入 <code>codex</code> 即可唤醒它。验证身份后，直接告诉它当前目录要完成什么任务。</p>
+
+                            <h2>4. Web 云端平台 (Cloud)</h2>
+                            <p>不消耗任何本地算力？你可以去去网页版 <a href="#">chatgpt.com/codex</a> 开辟云端战场。</p>
+                            <ul>
+                                <li><strong>连接仓库：</strong> 按照向导关联你的 GitHub Repository。只要环境跑起来了，哪怕页面关掉它也会在后台默默推平史诗级重构。
+                                </li>
+                                <li><strong>审查并下发 PR：</strong> 当它完成任务后，你可以直接在云端看 Diff。如果觉得一切完美就点击「创建 Pull
+                                    Request」。当然你也可用 <code>git fetch</code> 与 <code>git checkout <branch-name></code>
+                                    拉回本地跑一遍测试。</li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- APP FEATURES SECTION -->
+                <section id="app-features" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>客户端特性 (App Features)</h1>
+                        <p class="subtitle">桌面端 Codex 提供了超前的系统级集成，全面解放开发生产力。</p>
+
+                        <div class="intro-block">
+                            <h2>多工程并行 (Multitask across projects)</h2>
+                            <p>在一个 Codex 客户端窗口内，你就可以切分并同时推进横跨多个代码库的并发任务。如果你的项目是一个 Monorepo，建议为每一个独立的前后端服务划定单独的 Project
+                                Context，以确保 AI 的沙盒足够纯粹，不会胡乱找错引用文件。</p>
+
+                            <h2>沙箱与三种环境模式 (Modes)</h2>
+                            <p>开启每一条对话线程时，你就像是在为智能体指派任务执行的物理宇宙。你可以选择：</p>
+                            <ul>
+                                <li><strong>Local (本地模式)：</strong> 直接在你当下的工作目录进行肆意增删改查。</li>
+                                <li><strong>Worktree (工作树隔离模式)：</strong> Codex 会在后台悄悄切出一个平行的 <a href="#">Git
+                                        Worktree</a>。想让 AI 尝试推翻原本的架构而不把你的代码搞崩？这是最好的选择。你可以同时开多个线程分别在独立的 Worktree
+                                    尝试不同思路，互不干扰！</li>
+                                <li><strong>Cloud (云端模式)：</strong> 让任务在配好的远端云环境全速运转，将这台笔记本的算力彻底解放。</li>
+                            </ul>
+
+                            <h2>一站式 Git 与合并</h2>
+                            <p>桌面客户端自带完整的 Diff 面板，你可以像 Code Review 一样高亮它生成的某块代码并加上内联评论（Inline Comments）直接打回重修。你还可以全自动走完
+                                Git 提交与 Push 流程，完全不需要切换到终端窗口。</p>
+
+                            <h2>画中画悬浮窗 (Floating pop-out)</h2>
+                            <p>如果你在处理前端交互或设计，你可以把正在干活的对话线程“连根拔起”，缩小成一个永远置顶的悬浮模块。这样你在开着模拟器或浏览器检视页面样式变动时，还能不断通过旁边的悬浮窗微调
+                                CSS，这是一种前所未有的心流体验。</p>
+
+                            <h2>MCP (模型上下文协议) 全程支持</h2>
+                            <p>Codex 原生互联并共享所有 <strong>Model Context Protocol (MCP)</strong> 的服务配置。只要你在其中任何一处配置过诸如
+                                Supabase、Linear 等外部开发工具或者图表库的 MCP Server，Codex 会立马自动学会通过调用 API 去为你构建相关代码逻辑。</p>
+
+                            <h2>全局语音听写 (Voice Dictation)</h2>
+                            <p>按住 <code>Ctrl + M</code>，对着麦克风说出你的需求。系统将准确的将语音转录为文字 Prompts。当你想向 AI
+                                解释一段几十行长、充满各种晦涩逻辑的业务需求时，不用再费劲打字了。</p>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- PROMPTING SECTION -->
+                <section id="prompting" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>提示词指南 (Prompting)</h1>
+                        <p class="subtitle">在开发语境下，如何高效地“点拨” Codex 智能体？</p>
+
+                        <div class="intro-block">
+                            <h2>Prompt：发行的工程指令</h2>
+                            <p>Codex 并不是普通的聊天机器人，你发出去的每一条问题或需求都将被转化为“循环指令”。比如 <em>“写一个脚本输出 JSON 日志”</em>。一旦给出，Codex
+                                开启它自己的 <strong>Read-Write-Execute 循环</strong>：自我检索模型知识库 -> 读取本地目录里的现有代码 -> 修改或调用工具 ->
+                                评估结果 -> 自我纠正。这个进程只有等它觉得完成了（或是被你大喊“停下”）才会终止。</p>
+
+                            <blockquote>
+                                <p><strong>高分秘籍：为 AI 创造一个可证伪的环境</strong><br>
+                                    Codex 在能够自己“验证结论”时产出最具震撼力。在布置任务的同时，给它一个具体的验收标准。比如丢几行 <code>pnpm test</code> 或是报错复现的
+                                    Terminal 日志给它，然后说：“写这段代码，然后确保你的改动通过这个测试才算完。” 它接下来就真的会进入 TDD（测试驱动开发）模式为你全自动干活！</p>
+                            </blockquote>
+
+                            <h2>化繁为简：大模块切分</h2>
+                            <p>它能干很牛的事，但要分解。处理超巨型需求（比如“帮我把项目里遗留的 GraphQL 彻底替换成
+                                REST”）时，最好把任务打散成小线程（Threads）。小任务意味着更小更清晰的审查（Review）范围。如果你根本不知道咋拆，你甚至可以直接把超巨型需求喂给它，然后说：<em>“为以上目标给我制定一个
+                                    5 步实施方案”</em>，让它帮你规划。</p>
+
+                            <h2>线程(Threads)与上下文缩容(Context Compaction)</h2>
+                            <p>每个对话都是一个独立的 <strong>Thread</strong>，尽量不要同时派两个智能体跑两个 Thread
+                                去修改同一份核心配置文件，这会像两个没通气的程序员一样引发冲突。<br>在处理非常漫长的马拉松编码任务时，大模型必然面临 Token 容量问题。不用担心，Codex
+                                的架构内部实现了一种称为 <strong>Context Compaction（上下文自动无损压缩）</strong>
+                                的神技：当历史对话太厚时，它会自动在后台把老旧无用的试错流水账提取、缩写为关键逻辑状态，确保在几百轮对话后它的智商依旧在线，并且完全记得这栋大楼的地基在哪里。</p>
+                        </div>
+                    </article>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const docLinks = document.querySelectorAll('.doc-link');
+            const sections = document.querySelectorAll('.doc-section');
+
+            function showSection(targetId) {
+                // Update active content
+                sections.forEach(sec => sec.classList.remove('active'));
+                let targetSec = document.getElementById(targetId);
+                if (!targetSec) {
+                    targetSec = document.getElementById('under-construction');
+                }
+                if (targetSec) targetSec.classList.add('active');
+
+                // Update active link
+                docLinks.forEach(link => link.classList.remove('active'));
+                const activeLink = document.querySelector(`.doc-link[data-target="${targetId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                    const parentUl = activeLink.closest('.sub-nav');
+                    if (parentUl) {
+                        parentUl.classList.add('active');
+                    }
+                }
+            }
+
+            docLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const parentUl = link.nextElementSibling;
+                    if (link.classList.contains('with-arrow') && parentUl && parentUl.classList.contains('sub-nav')) {
+                        // Just expand sub-menu
+                        parentUl.classList.toggle('active');
+                    } else {
+                        // Navigation to section
+                        e.preventDefault();
+                        const targetId = link.getAttribute('data-target');
+                        if (targetId) {
+                            showSection(targetId);
+                            window.history.pushState(null, null, `#${targetId}`);
+                        }
+                    }
+                });
+            });
+
+            // Handle Light Mode
+            const themeBtn = document.getElementById('theme-toggle-btn');
+            if (themeBtn) {
+                themeBtn.addEventListener('click', () => {
+                    document.body.classList.toggle('light-theme');
+                    const isLight = document.body.classList.contains('light-theme');
+                    if (isLight) {
+                        themeBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
+                    } else {
+                        themeBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+                    }
+                });
+            }
+
+            // Handle initial direct load
+            if (window.location.hash) {
+                const pureHash = window.location.hash.substring(1);
+                showSection(pureHash);
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI Codex - 智能体构建的最佳方式</title>
+    <meta name="description" content="Codex 简介：基于云的软件工程智能体，可并行处理多项任务。支持代码编写、重构、调试及自动化流水线。">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glow-bg"></div>
+    
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0339 6.0339 0 0 0 5.7718-4.2057 5.9847 5.9847 0 0 0 3.989-2.9001 6.0462 6.0462 0 0 0-.7388-7.0731z"/>
+                </svg>
+                <span>Codex<span class="badge">CN</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">功能特性</a>
+                <a href="#agents">智能体</a>
+                <a href="#security">安全架构</a>
+            </div>
+            <div class="nav-actions">
+                <a href="#" class="btn btn-secondary">阅读文档</a>
+                <a href="#" class="btn btn-primary">试用 Codex</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="announcement-badge">
+                    <span class="new-tag">全新推出</span>
+                    <span>Codex 现已向 ChatGPT Plus 用户开放访问 &rarr;</span>
+                </div>
+                <h1 class="hero-title">
+                    随时随地，<br>
+                    <span class="gradient-text">与专属智能体结对编程</span>
+                </h1>
+                <p class="hero-desc">
+                    基于云的软件工程智能体，可并行处理多项繁杂任务，由最强大的 Codex 模型提供底层支持。从常规的 Pull Request 到最具挑战的核心架构难题，Codex 都能为你提供端到端的完美支持。
+                </p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary btn-large">下载适用于 macOS 的版本</button>
+                    <button class="btn btn-secondary btn-large">查看开发者文档</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="window-mockup">
+                    <div class="window-header">
+                        <div class="dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="title">AGENTS.md - Codex</div>
+                    </div>
+                    <div class="window-body">
+                        <div class="code-editor">
+                            <pre><code class="language-markdown"><span class="keyword">#</span> Codex 智能体执行指南
+
+这是项目的核心智能体配置。Codex 会读取此文件以了解代码库规范并执行自动化测试。
+
+<span class="keyword">##</span> 任务规范
+1. 首先熟悉项目的目录结构
+2. 在修改前始终运行 <span class="string">`pnpm run test`</span>
+3. 发现错误时，定位到抛出异常的模块并生成针对性的修复补丁
+4. 提供详尽的、可验证的行动证据 (Verified Actions)
+
+<span class="keyword">##</span> 运行环境
+<span class="string">-</span> 强制：隔离的云端安全沙箱
+<span class="string">-</span> 权限：按需配置互联网访问</code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-element element-1">
+                    <div class="status-indicator">
+                        <span class="pulse-dot"></span>
+                        <span>正在运行测试...</span>
+                    </div>
+                </div>
+                <div class="floating-element element-2">
+                    <div class="status-indicator success">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>所有单元测试通过</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <div class="section-header">
+                <h2>核心能力</h2>
+                <p>一个智能体，满足你所有编码场景的需求。</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-wrapper build-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>编写代码</h3>
+                    <p>只需用自然语言描述你想要构建的功能，Codex 就能生成符合你意图和项目约定的高质量代码。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrapper understand-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3>解析未知代码库</h3>
+                    <p>面对庞大或老旧的代码遗产？Codex 能迅速梳理依赖关系，为你清晰解释复杂的逻辑流转。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrapper debug-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <h3>调试与修复</h3>
+                    <p>提供精准的错误定位。Codex 能够追踪调用栈故障，找出深层异常并直接建议针对性的修复方案。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrapper auto-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                    </div>
+                    <h3>全面自动化</h3>
+                    <p>自主处理 Issue 分流、监控警报处理以及 CI/CD 流水线的维护，将开发迭代周期从数周缩短至数天。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="agents" class="workflow-section">
+            <div class="workflow-content">
+                <h2>融入你现有的工作流</h2>
+                <div class="workflow-steps">
+                    <div class="step">
+                        <div class="step-num">01</div>
+                        <div>
+                            <h4>云端隔离沙箱</h4>
+                            <p>Codex 运行在安全预载了你的代码库的高性能云端环境中，确保执行过程不对本地环境造成污染。</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">02</div>
+                        <div>
+                            <h4>AGENTS.md 驱动</h4>
+                            <p>通过自定义 AGENTS.md 文件，设定规则、测试路径及导航指南，让 Codex 完全按照团队规范工作。</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">03</div>
+                        <div>
+                            <h4>高效的终端交互</h4>
+                            <p>无论是在侧边栏对话框还是通过 CLI 工具，你都能获得极速响应，大幅提升研发产能。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="workflow-image">
+                <div class="glass-panel">
+                    <div class="terminal-mock">
+                        <div class="term-head">
+                            <span>draco@ocean-1 ~ /projects/codex-app</span>
+                        </div>
+                        <div class="term-body">
+                            <p><span class="prompt">$</span> codex --task "Refactor authentication using JWT"</p>
+                            <p class="output highlight">Analyzing user repository...</p>
+                            <p class="output">Found legacy session-based auth in src/auth.js</p>
+                            <p class="output highlight">Planning changes:</p>
+                            <p class="output">- Add jsonwebtoken dependency</p>
+                            <p class="output">- Update login endpoint to return signed token</p>
+                            <p class="output">- Create auth middleware for protected routes</p>
+                            <p class="output success">Starting refactor process in safe sandbox...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="security" class="cta-section">
+            <div class="cta-box">
+                <h2>安全、可靠、透明</h2>
+                <p>我们注重代码来源的可追溯性，并致力于让人类对智能体的工作目标保持绝对偏好控制。<br>可验证的行动证据，从源头上降低系统风险。</p>
+                <button class="btn btn-primary btn-large glow-btn">立即体验 Codex</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0339 6.0339 0 0 0 5.7718-4.2057 5.9847 5.9847 0 0 0 3.989-2.9001 6.0462 6.0462 0 0 0-.7388-7.0731z"/>
+                </svg>
+                <span>OpenAI Codex 中文社区</span>
+            </div>
+            <div class="footer-links">
+                <div class="link-column">
+                    <h4>产品</h4>
+                    <a href="#">下载应用</a>
+                    <a href="#">CLI 工具</a>
+                    <a href="#">价格</a>
+                </div>
+                <div class="link-column">
+                    <h4>资源</h4>
+                    <a href="#">开发者文档</a>
+                    <a href="#">AGENTS.md 指南</a>
+                    <a href="#">API 参考</a>
+                </div>
+                <div class="link-column">
+                    <h4>关于</h4>
+                    <a href="#">研究预览版</a>
+                    <a href="#">安全中心</a>
+                    <a href="#">服务条款</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 OpenAI. 此页面为 Codex 中国大陆爱好者重制体验版，非 OpenAI 官方运营站。</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
