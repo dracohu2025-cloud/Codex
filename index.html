@@ -49,51 +49,130 @@
 
             <nav class="sidebar-nav">
                 <div class="nav-section">
-                    <h3>快速入门 (Getting Started)</h3>
+                    <h3>快速入门</h3>
                     <ul>
-                        <li><a href="#overview" class="doc-link active" data-target="overview">总览 (Overview)</a></li>
-                        <li><a href="#quickstart" class="doc-link" data-target="quickstart">快速开始 (Quickstart)</a></li>
-                        <li><a href="#explore" class="doc-link" data-target="explore">探索 (Explore)</a></li>
-                        <li><a href="#pricing" class="doc-link" data-target="pricing">价格 (Pricing)</a></li>
-                        <li><a href="#prompting" class="doc-link with-arrow" data-target="prompting">核心概念 (Concepts)
+                        <li><a href="#overview" class="doc-link" data-target="overview">概览</a></li>
+                        <li><a href="#quickstart" class="doc-link" data-target="quickstart">快速开始</a></li>
+                        <li><a href="#explore" class="doc-link" data-target="explore">探索</a></li>
+                        <li><a href="#pricing" class="doc-link" data-target="pricing">价格</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>核心概念</h3>
+                    <ul>
+                        <li>
+                            <a href="#prompting" class="doc-link with-arrow" data-target="prompting">提示词
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg></a>
+                                </svg>
+                            </a>
                             <ul class="sub-nav">
-                                <li><a href="#prompting" class="doc-link" data-target="prompting">提示词 (Prompting)</a>
-                                </li>
+                                <li><a href="#prompting" class="doc-link" data-target="prompting">提示词基础</a></li>
+                                <li><a href="#multi-agents" class="doc-link" data-target="multi-agents">多智能体</a></li>
+                                <li><a href="#cyber-safety" class="doc-link" data-target="cyber-safety">网络安全</a></li>
                             </ul>
                         </li>
                     </ul>
                 </div>
 
                 <div class="nav-section">
-                    <h3>使用 Codex (Using Codex)</h3>
+                    <h3>Codex 客户端</h3>
                     <ul>
-                        <li><a href="#app-features" class="doc-link with-arrow" data-target="app-features">客户端 (App)
+                        <li>
+                            <a href="#app" class="doc-link with-arrow" data-target="app">应用
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg></a>
-                            <ul class="sub-nav active">
-                                <li><a href="#app-features" class="doc-link" data-target="app-features">特性
-                                        (Features)</a></li>
+                                </svg>
+                            </a>
+                            <ul class="sub-nav">
+                                <li><a href="#app-features" class="doc-link" data-target="app-features">功能特性</a></li>
+                                <li><a href="#app-commands" class="doc-link" data-target="app-commands">指令</a></li>
+                                <li><a href="#app-automations" class="doc-link" data-target="app-automations">自动化</a></li>
+                                <li><a href="#app-review" class="doc-link" data-target="app-review">审查</a></li>
+                                <li><a href="#app-settings" class="doc-link" data-target="app-settings">设置</a></li>
+                                <li><a href="#app-worktrees" class="doc-link" data-target="app-worktrees">工作树</a></li>
+                                <li><a href="#app-local" class="doc-link" data-target="app-local">本地环境</a></li>
                             </ul>
                         </li>
-                        <li><a href="#extension" class="doc-link" data-target="extension">IDE 插件 (Extension)</a></li>
-                        <li><a href="#cli" class="doc-link" data-target="cli">命令行 (CLI)</a></li>
-                        <li><a href="#web" class="doc-link" data-target="web">网页版 (Web)</a></li>
-                        <li><a href="#integrations" class="doc-link" data-target="integrations">集成 (Integrations)</a></li>
+                        <li>
+                            <a href="#ide" class="doc-link with-arrow" data-target="ide">IDE 插件
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <ul class="sub-nav">
+                                <li><a href="#ide-features" class="doc-link" data-target="ide-features">功能特性</a></li>
+                                <li><a href="#ide-commands" class="doc-link" data-target="ide-commands">命令</a></li>
+                                <li><a href="#ide-slash" class="doc-link" data-target="ide-slash">斜杠命令</a></li>
+                                <li><a href="#ide-settings" class="doc-link" data-target="ide-settings">设置</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#cli-nav" class="doc-link with-arrow" data-target="cli-nav">命令行
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <ul class="sub-nav">
+                                <li><a href="#cli-features" class="doc-link" data-target="cli-features">功能特性</a></li>
+                                <li><a href="#cli-reference" class="doc-link" data-target="cli-reference">命令参考</a></li>
+                                <li><a href="#cli-slash" class="doc-link" data-target="cli-slash">斜杠命令</a></li>
+                                <li><a href="#cli-noninteractive" class="doc-link" data-target="cli-noninteractive">非交互模式</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#cloud" class="doc-link with-arrow" data-target="cloud">云端
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <ul class="sub-nav">
+                                <li><a href="#cloud-env" class="doc-link" data-target="cloud-env">环境</a></li>
+                                <li><a href="#cloud-internet" class="doc-link" data-target="cloud-internet">互联网访问</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="nav-section">
-                    <h3>配置选项 (Configuration)</h3>
+                    <h3>集成</h3>
                     <ul>
-                        <li><a href="#config-file" class="doc-link" data-target="config-file">配置文件 (Config File)</a></li>
-                        <li><a href="#rules" class="doc-link" data-target="rules">规则设定 (Rules)</a></li>
-                        <li><a href="#agents-md" class="doc-link" data-target="agents-md">AGENTS.md 指南</a></li>
+                        <li><a href="#github" class="doc-link" data-target="github">GitHub</a></li>
+                        <li><a href="#linear" class="doc-link" data-target="linear">Linear</a></li>
+                        <li><a href="#slack" class="doc-link" data-target="slack">Slack</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>配置</h3>
+                    <ul>
+                        <li><a href="#config-basic" class="doc-link" data-target="config-basic">基础配置</a></li>
+                        <li><a href="#config-advanced" class="doc-link" data-target="config-advanced">高级配置</a></li>
+                        <li><a href="#config-reference" class="doc-link" data-target="config-reference">配置参考</a></li>
+                        <li><a href="#config-sample" class="doc-link" data-target="config-sample">配置示例</a></li>
+                        <li><a href="#rules" class="doc-link" data-target="rules">规则</a></li>
+                        <li><a href="#agents-md" class="doc-link" data-target="agents-md">AGENTS.md</a></li>
                         <li><a href="#mcp" class="doc-link" data-target="mcp">MCP 协议</a></li>
-                        <li><a href="#skills" class="doc-link" data-target="skills">自定义技能 (Skills)</a></li>
+                        <li><a href="#skills" class="doc-link" data-target="skills">自定义技能</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>企业版</h3>
+                    <ul>
+                        <li><a href="#enterprise-admin" class="doc-link" data-target="enterprise-admin">管理员设置</a></li>
+                        <li><a href="#enterprise-governance" class="doc-link" data-target="enterprise-governance">治理与合规</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3>其他</h3>
+                    <ul>
+                        <li><a href="#security" class="doc-link" data-target="security">安全</a></li>
+                        <li><a href="#models" class="doc-link" data-target="models">模型</a></li>
+                        <li><a href="#changelog" class="doc-link" data-target="changelog">更新日志</a></li>
+                        <li><a href="#videos" class="doc-link" data-target="videos">视频教程</a></li>
                     </ul>
                 </div>
             </nav>
@@ -238,12 +317,6 @@ codex new --template react-native --name mobile-app</code></pre>
                             </button>
                         </div>
                     </article>
-
-                    <aside class="content-visual">
-                        <div class="mockup-container">
-                            <img src="https://developers.openai.com/images/codex/app/codex-app-basic-dark.webp" alt="Codex App Interface" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
-                        </div>
-                    </aside>
                 </section>
 
                 <!-- QUICKSTART SECTION -->
@@ -1177,25 +1250,583 @@ my-skill/
                     </article>
                 </section>
 
+                <!-- MULTI-AGENTS SECTION -->
+                <section id="multi-agents" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>多智能体 (Multi-Agents)</h1>
+                        <p class="subtitle">协调多个 Codex 智能体并行工作。</p>
+                        <div class="intro-block">
+                            <h2>什么是多智能体系统？</h2>
+                            <p>多智能体系统允许你同时运行多个 Codex 实例，每个实例负责不同的子任务。通过合理分工，可以大幅提升复杂任务的执行效率。</p>
+
+                            <h2>使用场景</h2>
+                            <ul>
+                                <li><strong>大型代码库重构：</strong>一个智能体分析依赖关系，另一个执行代码转换</li>
+                                <li><strong>全栈开发：</strong>前端智能体处理 UI，后端智能体处理 API 逻辑</li>
+                                <li><strong>代码审查：</strong>多个智能体从不同角度审查代码（安全性、性能、可维护性）</li>
+                            </ul>
+
+                            <h2>配置多智能体工作流</h2>
+                            <pre><code>{
+  "multiAgent": {
+    "enabled": true,
+    "agents": [
+      {
+        "name": "frontend-agent",
+        "specialty": "react-typescript",
+        "context": ["src/components", "src/pages"]
+      },
+      {
+        "name": "backend-agent",
+        "specialty": "nodejs-api",
+        "context": ["src/api", "src/models"]
+      }
+    ],
+    "coordinator": "orchestrator-v2"
+  }
+}</code></pre>
+
+                            <h2>智能体间通信</h2>
+                            <p>Codex 提供内置的消息传递机制，让多个智能体可以共享上下文和协调工作：</p>
+                            <pre><code># 发送消息给其他智能体
+@backend-agent 请帮我创建一个新的用户 API 端点
+
+# 等待其他智能体完成工作
+await @frontend-agent 完成登录表单</code></pre>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- CYBER-SAFETY SECTION -->
+                <section id="cyber-safety" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>网络安全 (Cyber Safety)</h1>
+                        <p class="subtitle">确保 Codex 操作的网络安全最佳实践。</p>
+                        <div class="intro-block">
+                            <h2>安全沙箱</h2>
+                            <p>Codex 运行在隔离的沙箱环境中，防止恶意代码执行对系统造成损害：</p>
+                            <ul>
+                                <li>文件系统访问受限</li>
+                                <li>网络请求经过审查</li>
+                                <li>危险命令被阻止执行</li>
+                            </ul>
+
+                            <h2>命令审查</h2>
+                            <p>以下命令类型需要用户明确确认才能执行：</p>
+                            <pre><code>- rm -rf /
+                            - DROP TABLE
+                            - DELETE FROM users
+                            - chmod 777
+                            - sudo su</code></pre>
+
+                            <h2>网络安全策略</h2>
+                            <p>配置 Codex 的网络安全规则：</p>
+                            <pre><code>{
+  "cyberSafety": {
+    "blockDangerousCommands": true,
+    "requireConfirmationFor": ["file-delete", "db-modify", "system-change"],
+    "allowedDomains": ["api.github.com", "registry.npmjs.org"],
+    "blockedDomains": ["malicious-site.com"]
+  }
+}</code></pre>
+
+                            <h2>审计日志</h2>
+                            <p>所有 Codex 执行的操作都会被记录在审计日志中，便于事后审查和故障排查。</p>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- APP COMMANDS SECTION -->
+                <section id="app-commands" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>客户端指令 (Commands)</h1>
+                        <p class="subtitle">Codex 客户端支持的指令列表。</p>
+                        <div class="intro-block">
+                            <h2>内置指令</h2>
+                            <ul>
+                                <li><code>/explain</code> - 解释选中的代码</li>
+                                <li><code>/test</code> - 为选中的函数生成测试</li>
+                                <li><code>/refactor</code> - 重构代码</li>
+                                <li><code>/document</code> - 生成文档注释</li>
+                                <li><code>/fix</code> - 修复错误</li>
+                            </ul>
+
+                            <h2>自定义指令</h2>
+                            <p>在配置文件中添加自定义指令：</p>
+                            <pre><code>{
+  "commands": {
+    "my-custom": {
+      "description": "执行自定义任务",
+      "prompt": "请帮我完成...",
+      "context": ["src/**/*"]
+    }
+  }
+}</code></pre>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- APP AUTOMATIONS SECTION -->
+                <section id="app-automations" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>自动化 (Automations)</h1>
+                        <p class="subtitle">设置自动化工作流。</p>
+                        <div class="intro-block">
+                            <h2>触发器类型</h2>
+                            <ul>
+                                <li><strong>文件变更：</strong>当特定文件被修改时触发</li>
+                                <li><strong>Git 事件：</strong>Push、Pull Request 等事件</li>
+                                <li><strong>定时任务：</strong>按计划执行</li>
+                            </ul>
+
+                            <h2>配置自动化</h2>
+                            <pre><code>{
+  "automations": [
+    {
+      "name": "自动修复 ESLint 错误",
+      "trigger": "file-save",
+      "filter": "**/*.ts",
+      "action": "eslint-fix"
+    },
+    {
+      "name": "PR 描述生成",
+      "trigger": "pr-created",
+      "action": "generate-pr-description"
+    }
+  ]
+}</code></pre>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- APP REVIEW SECTION -->
+                <section id="app-review" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>审查 (Review)</h1>
+                        <p class="subtitle">代码审查和 Diff 查看功能。</p>
+                        <div class="intro-block">
+                            <h2>Diff 视图</h2>
+                            <p>Codex 提供并排 Diff 视图，方便对比修改前后的代码。</p>
+
+                            <h2>内联评论</h2>
+                            <p>在 Diff 视图中添加内联评论，指出问题或建议改进。</p>
+
+                            <h2>审查清单</h2>
+                            <pre><code>- [ ] 代码逻辑正确
+                            - [ ] 测试覆盖率足够
+                            - [ ] 遵循编码规范
+                            - [ ] 没有安全漏洞</code></pre>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- APP SETTINGS SECTION -->
+                <section id="app-settings" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>客户端设置 (Settings)</h1>
+                        <p class="subtitle">Codex 客户端配置选项。</p>
+                        <div class="intro-block">
+                            <h2>通用设置</h2>
+                            <ul>
+                                <li><strong>主题：</strong>深色/浅色/自动</li>
+                                <li><strong>字体大小：</strong>12px - 20px</li>
+                                <li><strong>自动保存：</strong>开启/关闭</li>
+                            </ul>
+
+                            <h2>智能体设置</h2>
+                            <ul>
+                                <li><strong>默认模式：</strong>Agent/Chat</li>
+                                <li><strong>自动批准：</strong>开启/关闭/部分</li>
+                                <li><strong>最大 Token：</strong>4096 - 32768</li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- APP WORKTREES SECTION -->
+                <section id="app-worktrees" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>工作树 (Worktrees)</h1>
+                        <p class="subtitle">使用 Git Worktrees 进行并行开发。</p>
+                        <div class="intro-block">
+                            <h2>什么是 Worktrees？</h2>
+                            <p>Git Worktrees 允许你在同一仓库的多个独立工作目录之间切换，每个目录都可以独立开发和测试。</p>
+
+                            <h2>Codex 中的 Worktrees</h2>
+                            <p>Codex 会自动为每个新任务创建一个 Worktree，确保修改不会影响主分支或其他正在进行的任务。</p>
+
+                            <h2>命令</h2>
+                            <pre><code># 创建新的 Worktree
+codex worktree create feature-branch
+
+# 列出所有 Worktrees
+codex worktree list
+
+# 删除 Worktree
+codex worktree delete feature-branch</code></pre>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- APP LOCAL SECTION -->
+                <section id="app-local" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>本地环境 (Local Environments)</h1>
+                        <p class="subtitle">在本地运行和调试代码。</p>
+                        <div class="intro-block">
+                            <h2>环境配置</h2>
+                            <p>配置本地开发环境的参数：</p>
+                            <pre><code>{
+  "localEnv": {
+    "nodeVersion": "20.x",
+    "packageManager": "pnpm",
+    "port": 3000,
+    "envFile": ".env.local"
+  }
+}</code></pre>
+
+                            <h2>自动启动服务</h2>
+                            <p>Codex 可以自动启动开发服务器、数据库等依赖服务。</p>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- IDE FEATURES SECTION -->
+                <section id="ide-features" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>IDE 插件功能</h1>
+                        <p class="subtitle">IDE 扩展的核心功能。</p>
+                        <div class="intro-block">
+                            <h2>支持的 IDE</h2>
+                            <ul>
+                                <li>Visual Studio Code</li>
+                                <li>Cursor</li>
+                                <li>Windsurf</li>
+                                <li>JetBrains 系列</li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- IDE COMMANDS SECTION -->
+                <section id="ide-commands" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>IDE 命令</h1>
+                        <p class="subtitle">IDE 插件中可用的命令。</p>
+                        <div class="intro-block">
+                            <h2>快捷键命令</h2>
+                            <pre><code>Cmd+Shift+C - 打开聊天
+Cmd+Shift+E - 内联编辑
+Cmd+Shift+X - 解释代码</code></pre>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- IDE SLASH SECTION -->
+                <section id="ide-slash" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>斜杠命令</h1>
+                        <p class="subtitle">IDE 中的斜杠命令列表。</p>
+                        <div class="intro-block">
+                            <ul>
+                                <li><code>/fix</code> - 修复错误</li>
+                                <li><code>/test</code> - 生成测试</li>
+                                <li><code>/docs</code> - 生成文档</li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- IDE SETTINGS SECTION -->
+                <section id="ide-settings" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>IDE 设置</h1>
+                        <p class="subtitle">IDE 插件配置选项。</p>
+                        <div class="intro-block">
+                            <pre><code>{
+  "codex.enabled": true,
+  "codex.model": "codex-latest"
+}</code></pre>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- CLI FEATURES SECTION -->
+                <section id="cli-features" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>CLI 功能</h1>
+                        <p class="subtitle">命令行工具的核心功能。</p>
+                        <div class="intro-block">
+                            <ul>
+                                <li>交互式对话</li>
+                                <li>批处理模式</li>
+                                <li>管道输入/输出</li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- CLI REFERENCE SECTION -->
+                <section id="cli-reference" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>CLI 命令参考</h1>
+                        <p class="subtitle">完整的命令行参考手册。</p>
+                        <div class="intro-block">
+                            <pre><code>codex run &lt;task&gt;
+codex login
+codex config &lt;key&gt; &lt;value&gt;</code></pre>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- CLI SLASH SECTION -->
+                <section id="cli-slash" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>CLI 斜杠命令</h1>
+                        <p class="subtitle">交互模式中的斜杠命令。</p>
+                        <div class="intro-block">
+                            <ul>
+                                <li><code>/help</code> - 显示帮助</li>
+                                <li><code>/clear</code> - 清除历史</li>
+                                <li><code>/export</code> - 导出对话</li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- CLI NONINTERACTIVE SECTION -->
+                <section id="cli-noninteractive" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>非交互模式</h1>
+                        <p class="subtitle">在脚本和自动化中使用 CLI。</p>
+                        <div class="intro-block">
+                            <pre><code>codex run --json "列表" &gt; deps.json
+git diff | codex run "解释"</code></pre>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- CLOUD ENV SECTION -->
+                <section id="cloud-env" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>云端环境</h1>
+                        <p class="subtitle">在云端运行 Codex 任务。</p>
+                        <div class="intro-block">
+                            <ul>
+                                <li><strong>标准环境：</strong>2 vCPU, 4GB RAM</li>
+                                <li><strong>性能环境：</strong>4 vCPU, 8GB RAM</li>
+                                <li><strong>企业环境：</strong>8 vCPU, 16GB RAM</li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- CLOUD INTERNET SECTION -->
+                <section id="cloud-internet" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>互联网访问</h1>
+                        <p class="subtitle">云端环境的网络配置。</p>
+                        <div class="intro-block">
+                            <p>云端环境可以访问外部 API 和服务，包括 GitHub API、npm registry 等。</p>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- GITHUB SECTION -->
+                <section id="github" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>GitHub 集成</h1>
+                        <p class="subtitle">与 GitHub 深度集成。</p>
+                        <div class="intro-block">
+                            <ul>
+                                <li>自动 PR 创建</li>
+                                <li>Issue 自动响应</li>
+                                <li>代码审查建议</li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- LINEAR SECTION -->
+                <section id="linear" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>Linear 集成</h1>
+                        <p class="subtitle">与 Linear 项目管理集成。</p>
+                        <div class="intro-block">
+                            <ul>
+                                <li>从 Issue 创建任务</li>
+                                <li>自动更新 Issue 状态</li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- SLACK SECTION -->
+                <section id="slack" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>Slack 集成</h1>
+                        <p class="subtitle">在 Slack 中使用 Codex。</p>
+                        <div class="intro-block">
+                            <ul>
+                                <li><code>/codex help</code> - 显示帮助</li>
+                                <li><code>/codex explain</code> - 解释代码</li>
+                                <li><code>/codex review</code> - 审查 PR</li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- CONFIG BASIC SECTION -->
+                <section id="config-basic" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>基础配置</h1>
+                        <p class="subtitle">快速开始配置指南。</p>
+                        <div class="intro-block">
+                            <pre><code>codex login
+codex config model codex-latest
+codex workspace set ./my-project</code></pre>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- CONFIG ADVANCED SECTION -->
+                <section id="config-advanced" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>高级配置</h1>
+                        <p class="subtitle">高级用户配置选项。</p>
+                        <div class="intro-block">
+                            <pre><code>export CODEX_MODEL=codex-latest
+export CODEX_MAX_TOKENS=8192</code></pre>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- CONFIG REFERENCE SECTION -->
+                <section id="config-reference" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>配置参考</h1>
+                        <p class="subtitle">完整的配置项参考手册。</p>
+                        <div class="intro-block">
+                            <ul>
+                                <li><code>model</code> - 使用的模型</li>
+                                <li><code>temperature</code> - 温度参数</li>
+                                <li><code>maxTokens</code> - 最大 Token 数</li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- CONFIG SAMPLE SECTION -->
+                <section id="config-sample" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>配置示例</h1>
+                        <p class="subtitle">常用的配置示例。</p>
+                        <div class="intro-block">
+                            <pre><code>{
+  "model": "codex-latest",
+  "temperature": 0.3
+}</code></pre>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- ENTERPRISE ADMIN SECTION -->
+                <section id="enterprise-admin" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>管理员设置</h1>
+                        <p class="subtitle">企业版管理员配置指南。</p>
+                        <div class="intro-block">
+                            <ul>
+                                <li>用户管理</li>
+                                <li>角色分配</li>
+                                <li>权限管理</li>
+                                <li>使用量监控</li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- ENTERPRISE GOVERNANCE SECTION -->
+                <section id="enterprise-governance" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>治理与合规</h1>
+                        <p class="subtitle">企业治理和合规性配置。</p>
+                        <div class="intro-block">
+                            <ul>
+                                <li>数据保留</li>
+                                <li>合规性报告</li>
+                                <li>数据导出</li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- SECURITY SECTION -->
+                <section id="security" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>安全</h1>
+                        <p class="subtitle">安全性和隐私保护。</p>
+                        <div class="intro-block">
+                            <ul>
+                                <li>传输中加密 (TLS 1.3)</li>
+                                <li>静态数据加密 (AES-256)</li>
+                                <li>SOC 2 Type II 认证</li>
+                                <li>GDPR 合规</li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- MODELS SECTION -->
+                <section id="models" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>模型</h1>
+                        <p class="subtitle">可用的 Codex 模型。</p>
+                        <div class="intro-block">
+                            <ul>
+                                <li><strong>codex-latest</strong> - 最新最强模型</li>
+                                <li><strong>codex-stable</strong> - 稳定版本</li>
+                                <li><strong>codex-mini</strong> - 快速轻量模型</li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- CHANGELOG SECTION -->
+                <section id="changelog" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>更新日志</h1>
+                        <p class="subtitle">产品更新历史。</p>
+                        <div class="intro-block">
+                            <h2>v2.0.0 (2026-02)</h2>
+                            <ul>
+                                <li>新增多智能体支持</li>
+                                <li>改进的代码审查功能</li>
+                                <li>性能提升 50%</li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- VIDEOS SECTION -->
+                <section id="videos" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>视频教程</h1>
+                        <p class="subtitle">视频学习资源。</p>
+                        <div class="intro-block">
+                            <h2>入门系列</h2>
+                            <ul>
+                                <li>Codex 快速入门 (5 分钟)</li>
+                                <li>第一个 Codex 项目 (10 分钟)</li>
+                                <li>提示词技巧 (15 分钟)</li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
             </div>
         </main>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const docLinks = document.querySelectorAll('.doc-link');
-            const sections = document.querySelectorAll('.doc-section');
-
-            function showSection(targetId) {
-                // Update active content
-                sections.forEach(sec => sec.classList.remove('active'));
-                let targetSec = document.getElementById(targetId);
-                if (!targetSec) {
-                    targetSec = document.getElementById('under-construction');
-                }
-                if (targetSec) targetSec.classList.add('active');
-
-                // Update active link
+    </div>                // Update active link
                 docLinks.forEach(link => link.classList.remove('active'));
                 const activeLink = document.querySelector(`.doc-link[data-target="${targetId}"]`);
                 if (activeLink) {
