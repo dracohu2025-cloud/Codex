@@ -129,13 +129,99 @@
 
             <div class="sections-wrapper">
 
-                <!-- UNDER CONSTRUCTION (Fallback Section) -->
-                <section id="under-construction" class="doc-section">
-                    <article class="document-content">
-                        <h1>正在加紧制版中 🚧</h1>
-                        <p class="subtitle">当前所选版块的内容正在火热编写和排版中，敬请期待！</p>
+                <!-- EXPLORE SECTION -->
+                <section id="explore" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>探索 (Explore)</h1>
+                        <p class="subtitle">发现 Codex 的无限可能性。</p>
+
                         <div class="intro-block">
-                            <p>Codex 开发者文档在持续迭代中。如果您对本部分有急切的业务需求，请持续关注我们的官方更新日志。</p>
+                            <h2>示例项目库</h2>
+                            <p>探索由 Codex 构建的真实项目，从简单的 CLI 工具到复杂的 Web 应用。每个示例都包含完整的源代码、部署说明和构建过程解析。</p>
+                            <ul>
+                                <li><strong>入门示例：</strong> 待办事项应用、天气查询 CLI、Markdown 博客生成器</li>
+                                <li><strong>进阶项目：</strong> RESTful API 服务、实时聊天应用、数据可视化仪表盘</li>
+                                <li><strong>企业级案例：</strong> 微服务架构、CI/CD 流水线自动化、遗留代码重构</li>
+                            </ul>
+
+                            <h2>模板库 (Templates)</h2>
+                            <p>一键启动你的下一个项目。选择技术栈，Codex 会自动生成符合最佳实践的项目骨架。</p>
+                            <pre><code># 使用模板创建新项目
+codex new --template nextjs-ts --name my-app
+codex new --template express-api --name backend-service
+codex new --template react-native --name mobile-app</code></pre>
+
+                            <h2>技能商城 (Skills Marketplace)</h2>
+                            <p>发现并安装社区开发的预制技能包，让 Codex 瞬间掌握特定领域知识：</p>
+                            <ul>
+                                <li><strong>数据库专家：</strong> PostgreSQL 优化、MongoDB 聚合、Redis 缓存策略</li>
+                                <li><strong>云原生顾问：</strong> Kubernetes 部署、Terraform IaC、AWS 架构设计</li>
+                                <li><strong>安全审计师：</strong> OWASP 漏洞扫描、渗透测试报告、合规性检查</li>
+                            </ul>
+
+                            <h2>社区展示</h2>
+                            <p>关注顶尖 Codex 用户，学习他们的提示词技巧和工程化实践。每周更新"最佳构建"榜单，优秀项目可获得 OpenAI Credits 奖励。</p>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- PRICING SECTION -->
+                <section id="pricing" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>价格 (Pricing)</h1>
+                        <p class="subtitle">选择适合你的订阅方案。</p>
+
+                        <div class="intro-block">
+                            <h2>订阅计划对比</h2>
+
+                            <h3>ChatGPT Plus - ¥145/月</h3>
+                            <ul>
+                                <li>包含 Codex 基础版访问权限</li>
+                                <li>每日 50 条 Codex 消息配额</li>
+                                <li>标准响应速度</li>
+                                <li>支持 Web 端和移动端访问</li>
+                                <li>gpt-4o 和 o1-mini 模型访问</li>
+                            </ul>
+
+                            <h3>ChatGPT Pro - ¥1450/月</h3>
+                            <ul>
+                                <li>包含 Codex 完整版所有功能</li>
+                                <li>每日 500 条 Codex 消息配额</li>
+                                <li>优先响应队列</li>
+                                <li>o1-pro 和 o3-mini 高级模型访问</li>
+                                <li>深度研究 (Deep Research) 功能</li>
+                                <li>专属的 Pro 用户社区支持</li>
+                            </ul>
+
+                            <h3>ChatGPT Business - ¥145/用户/月</h3>
+                            <ul>
+                                <li>为小团队设计（1-50 人）</li>
+                                <li>无限 Codex 消息配额</li>
+                                <li>共享工作空间和项目模板</li>
+                                <li>团队管理控制台</li>
+                                <li>数据隐私保护（对话不用于训练）</li>
+                                <li>SSO 单点登录集成</li>
+                            </ul>
+
+                            <h3>ChatGPT Enterprise - 联系销售</h3>
+                            <ul>
+                                <li>为大规模组织设计（50+ 人）</li>
+                                <li>无限制的使用量</li>
+                                <li>高级安全审查和合规性</li>
+                                <li>定制化部署选项</li>
+                                <li>专属客户经理和技术支持</li>
+                                <li>SLA 服务保障</li>
+                                <li>私有化部署支持</li>
+                            </ul>
+
+                            <h2>用量说明</h2>
+                            <blockquote>
+                                <p><strong>消息配额如何计算？</strong><br>
+                                每次与 Codex 的交互（发送一条消息并接收回复）计为 1 条消息。如果 Codex 在单次回复中执行了多个步骤（如读取多个文件、运行多个命令），仍然只计为 1 条消息。</p>
+                            </blockquote>
+
+                            <h2>教育优惠</h2>
+                            <p>持有 .edu 邮箱的在校学生和教职员工可享受 ChatGPT Edu 免费访问，包含每日 100 条 Codex 消息配额。详情请访问 <a href="#">OpenAI Education</a> 页面。</p>
                         </div>
                     </article>
                 </section>
@@ -315,6 +401,623 @@
                                 去修改同一份核心配置文件，这会像两个没通气的程序员一样引发冲突。<br>在处理非常漫长的马拉松编码任务时，大模型必然面临 Token 容量问题。不用担心，Codex
                                 的架构内部实现了一种称为 <strong>Context Compaction（上下文自动无损压缩）</strong>
                                 的神技：当历史对话太厚时，它会自动在后台把老旧无用的试错流水账提取、缩写为关键逻辑状态，确保在几百轮对话后它的智商依旧在线，并且完全记得这栋大楼的地基在哪里。</p>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- WEB SECTION -->
+                <section id="web" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>网页版 (Web)</h1>
+                        <p class="subtitle">在浏览器中体验完整的 Codex 能力。</p>
+
+                        <div class="intro-block">
+                            <h2>访问网址</h2>
+                            <p>前往 <a href="https://chatgpt.com/codex" target="_blank">chatgpt.com/codex</a> 登录你的 ChatGPT 账号即可开始使用。</p>
+
+                            <h2>核心功能</h2>
+
+                            <h3>1. 连接 GitHub 仓库</h3>
+                            <p>网页版最大的优势是能够 24/7 不间断运行：</p>
+                            <ol>
+                                <li>点击 "连接仓库" 按钮</li>
+                                <li>授权访问你的 GitHub 账号</li>
+                                <li>选择要操作的 Repository</li>
+                                <li>Codex 会自动分析项目结构并准备就绪</li>
+                            </ol>
+
+                            <h3>2. 任务执行模式</h3>
+                            <p>网页版支持两种任务模式：</p>
+                            <ul>
+                                <li><strong>会话模式：</strong> 实时对话式开发，适合快速迭代和探索</li>
+                                <li><strong>批处理模式：</strong> 提交一个大型任务后，可以关闭页面，任务会在云端继续执行</li>
+                            </ul>
+
+                            <h3>3. Pull Request 工作流</h3>
+                            <p>当 Codex 完成任务后：</p>
+                            <ol>
+                                <li>你可以在网页上预览完整的 Diff</li>
+                                <li>添加内联评论或要求修改</li>
+                                <li>满意后点击"创建 Pull Request"</li>
+                                <li>PR 会自动提交到你的 GitHub 仓库</li>
+                            </ol>
+
+                            <h2>高级功能</h2>
+
+                            <h3>代码审查请求</h3>
+                            <pre><code># 示例提示词
+请审查这个 PR 的代码质量问题：
+- 检查潜在的空指针异常
+- 确认错误处理是否完整
+- 评估性能影响</code></pre>
+
+                            <h3>跨文件重构</h3>
+                            <p>网页版拥有更大的上下文窗口，适合处理需要同时修改多个文件的大型重构任务。</p>
+
+                            <h2>注意事项</h2>
+                            <blockquote>
+                                <p><strong>安全提示：</strong> 网页版执行的所有操作都会创建新分支，不会直接修改主分支。你可以在合并前进行充分的本地测试。</p>
+                            </blockquote>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- INTEGRATIONS SECTION -->
+                <section id="integrations" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>集成 (Integrations)</h1>
+                        <p class="subtitle">将 Codex 融入你现有的开发工具链。</p>
+
+                        <div class="intro-block">
+                            <h2>GitHub 集成</h2>
+                            <h3>自动 Issue 处理</h3>
+                            <p>配置 GitHub Actions 让 Codex 自动响应新 Issue：</p>
+                            <pre><code># .github/workflows/codex-triage.yml
+name: Codex Issue Triage
+on:
+  issues:
+    types: [opened]
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: openai/codex-action@v1
+        with:
+          api-key: ${{ secrets.OPENAI_API_KEY }}
+          task: "analyze-and-label-issue"</code></pre>
+
+                            <h3>PR 自动审查</h3>
+                            <p>每次 Pull Request 提交后，Codex 自动进行代码审查并留下评论。</p>
+
+                            <h2>Slack 机器人</h2>
+                            <p>在 Slack 中与 Codex 对话，获取代码帮助：</p>
+                            <ul>
+                                <li><code>/codex 解释这段代码...</code> - 粘贴代码获取解释</li>
+                                <li><code>/codex 帮我写个...</code> - 直接生成代码片段</li>
+                                <li><code>/codex review &lt;PR URL&gt;</code> - 审查指定的 PR</li>
+                            </ul>
+
+                            <h2>Linear/Jira 集成</h2>
+                            <p>从项目管理工具直接触发 Codex 任务：</p>
+                            <ol>
+                                <li>在任务描述中添加 <code>[CODEX]</code> 标签</li>
+                                <li>Codex 会自动读取任务要求并开始执行</li>
+                                <li>完成后自动更新任务状态并提交代码</li>
+                            </ol>
+
+                            <h2>CI/CD 流水线</h2>
+                            <h3>GitHub Actions</h3>
+                            <pre><code>- name: Codex Auto-Fix
+  uses: openai/codex-action@v1
+  with:
+    task: "fix-eslint-errors"
+    commit-message: "chore: auto-fix ESLint issues"</code></pre>
+
+                            <h3>GitLab CI</h3>
+                            <pre><code>codex-auto-merge:
+  stage: merge
+  script:
+    - codex run "resolve merge conflicts"
+    - git push origin $CI_COMMIT_REF_NAME</code></pre>
+
+                            <h2>Vercel/Netlify 部署</h2>
+                            <p>配置部署钩子让 Codex 在每次部署前自动执行检查和优化。</p>
+
+                            <h2>自定义 Webhook</h2>
+                            <p>通过 REST API 触发 Codex 任务：</p>
+                            <pre><code>curl -X POST https://api.codex.openai.com/v1/tasks \
+  -H "Authorization: Bearer $API_KEY" \
+  -d '{
+    "action": "refactor",
+    "target": "src/auth/jwt.ts",
+    "instructions": "迁移到使用 RS256 算法"
+  }'</code></pre>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- CONFIG FILE SECTION -->
+                <section id="config-file" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>配置文件 (Config File)</h1>
+                        <p class="subtitle">深度定制 Codex 的行为和偏好。</p>
+
+                        <div class="intro-block">
+                            <h2>配置文件位置</h2>
+                            <ul>
+                                <li><strong>全局配置：</strong> <code>~/.codex/config.json</code></li>
+                                <li><strong>项目配置：</strong> <code>&lt;project&gt;/.codex.json</code></li>
+                                <li><strong>环境变量：</strong> 以 <code>CODEX_</code> 开头的环境变量会覆盖配置文件</li>
+                            </ul>
+
+                            <h2>完整配置示例</h2>
+                            <pre><code>{
+  "$schema": "https://codex.openai.com/schema/config.json",
+  "model": {
+    "name": "codex-latest",
+    "temperature": 0.3,
+    "maxTokens": 8192
+  },
+  "behavior": {
+    "autoApprove": false,
+    "previewChanges": true,
+    "confirmBeforeExecute": ["npm publish", "rm -rf", "DROP TABLE"],
+    "silentMode": false
+  },
+  "context": {
+    "maxFiles": 100,
+    "excludePatterns": [
+      "node_modules/**",
+      ".git/**",
+      "**/*.lock",
+      "**/dist/**",
+      ".env*"
+    ],
+    "includePatterns": [
+      "**/*.ts",
+      "**/*.tsx",
+      "**/*.js"
+    ]
+  },
+  "hooks": {
+    "beforeTask": "git stash push -m 'codex-backup'",
+    "afterTask": "git stash pop",
+    "onError": "codex-rollback"
+  },
+  "output": {
+    "verbosity": "normal",
+    "format": "pretty",
+    "logFile": ".codex/logs/execution.log"
+  },
+  "mcp": {
+    "servers": {
+      "supabase": {
+        "url": "https://api.supabase.com/mcp",
+        "apiKey": "${SUPABASE_API_KEY}"
+      }
+    }
+  }
+}</code></pre>
+
+                            <h2>配置项详解</h2>
+
+                            <h3>模型设置</h3>
+                            <ul>
+                                <li><code>model.name</code> - 选择使用的模型版本</li>
+                                <li><code>model.temperature</code> - 创造性程度 (0-1)，越低越保守</li>
+                                <li><code>model.maxTokens</code> - 单次响应的最大 Token 数</li>
+                            </ul>
+
+                            <h3>行为设置</h3>
+                            <ul>
+                                <li><code>behavior.autoApprove</code> - 是否自动应用更改（生产环境建议关闭）</li>
+                                <li><code>behavior.previewChanges</code> - 应用前显示 Diff 预览</li>
+                                <li><code>behavior.confirmBeforeExecute</code> - 执行这些命令前需要二次确认</li>
+                            </ul>
+
+                            <h3>上下文设置</h3>
+                            <ul>
+                                <li><code>context.excludePatterns</code> - 忽略这些文件（支持 glob 语法）</li>
+                                <li><code>context.includePatterns</code> - 只读取这些类型的文件</li>
+                            </ul>
+
+                            <h2>项目级配置</h2>
+                            <p>在项目根目录创建 <code>.codex.json</code>，团队共享同一套 Codex 行为规范：</p>
+                            <pre><code>{
+  "extends": "~/.codex/config.json",
+  "rules": {
+    "requireTests": true,
+    "requireTypeAnnotations": true
+  },
+  "scripts": {
+    "test": "pnpm test",
+    "lint": "pnpm lint",
+    "build": "pnpm build"
+  }
+}</code></pre>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- RULES SECTION -->
+                <section id="rules" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>规则设定 (Rules)</h1>
+                        <p class="subtitle">定义 Codex 在你项目中的行为准则。</p>
+
+                        <div class="intro-block">
+                            <h2>Rules 简介</h2>
+                            <p>Rules 是 Codex 必须遵守的硬性问题约束。与 AGENTS.md 中的建议不同，Rules 是强制性的，Codex 永远不会违反。</p>
+
+                            <h2>创建规则</h2>
+                            <p>在项目中创建 <code>.codex/rules.json</code> 文件：</p>
+                            <pre><code>{
+  "rules": [
+    {
+      "id": "require-tests",
+      "description": "任何新代码文件都必须包含对应的测试文件",
+      "action": "reject",
+      "message": "检测到新代码文件缺少测试文件，请先创建测试"
+    },
+    {
+      "id": "no-console-log",
+      "description": "生产代码中禁止使用 console.log",
+      "pattern": "console\\.log\\(",
+      "action": "reject",
+      "message": "请使用 logger 工具替代 console.log"
+    },
+    {
+      "id": "type-annotations-required",
+      "description": "所有函数参数和返回值必须有类型注解",
+      "action": "modify",
+      "suggestion": "添加 TypeScript 类型注解"
+    }
+  ]
+}</code></pre>
+
+                            <h2>规则类型</h2>
+
+                            <h3>1. 拒绝型规则 (Reject)</h3>
+                            <p>当 Codex 生成的代码违反规则时，直接拒绝执行并要求重新生成。</p>
+
+                            <h3>2. 修改型规则 (Modify)</h3>
+                            <p>自动修正违反规则的代码，然后重新提交审查。</p>
+
+                            <h3>3. 警告型规则 (Warn)</h3>
+                            <p>生成代码后添加警告评论，但不阻止提交。</p>
+
+                            <h2>内置规则模板</h2>
+                            <pre><code># 代码风格规则
+{
+  "enforce": "prettier",
+  "config": "./.prettierrc"
+}
+
+# 测试覆盖规则
+{
+  "minCoverage": 80,
+  "exclude": ["**/*.config.js", "**/mocks/**"]
+}
+
+# 安全规则
+{
+  "noHardcodedSecrets": true,
+  "noEvalUsage": true,
+  "requireInputValidation": true
+}</code></pre>
+
+                            <h2>规则优先级</h2>
+                            <blockquote>
+                                <p><strong>优先级顺序：</strong> 项目规则 &gt; 全局规则 &gt; 默认规则</p>
+                                <p>如果多个规则冲突，更具体的规则优先。如果仍然无法解决，Codex 会暂停并请求用户澄清。</p>
+                            </blockquote>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- AGENTS.MD SECTION -->
+                <section id="agents-md" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>AGENTS.md 指南</h1>
+                        <p class="subtitle">为你的项目定义 AI 智能体行为。</p>
+
+                        <div class="intro-block">
+                            <h2>什么是 AGENTS.md？</h2>
+                            <p><code>AGENTS.md</code> 是项目根目录下的一个 Markdown 文件，用于告诉 Codex 如何理解和操作你的代码库。它包含：</p>
+                            <ul>
+                                <li>项目架构和目录结构说明</li>
+                                <li>编码规范和约定</li>
+                                <li>测试和构建命令</li>
+                                <li>常见任务的执行流程</li>
+                                <li>领域特定的知识</li>
+                            </ul>
+
+                            <h2>快速开始</h2>
+                            <p>在项目根目录创建 <code>AGENTS.md</code>：</p>
+                            <pre><code># 项目概览
+
+这是一个基于 Next.js 14 + TypeScript 的电商平台。
+
+## 目录结构
+
+```
+src/
+├── app/          # Next.js App Router
+├── components/   # React 组件
+├── lib/          # 工具函数和 API 客户端
+├── stores/       # Zustand 状态管理
+└── types/        # TypeScript 类型定义
+```
+
+## 开发命令
+
+- `pnpm dev` - 启动开发服务器
+- `pnpm build` - 生产构建
+- `pnpm test` - 运行测试套件
+- `pnpm lint` - ESLint 检查
+
+## 编码规范
+
+1. 所有组件必须使用 TypeScript
+2. 使用 Tailwind CSS 进行样式编写
+3. API 调用必须包含错误处理
+4. 新组件必须编写单元测试
+
+## 架构决策
+
+- 使用 Server Components 作为默认选择
+- 客户端状态使用 Zustand 管理
+- API 使用 React Query 进行数据获取和缓存
+```</code></pre>
+
+                            <h2>AGENTS.md 最佳实践</h2>
+
+                            <h3>1. 明确测试要求</h3>
+                            <pre><code>## 测试要求
+
+- 所有新组件必须有对应的 `*.test.tsx` 文件
+- 测试覆盖率必须保持在 80% 以上
+- 运行测试：`pnpm test -- --coverage`</code></pre>
+
+                            <h3>2. 定义代码审查清单</h3>
+                            <pre><code>## PR 审查清单
+
+- [ ] 代码通过 ESLint 检查
+- [ ] 所有测试通过
+- [ ] 添加了适当的错误处理
+- [ ] 更新了相关文档</code></pre>
+
+                            <h3>3. 记录部署流程</h3>
+                            <pre><code>## 部署到生产环境
+
+1. 运行 `pnpm build` 确认无构建错误
+2. 运行 `pnpm test` 确认所有测试通过
+3. 执行 `git push origin main` 触发自动部署
+4. 部署完成后在 Vercel 控制台检查健康状态</code></pre>
+
+                            <h2>自动生成 AGENTS.md</h2>
+                            <p>让 Codex 帮你生成初始的 AGENTS.md：</p>
+                            <pre><code>codex generate:agents-md</code></pre>
+                            <p>Codex 会分析你的代码库结构、package.json 脚本和现有文档，生成一个全面的初始版本。</p>
+
+                            <h2>示例模板</h2>
+                            <p>访问 <a href="https://github.com/topics/agents-md" target="_blank">GitHub AGENTS.md 主题页</a> 查看更多社区贡献的模板。</p>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- MCP SECTION -->
+                <section id="mcp" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>MCP 协议</h1>
+                        <p class="subtitle">模型上下文协议 - 让 Codex 连接外部世界。</p>
+
+                        <div class="intro-block">
+                            <h2>什么是 MCP？</h2>
+                            <p><strong>Model Context Protocol (MCP)</strong> 是一个开放标准，允许 AI 模型（如 Codex）与外部数据源和工具进行标准化通信。通过 MCP，Codex 可以：</p>
+                            <ul>
+                                <li>查询数据库获取实时数据</li>
+                                <li>调用第三方 API（如 Stripe、Supabase、Linear）</li>
+                                <li>访问企业内部系统</li>
+                                <li>执行专门的工具链操作</li>
+                            </ul>
+
+                            <h2>架构概览</h2>
+                            <pre><code>┌─────────────┐      ┌──────────────┐      ┌─────────────┐
+│   Codex     │◄────►│  MCP Server  │◄────►│  外部服务   │
+│  (Client)   │      │  (Bridge)    │      │  (API/DB)   │
+└─────────────┘      └──────────────┘      └─────────────┘</code></pre>
+
+                            <h2>安装 MCP Server</h2>
+                            <h3>使用官方 MCP 服务器</h3>
+                            <pre><code># 安装 Supabase MCP 服务器
+npm install -g @mcp/supabase
+
+# 安装 Linear MCP 服务器
+npm install -g @mcp/linear
+
+# 安装 Stripe MCP 服务器
+npm install -g @mcp/stripe</code></pre>
+
+                            <h2>配置 MCP</h2>
+                            <p>在 <code>~/.codex/mcp.json</code> 中配置服务器：</p>
+                            <pre><code>{
+  "mcpServers": {
+    "supabase": {
+      "command": "npx",
+      "args": ["-y", "@mcp/supabase"],
+      "env": {
+        "SUPABASE_URL": "https://xxx.supabase.co",
+        "SUPABASE_KEY": "${SUPABASE_API_KEY}"
+      }
+    },
+    "linear": {
+      "command": "npx",
+      "args": ["-y", "@mcp/linear"],
+      "env": {
+        "LINEAR_API_KEY": "${LINEAR_API_KEY}"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@mcp/filesystem"],
+      "config": {
+        "roots": ["./data", "./logs"]
+      }
+    }
+  }
+}</code></pre>
+
+                            <h2>使用 MCP</h2>
+                            <p>配置完成后，Codex 会自动发现并使用 MCP 服务器：</p>
+                            <pre><code>> 帮我查询上个月最活跃的用户
+
+[Codex 通过 Supabase MCP 查询数据库]
+✅ 查询完成：最活跃的用户是 @alice，共登录 47 次
+
+> 创建一个 Linear Issue 跟踪这个 bug
+
+[Codex 通过 Linear MCP 创建 Issue]
+✅ 已创建 Issue: LIN-1234</code></pre>
+
+                            <h2>官方 MCP 服务器列表</h2>
+                            <ul>
+                                <li><strong>@mcp/supabase</strong> - Supabase 数据库查询</li>
+                                <li><strong>@mcp/linear</strong> - Linear 项目管理</li>
+                                <li><strong>@mcp/stripe</strong> - Stripe 支付处理</li>
+                                <li><strong>@mcp/github</strong> - GitHub API 操作</li>
+                                <li><strong>@mcp/filesystem</strong> - 文件系统访问</li>
+                                <li><strong>@mcp/postgres</strong> - PostgreSQL 数据库</li>
+                                <li><strong>@mcp/slack</strong> - Slack 消息发送</li>
+                            </ul>
+
+                            <h2>创建自定义 MCP Server</h2>
+                            <pre><code>// mcp-server.js
+import { Server } from '@modelcontextprotocol/sdk/server.js';
+
+const server = new Server({
+  name: 'my-custom-server',
+  version: '1.0.0'
+});
+
+server.setRequestHandler('query', async (request) => {
+  // 处理查询请求
+  return { data: 'result' };
+});
+
+server.connect();</code></pre>
+
+                            <h2>MCP 安全</h2>
+                            <blockquote>
+                                <p><strong>重要：</strong> MCP 服务器运行在沙箱环境中，只能访问明确配置的资源。建议使用环境变量管理敏感凭据，而非硬编码在配置文件中。</p>
+                            </blockquote>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- SKILLS SECTION -->
+                <section id="skills" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>自定义技能 (Skills)</h1>
+                        <p class="subtitle">为 Codex 添加领域专精能力。</p>
+
+                        <div class="intro-block">
+                            <h2>什么是 Skills？</h2>
+                            <p>Skills 是封装了特定领域知识和工具使用的可插拔模块。安装一个 Skill 后，Codex 会自动获得相关领域的专业能力。</p>
+
+                            <h2>Skill 类型</h2>
+
+                            <h3>1. 知识型 Skill</h3>
+                            <p>提供特定领域的文档和最佳实践：</p>
+                            <ul>
+                                <li><code>aws-architect</code> - AWS 架构设计指南</li>
+                                <li><code>security-auditor</code> - OWASP 安全检查清单</li>
+                                <li><code>db-optimizer</code> - 数据库查询优化技巧</li>
+                            </ul>
+
+                            <h3>2. 工具型 Skill</h3>
+                            <p>封装常用工具链的操作：</p>
+                            <ul>
+                                <li><code>git-master</code> - 复杂 Git 操作自动化</li>
+                                <li><code>docker-builder</code> - Dockerfile 生成和优化</li>
+                                <li><code>ci-cd-expert</code> - CI/CD 流水线配置</li>
+                            </ul>
+
+                            <h3>3. 框架型 Skill</h3>
+                            <p>针对特定框架的深度集成：</p>
+                            <ul>
+                                <li><code>nextjs-pro</code> - Next.js 高级用法</li>
+                                <li><code>react-native-dev</code> - React Native 开发工具链</li>
+                                <li><code>prisma-master</code> - Prisma ORM 最佳实践</li>
+                            </ul>
+
+                            <h2>安装 Skill</h2>
+                            <pre><code># 从技能商城安装
+codex skills install aws-architect
+
+# 从 GitHub 安装
+codex skills install github:user/repo
+
+# 本地开发安装
+codex skills link ./my-skill</code></pre>
+
+                            <h2>管理 Skills</h2>
+                            <pre><code># 查看已安装的 Skills
+codex skills list
+
+# 查看 Skill 详情
+codex skills info aws-architect
+
+# 更新所有 Skills
+codex skills update
+
+# 卸载 Skill
+codex skills uninstall aws-architect</code></pre>
+
+                            <h2>创建自定义 Skill</h2>
+                            <pre><code># 创建 Skill 模板
+codex skills create my-skill
+
+# 生成的目录结构
+my-skill/
+├── package.json
+├── skill.json
+├── prompts/       # 提示词模板
+├── knowledge/     # 领域知识文档
+├── tools/         # 工具函数
+└── examples/      # 使用示例</code></pre>
+
+                            <h2>Skill 配置文件</h2>
+                            <pre><code>// skill.json
+{
+  "name": "my-skill",
+  "version": "1.0.0",
+  "description": "我的自定义技能",
+  "capabilities": [
+    "code-generation",
+    "code-review",
+    "debugging"
+  ],
+  "triggers": [
+    "当用户提到 Kubernetes 时激活",
+    "在 .kube 目录下自动激活"
+  ],
+  "dependencies": [
+    "docker-builder@^1.0.0"
+  ]
+}</code></pre>
+
+                            <h2>技能商城</h2>
+                            <p>访问 <a href="https://skills.openai.com" target="_blank">skills.openai.com</a> 浏览和发布社区 Skills。发布优质 Skills 可获得 OpenAI Credits 奖励！</p>
+
+                            <h2>企业自定义 Skills</h2>
+                            <p>Enterprise 用户可以创建内部 Skills，封装公司特有的：</p>
+                            <ul>
+                                <li>API 规范和 SDK 使用</li>
+                                <li>内部工具链操作</li>
+                                <li>业务流程和审批规则</li>
+                                <li>合规性和安全检查清单</li>
+                            </ul>
                         </div>
                     </article>
                 </section>
