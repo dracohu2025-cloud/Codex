@@ -62,7 +62,7 @@
                     <h3>核心概念</h3>
                     <ul>
                         <li>
-                            <a href="#prompting" class="doc-link with-arrow" data-target="prompting">提示词
+                            <a href="javascript:void(0)" class="doc-link with-arrow">提示词
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="9 18 15 12 9 6"></polyline>
                                 </svg>
@@ -74,7 +74,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#customization" class="doc-link with-arrow" data-target="customization">自定义
+                            <a href="javascript:void(0)" class="doc-link with-arrow">自定义
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="9 18 15 12 9 6"></polyline>
                                 </svg>
@@ -94,7 +94,7 @@
                     <h3>Codex 客户端</h3>
                     <ul>
                         <li>
-                            <a href="#app" class="doc-link with-arrow" data-target="app">应用
+                            <a href="javascript:void(0)" class="doc-link with-arrow">应用
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="9 18 15 12 9 6"></polyline>
                                 </svg>
@@ -112,7 +112,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#ide" class="doc-link with-arrow" data-target="ide">IDE 插件
+                            <a href="javascript:void(0)" class="doc-link with-arrow">IDE 插件
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="9 18 15 12 9 6"></polyline>
                                 </svg>
@@ -126,7 +126,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#cli-nav" class="doc-link with-arrow" data-target="cli-nav">命令行
+                            <a href="javascript:void(0)" class="doc-link with-arrow">命令行
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="9 18 15 12 9 6"></polyline>
                                 </svg>
@@ -140,7 +140,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#cloud" class="doc-link with-arrow" data-target="cloud">云端
+                            <a href="javascript:void(0)" class="doc-link with-arrow">云端
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="9 18 15 12 9 6"></polyline>
                                 </svg>
@@ -168,7 +168,7 @@
                     <h3>配置</h3>
                     <ul>
                         <li>
-                            <a href="#config-file" class="doc-link with-arrow" data-target="config-file">配置文件
+                            <a href="javascript:void(0)" class="doc-link with-arrow">配置文件
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="9 18 15 12 9 6"></polyline>
                                 </svg>
@@ -194,7 +194,7 @@
                         <li><a href="#authentication" class="doc-link" data-target="authentication">认证</a></li>
                         <li><a href="#security" class="doc-link" data-target="security">安全</a></li>
                         <li>
-                            <a href="#enterprise" class="doc-link with-arrow" data-target="enterprise">企业版
+                            <a href="javascript:void(0)" class="doc-link with-arrow">企业版
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="9 18 15 12 9 6"></polyline>
                                 </svg>
@@ -2977,6 +2977,14 @@ jobs:
                 const pureHash = window.location.hash.substring(1);
                 showSection(pureHash);
             }
+
+            // Handle hash changes (when user clicks anchor links)
+            window.addEventListener('hashchange', () => {
+                const pureHash = window.location.hash.substring(1);
+                if (pureHash) {
+                    showSection(pureHash);
+                }
+            });
         });
     </script>
 </body>
