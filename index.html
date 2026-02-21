@@ -73,6 +73,17 @@
                                 <li><a href="#cyber-safety" class="doc-link" data-target="cyber-safety">网络安全</a></li>
                             </ul>
                         </li>
+                        <li>
+                            <a href="#customization" class="doc-link with-arrow" data-target="customization">自定义
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            <ul class="sub-nav">
+                                <li><a href="#customization" class="doc-link" data-target="customization">Customization</a></li>
+                                <li><a href="#workflows" class="doc-link" data-target="workflows">Workflows</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
 
@@ -1336,6 +1347,169 @@ await @frontend-agent 完成登录表单</code></pre>
 
                             <h2>审计日志</h2>
                             <p>所有 Codex 执行的操作都会被记录在审计日志中，便于事后审查和故障排查。</p>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- CUSTOMIZATION SECTION -->
+                <section id="customization" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>自定义 (Customization)</h1>
+                        <p class="subtitle">定制化 Codex 的行为和工作方式。</p>
+
+                        <div class="intro-block">
+                            <h2>配置选项</h2>
+                            <p>Codex 提供了丰富的配置选项，让你可以根据项目需求和个人偏好调整智能体的行为：</p>
+                            <ul>
+                                <li><strong>模型选择：</strong>选择使用 codex-latest、codex-stable 或 codex-mini</li>
+                                <li><strong>温度参数：</strong>调整响应的创造性程度（0-1 之间）</li>
+                                <li><strong>Token 限制：</strong>控制单次响应的最大长度</li>
+                                <li><strong>上下文范围：</strong>定义 Codex 可以访问的文件和目录</li>
+                            </ul>
+
+                            <h2>自定义指令</h2>
+                            <p>通过配置文件或环境变量定义 Codex 的行为准则：</p>
+                            <pre><code># ~/.codex/config.json
+{
+  "instructions": {
+    "always": [
+      "使用 TypeScript 编写代码",
+      "为新函数添加 JSDoc 注释",
+      "编写单元测试覆盖新代码"
+    ],
+    "never": [
+      "使用 console.log，改用 logger",
+      "修改 .env 文件",
+      "提交包含敏感信息的代码"
+    ]
+  }
+}</code></pre>
+
+                            <h2>项目级自定义</h2>
+                            <p>在项目根目录创建 <code>.codex.json</code> 文件，为特定项目定义专属规则：</p>
+                            <pre><code>{
+  "projectType": "nextjs-app",
+  "styleGuide": "airbnb",
+  "testFramework": "jest",
+  "packageManager": "pnpm"
+}</code></pre>
+
+                            <h2>主题和外观</h2>
+                            <p>调整 Codex 客户端的视觉体验：</p>
+                            <ul>
+                                <li><strong>主题：</strong>深色模式、浅色模式或跟随系统</li>
+                                <li><strong>字体大小：</strong>12px - 20px 可调</li>
+                                <li><strong>布局：</strong>紧凑模式或舒适模式</li>
+                            </ul>
+
+                            <h2>快捷键定制</h2>
+                            <p>在设置中自定义快捷键绑定：</p>
+                            <pre><code>{
+  "keybindings": {
+    "toggleCodex": "Cmd+Shift+K",
+    "acceptDiff": "Cmd+Enter",
+    "rejectDiff": "Cmd+Escape",
+    "newChat": "Cmd+Shift+N"
+  }
+}</code></pre>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- WORKFLOWS SECTION -->
+                <section id="workflows" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>工作流 (Workflows)</h1>
+                        <p class="subtitle">创建自动化工作流提升效率。</p>
+
+                        <div class="intro-block">
+                            <h2>什么是工作流？</h2>
+                            <p>工作流是预定义的任务序列，让你能够一键执行复杂的操作。你可以将常用操作组合成一个工作流，在需要时快速触发。</p>
+
+                            <h2>内置工作流</h2>
+                            <p>Codex 自带多种实用工作流：</p>
+                            <ul>
+                                <li><strong>代码审查：</strong>自动分析 PR、检查代码质量问题、提供改进建议</li>
+                                <li><strong>Bug 修复：</strong>解析错误日志、定位问题、生成修复补丁</li>
+                                <li><strong>功能开发：</strong>从需求描述到完整实现的端到端开发</li>
+                                <li><strong>文档生成：</strong>为代码生成 API 文档、README、注释</li>
+                                <li><strong>测试套件：</strong>生成单元测试、集成测试、E2E 测试</li>
+                                <li><strong>重构助手：</strong>代码重构、性能优化、技术债务清理</li>
+                            </ul>
+
+                            <h2>创建自定义工作流</h2>
+                            <p>在配置文件中定义你的专属工作流：</p>
+                            <pre><code>{
+  "workflows": {
+    "feature-development": {
+      "name": "功能开发工作流",
+      "description": "从需求到部署的完整流程",
+      "steps": [
+        {
+          "name": "分析需求",
+          "prompt": "根据以下需求文档制定技术方案..."
+        },
+        {
+          "name": "编写测试",
+          "prompt": "为新功能编写测试用例..."
+        },
+        {
+          "name": "实现功能",
+          "prompt": "实现功能代码确保测试通过..."
+        },
+        {
+          "name": "代码审查",
+          "prompt": "审查代码质量和潜在问题..."
+        },
+        {
+          "name": "部署",
+          "command": "vercel --prod"
+        }
+      ]
+    }
+  }
+}</code></pre>
+
+                            <h2>触发工作流</h2>
+                            <p>通过多种方式触发工作流：</p>
+                            <pre><code># CLI 触发
+codex workflow run feature-development
+
+# 快捷键触发
+# 在设置中绑定 Cmd+Shift+F 到工作流
+
+# 文件事件触发
+{
+  "triggers": {
+    "onFileSave": "**/*.ts",
+    "workflow": "auto-format"
+  }
+}
+
+# Git 事件触发
+{
+  "triggers": {
+    "onPullRequest": "auto-review"
+  }
+}</code></pre>
+
+                            <h2>工作流模板市场</h2>
+                            <p>访问 <a href="https://workflows.openai.com" target="_blank">workflows.openai.com</a> 发现社区贡献的工作流模板：</p>
+                            <ul>
+                                <li><strong>Next.js 全栈开发</strong> - 从数据库到前端的完整开发流程</li>
+                                <li><strong>Python 数据分析</strong> - 数据清洗、分析、可视化流水线</li>
+                                <li><strong>智能合约审计</strong> - Solidity 安全检查和漏洞扫描</li>
+                                <li><strong>API 迁移</strong> - 从 REST 到 GraphQL 的自动迁移</li>
+                            </ul>
+
+                            <h2>企业级工作流</h2>
+                            <p>Enterprise 用户可以创建组织级工作流，统一团队的开发实践：</p>
+                            <ul>
+                                <li>强制执行代码审查流程</li>
+                                <li>自动化 CI/CD 流水线</li>
+                                <li>集成内部工具和 API</li>
+                                <li>合规性检查和审批流程</li>
+                            </ul>
                         </div>
                     </article>
                 </section>
