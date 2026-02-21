@@ -4,16 +4,6 @@
   "outputDirectory": ".",
   "devCommand": "npx serve .",
   "installCommand": "echo 'No dependencies to install'",
-  "rewrites": [
-    {
-      "source": "/docs",
-      "destination": "/docs.html"
-    },
-    {
-      "source": "/docs/:path*",
-      "destination": "/docs.html"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",

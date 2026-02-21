@@ -6,9 +6,7 @@
 
 本项目是 OpenAI Codex 产品的中文文档网站复刻版，旨在帮助中文开发者更好地理解和使用 Codex 软件工程智能体。
 
-包含两个主要页面：
-- **产品首页** (`index.html`) - Codex 产品介绍和功能展示
-- **开发者文档** (`docs.html`) - 完整的中文文档，包含快速入门、使用指南、配置选项等
+**首页即文档页** - 访问根目录直接展示完整的中文文档，包含快速入门、使用指南、配置选项等。
 
 ## 本地开发
 
@@ -71,10 +69,8 @@ vercel --prod
 
 ```
 Codex/
-├── index.html          # 产品首页
-├── style.css           # 首页样式
-├── script.js           # 首页交互逻辑
-├── docs.html           # 开发者文档 SPA
+├── index.html          # 首页（文档页）
+├── docs.html           # 开发者文档 SPA（与首页内容相同）
 ├── docs.css            # 文档样式
 ├── vercel.json         # Vercel 部署配置
 └── README.md           # 项目说明
