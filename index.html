@@ -85,12 +85,12 @@
                             <ul class="sub-nav">
                                 <li><a href="#app-overview" class="doc-link" data-target="app-overview">概览</a></li>
                                 <li><a href="#app-features" class="doc-link" data-target="app-features">功能特性</a></li>
-                                <li><a href="#app-commands" class="doc-link" data-target="app-commands">指令</a></li>
-                                <li><a href="#app-automations" class="doc-link" data-target="app-automations">自动化</a></li>
-                                <li><a href="#app-review" class="doc-link" data-target="app-review">审查</a></li>
                                 <li><a href="#app-settings" class="doc-link" data-target="app-settings">设置</a></li>
+                                <li><a href="#app-review" class="doc-link" data-target="app-review">审查</a></li>
+                                <li><a href="#app-automations" class="doc-link" data-target="app-automations">自动化</a></li>
                                 <li><a href="#app-worktrees" class="doc-link" data-target="app-worktrees">工作树</a></li>
                                 <li><a href="#app-local" class="doc-link" data-target="app-local">本地环境</a></li>
+                                <li><a href="#app-commands" class="doc-link" data-target="app-commands">指令</a></li>
                                 <li><a href="#app-troubleshooting" class="doc-link" data-target="app-troubleshooting">故障排除</a></li>
                             </ul>
                         </li>
@@ -103,9 +103,9 @@
                             <ul class="sub-nav">
                                 <li><a href="#extension" class="doc-link" data-target="extension">概览</a></li>
                                 <li><a href="#ide-features" class="doc-link" data-target="ide-features">功能特性</a></li>
+                                <li><a href="#ide-settings" class="doc-link" data-target="ide-settings">设置</a></li>
                                 <li><a href="#ide-commands" class="doc-link" data-target="ide-commands">命令</a></li>
                                 <li><a href="#ide-slash" class="doc-link" data-target="ide-slash">斜杠命令</a></li>
-                                <li><a href="#ide-settings" class="doc-link" data-target="ide-settings">设置</a></li>
                             </ul>
                         </li>
                         <li>
@@ -119,7 +119,6 @@
                                 <li><a href="#cli-features" class="doc-link" data-target="cli-features">功能特性</a></li>
                                 <li><a href="#cli-reference" class="doc-link" data-target="cli-reference">命令参考</a></li>
                                 <li><a href="#cli-slash" class="doc-link" data-target="cli-slash">斜杠命令</a></li>
-                                <li><a href="#cli-noninteractive" class="doc-link" data-target="cli-noninteractive">非交互模式</a></li>
                             </ul>
                         </li>
                         <li>
@@ -141,7 +140,6 @@
                                 </svg>
                             </a>
                             <ul class="sub-nav">
-                                <li><a href="#integrations" class="doc-link" data-target="integrations">概览</a></li>
                                 <li><a href="#github" class="doc-link" data-target="github">GitHub</a></li>
                                 <li><a href="#slack" class="doc-link" data-target="slack">Slack</a></li>
                                 <li><a href="#linear" class="doc-link" data-target="linear">Linear</a></li>
@@ -569,36 +567,30 @@
                 <!-- APP OVERVIEW SECTION -->
                 <section id="app-overview" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>应用概览</h1>
-                        <p class="subtitle">Codex 桌面客户端入门指南。</p>
-
+                        <h1>Codex 应用</h1>
+                        <p class="subtitle">面向桌面端的并行线程工作区。</p>
                         <div class="intro-block">
-                            <h2>什么是 Codex 客户端？</h2>
-                            <p>Codex 桌面客户端是一个独立的 macOS 应用，为你提供终极结对编程体验。它悬浮于任何工作流之上，随时准备协助你的编码工作。</p>
-
-                            <h2>核心优势</h2>
+                            <h2>开始使用</h2>
                             <ul>
-                                <li><strong>独立运行：</strong>不依赖任何 IDE，可在任何应用场景下使用</li>
-                                <li><strong>多项目管理：</strong>同时处理多个代码库，轻松切换上下文</li>
-                                <li><strong>三种模式：</strong>本地模式、工作树模式、云端模式灵活选择</li>
-                                <li><strong>原生体验：</strong>Apple Silicon 优化，丝滑流畅</li>
+                                <li>查看套餐说明：<a href="https://developers.openai.com/codex/pricing" target="_blank" rel="noopener noreferrer">what’s included</a></li>
+                                <li>下载 macOS：<a href="https://persistent.oaistatic.com/codex-app-prod/Codex.dmg" target="_blank" rel="noopener noreferrer">Download for macOS</a></li>
+                                <li>订阅 Windows / Linux 通知：<a href="https://openai.com/form/codex-app/" target="_blank" rel="noopener noreferrer">Get notified</a></li>
                             </ul>
-
-                            <h2>快速开始</h2>
-                            <ol>
-                                <li>下载并安装 Codex 客户端</li>
-                                <li>使用 ChatGPT 账号登录</li>
-                                <li>选择工作区目录</li>
-                                <li>开始对话，让 Codex 协助编码</li>
-                            </ol>
-
-                            <h2>界面导览</h2>
-                            <ul>
-                                <li><strong>对话区：</strong>输入自然语言指令</li>
-                                <li><strong>Diff 面板：</strong>查看和审查代码变更</li>
-                                <li><strong>Git 面板：</strong>管理提交、分支和推送</li>
-                                <li><strong>设置面板：</strong>自定义行为和偏好</li>
-                            </ul>
+                            <h2>在 Codex 应用中工作</h2>
+                            <p>应用支持多项目并行、多线程协作与本地执行。可结合云端线程（<a href="https://developers.openai.com/codex/prompting#threads" target="_blank" rel="noopener noreferrer">cloud threads</a>）与示例任务（<a href="https://developers.openai.com/codex/explore" target="_blank" rel="noopener noreferrer">explore section</a>）快速上手。</p>
+                            <h3>跨项目并行</h3>
+                            <div class="app-screenshot" style="margin: 1.5rem 0;">
+                                <picture>
+                                    <source media="(prefers-color-scheme: dark)" srcset="https://developers.openai.com/images/codex/app/app-screenshot-dark.webp">
+                                    <img src="https://developers.openai.com/images/codex/app/app-screenshot-light.webp" alt="Codex app overview" style="width:100%;border-radius:12px;">
+                                </picture>
+                            </div>
+                            <div class="explore-card-grid">
+                                <div class="explore-card"><img src="https://developers.openai.com/codex/colorcons/brain.png" alt=""><h3>理解代码</h3><p>快速总结结构与关键路径。</p></div>
+                                <div class="explore-card"><img src="https://developers.openai.com/codex/colorcons/gamepad.png" alt=""><h3>执行任务</h3><p>把需求转成可执行改动。</p></div>
+                                <div class="explore-card"><img src="https://developers.openai.com/codex/colorcons/search.png" alt=""><h3>验证结果</h3><p>结合测试与命令完成闭环。</p></div>
+                            </div>
+                            <p>官方页面：<a href="https://developers.openai.com/codex/app" target="_blank" rel="noopener noreferrer">developers.openai.com/codex/app</a></p>
                         </div>
                     </article>
                 </section>
@@ -607,40 +599,24 @@
                 <section id="app-troubleshooting" class="doc-section full-width">
                     <article class="document-content markdown-body">
                         <h1>故障排除</h1>
-                        <p class="subtitle">解决常见问题。</p>
-
+                        <p class="subtitle">常见问题、日志反馈与恢复路径。</p>
                         <div class="intro-block">
-                            <h2>登录问题</h2>
-                            <p>如无法登录，尝试：</p>
-                            <ol>
-                                <li>检查网络连接</li>
-                                <li>清除浏览器缓存后重新登录</li>
-                                <li>退出并重启应用</li>
-                            </ol>
-
-                            <h2>性能缓慢</h2>
-                            <p>如应用响应缓慢：</p>
+                            <h2>常见问题</h2>
+                            <h2>反馈与日志</h2>
+                            <h2>卡住状态与恢复模式</h2>
+                            <h2>终端问题</h2>
+                            <h3>侧边栏出现未编辑文件</h3>
+                            <h3>如何移除项目</h3>
+                            <h3>找不到历史线程</h3>
+                            <h3>工作树代码无法运行</h3>
                             <ul>
-                                <li>关闭并重新打开对话线程</li>
-                                <li>减少同时打开的线程数量</li>
-                                <li>检查系统活动监视器，确认资源占用</li>
+                                <li>审查面板：<a href="https://developers.openai.com/codex/app/review" target="_blank" rel="noopener noreferrer">review pane</a></li>
+                                <li>设置入口：<a href="codex://settings" target="_blank" rel="noopener noreferrer">codex://settings</a></li>
+                                <li>工作树文档：<a href="https://developers.openai.com/codex/app/worktrees" target="_blank" rel="noopener noreferrer">worktrees documentation</a></li>
+                                <li>问题反馈：<a href="https://github.com/openai/codex/issues" target="_blank" rel="noopener noreferrer">existing issues</a></li>
+                                <li>新建问题（模板）：<a href="https://github.com/openai/codex/issues/new?template=2-bug-report.yml&steps=Uploaded%20thread%3A%20019c0d37-d2b6-74c0-918f-0e64af9b6e14" target="_blank" rel="noopener noreferrer">Open a new GitHub issue</a></li>
                             </ul>
-
-                            <h2>Git 冲突</h2>
-                            <p>遇到 Git 冲突时：</p>
-                            <ol>
-                                <li>使用 Git 面板查看冲突文件</li>
-                                <li>手动解决冲突或使用 Codex 协助</li>
-                                <li>重新运行任务</li>
-                            </ol>
-
-                            <h2>获取帮助</h2>
-                            <p>如需进一步帮助：</p>
-                            <ul>
-                                <li>查看 <a href="https://developers.openai.com/codex" target="_blank" rel="noopener noreferrer">官方文档</a></li>
-                                <li>访问 <a href="https://community.openai.com" target="_blank" rel="noopener noreferrer">社区论坛</a></li>
-                                <li>联系支持：support@openai.com</li>
-                            </ul>
+                            <p>官方页面：<a href="https://developers.openai.com/codex/app/troubleshooting" target="_blank" rel="noopener noreferrer">developers.openai.com/codex/app/troubleshooting</a></p>
                         </div>
                     </article>
                 </section>
@@ -648,94 +624,41 @@
                 <!-- APP FEATURES SECTION -->
                 <section id="app-features" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>应用功能</h1>
-                        <p class="subtitle">使用 Codex 应用可以做什么。</p>
-
+                        <h1>Codex 应用功能</h1>
+                        <p class="subtitle">应用端主要能力与工作方式。</p>
                         <div class="intro-block">
-                            <p>Codex 应用是一个专注的桌面体验，用于并行处理 Codex 线程，具有内置的工作树支持、自动化和 Git 功能。</p>
-
-                            <h2>跨项目多任务处理</h2>
-                            <p>使用一个 Codex 应用窗口跨项目运行任务。为每个代码库添加一个项目，并根据需要在它们之间切换。</p>
-                            <p>如果你使用过 Codex CLI，项目就像在特定目录中启动会话。</p>
-                            <p>如果你在一个仓库中处理两个或更多应用或包，将不同的项目拆分为单独的应用项目，以便沙盒仅包含该项目的文件。</p>
-
+                            <h2>多项目并行</h2>
+                            <picture><source media="(prefers-color-scheme: dark)" srcset="https://developers.openai.com/images/codex/app/multitask-dark.webp"><img src="https://developers.openai.com/images/codex/app/multitask-light.webp" alt="Multitask" style="width:100%;border-radius:12px;"></picture>
                             <h2>技能支持</h2>
-                            <p>Codex 应用支持与 CLI 和 IDE 扩展相同的代理技能。你还可以通过点击侧边栏中的"技能"查看和探索团队在不同项目中创建的新技能。</p>
-
+                            <picture><source media="(prefers-color-scheme: dark)" srcset="https://developers.openai.com/images/codex/app/skill-selector-dark.webp"><img src="https://developers.openai.com/images/codex/app/skill-selector-light.webp" alt="Skills" style="width:100%;border-radius:12px;"></picture>
                             <h2>自动化</h2>
-                            <p>你可以将技能与自动化相结合，执行例行任务，例如评估遥测中的错误并提交修复或创建有关最近代码库更改的报告。</p>
-
+                            <picture><source media="(prefers-color-scheme: dark)" srcset="https://developers.openai.com/images/codex/app/create-automation-dark.webp"><img src="https://developers.openai.com/images/codex/app/create-automation-light.webp" alt="Automations" style="width:100%;border-radius:12px;"></picture>
                             <h2>模式</h2>
-                            <p>每个线程在选定的模式下运行。启动线程时，你可以选择：</p>
-                            <ul>
-                                <li><strong>本地：</strong>直接在你当前的项目目录中工作。</li>
-                                <li><strong>工作树：</strong>在 Git 工作树中隔离更改。</li>
-                                <li><strong>云端：</strong>在配置的云端环境中远程运行。</li>
-                            </ul>
-                            <p>本地和工作树线程都将在你的计算机上运行。</p>
-
+                            <picture><source media="(prefers-color-scheme: dark)" srcset="https://developers.openai.com/images/codex/app/modes-dark.webp"><img src="https://developers.openai.com/images/codex/app/modes-light.webp" alt="Modes" style="width:100%;border-radius:12px;"></picture>
                             <h2>内置 Git 工具</h2>
-                            <p>Codex 应用直接在应用内提供常见的 Git 功能。</p>
-                            <p>差异窗格显示本地项目或工作树检出中更改的 Git 差异。你还可以添加内联评论供 Codex 处理，并暂存或恢复特定的块或整个文件。</p>
-                            <p>你还可以直接从 Codex 应用内为本地和工作树任务提交、推送和创建拉取请求。</p>
-                            <p>对于更高级的 Git 任务，请使用集成终端。</p>
-
+                            <picture><source media="(prefers-color-scheme: dark)" srcset="https://developers.openai.com/images/codex/app/git-commit-dark.webp"><img src="https://developers.openai.com/images/codex/app/git-commit-light.webp" alt="Git" style="width:100%;border-radius:12px;"></picture>
                             <h2>工作树支持</h2>
-                            <p>创建新线程时，选择本地或工作树。本地直接在你的项目中工作。工作树创建一个新的 Git 工作树，以便更改与你的常规项目保持隔离。</p>
-                            <p>当你想尝试新想法而不触碰当前工作，或者希望 Codex 在同一项目中并排运行独立任务时，请使用工作树。</p>
-                            <p>自动化在 Git 仓库的专用后台工作树中运行，在非版本控制项目的项目目录中直接运行。</p>
-
+                            <picture><source media="(prefers-color-scheme: dark)" srcset="https://developers.openai.com/images/codex/app/worktree-dark.webp"><img src="https://developers.openai.com/images/codex/app/worktree-light.webp" alt="Worktree" style="width:100%;border-radius:12px;"></picture>
                             <h2>集成终端</h2>
-                            <p>每个线程都包含一个内置终端，范围限定为当前项目或工作树。使用应用右上角的终端图标或按 Cmd+J 切换它。</p>
-                            <p>使用终端验证更改、运行脚本和执行 Git 操作，而无需离开应用。</p>
-                            <p>常见任务包括：</p>
+                            <picture><source media="(prefers-color-scheme: dark)" srcset="https://developers.openai.com/images/codex/app/integrated-terminal-dark.webp"><img src="https://developers.openai.com/images/codex/app/integrated-terminal-light.webp" alt="Terminal" style="width:100%;border-radius:12px;"></picture>
+                            <h2>语音输入</h2>
+                            <picture><source media="(prefers-color-scheme: dark)" srcset="https://developers.openai.com/images/codex/app/voice-dictation-dark.webp"><img src="https://developers.openai.com/images/codex/app/voice-dictation-light.webp" alt="Voice" style="width:100%;border-radius:12px;"></picture>
+                            <h2>浮窗模式</h2>
+                            <picture><source media="(prefers-color-scheme: dark)" srcset="https://developers.openai.com/images/codex/app/popover-dark.webp"><img src="https://developers.openai.com/images/codex/app/popover-light.webp" alt="Popover" style="width:100%;border-radius:12px;"></picture>
+                            <h2>其他能力</h2>
                             <ul>
-                                <li>git status</li>
-                                <li>git pull --rebase</li>
-                                <li>pnpm test 或 npm test</li>
-                                <li>pnpm run lint 或类似的项目命令</li>
+                                <li>与 IDE 扩展同步</li>
+                                <li>审批与沙箱（详见 <a href="https://developers.openai.com/codex/security" target="_blank" rel="noopener noreferrer">security</a>）</li>
+                                <li>MCP 支持（<a href="https://developers.openai.com/codex/mcp" target="_blank" rel="noopener noreferrer">Model Context Protocol</a>）</li>
+                                <li>Web 搜索、图片输入、通知、防休眠</li>
                             </ul>
-                            <p>如果你定期运行任务，可以在本地环境中定义一个操作，以在 Codex 应用窗口顶部添加一个快捷按钮。</p>
-                            <p>注意，Cmd+K 在 Codex 应用中打开命令面板。它不会清除终端。要清除终端，请使用 Ctrl+L。</p>
-
-                            <h2>语音听写</h2>
-                            <p>使用语音提示 Codex。当编辑器可见时按住 Ctrl+M 并开始说话。你的语音将被转录。编辑转录的提示或点击发送让 Codex 开始工作。</p>
-
-                            <h2>浮动弹出窗口</h2>
-                            <p>将活动对话线程弹出到一个单独的窗口，并将其移动到正在积极工作的地方。这非常适合前端工作，你可以将线程保留在浏览器、编辑器或设计预览附近，同时快速迭代。</p>
-                            <p>你还可以切换弹出窗口以保持置顶，当你希望它在整个工作流中保持可见时。</p>
-
-                            <h2>与 IDE 扩展同步</h2>
-                            <p>如果你在编辑器中安装了 Codex IDE 扩展，当你处于同一项目时，你的 Codex 应用和 IDE 扩展会自动同步。</p>
-                            <p>同步时，你会在 Codex 应用编辑器中看到 IDE 上下文选项。启用"自动上下文"后，Codex 应用会跟踪你正在查看的文件，因此你可以间接引用它们（例如，"这个文件是关于什么的？"）。你还可以在 IDE 扩展中看到 Codex 应用中运行的线程，反之亦然。</p>
-                            <p>如果你不确定应用是否包含上下文，请将其关闭并再次询问相同的问题以比较结果。</p>
-
-                            <h2>审批和沙盒</h2>
-                            <p>你的审批和沙盒设置约束 Codex 操作。</p>
+                            <h2>相关页面</h2>
                             <ul>
-                                <li>审批决定 Codex 在运行命令之前何时暂停请求权限。</li>
-                                <li>沙盒控制 Codex 可以使用的目录和网络访问。</li>
+                                <li><a href="https://developers.openai.com/codex/app/settings" target="_blank" rel="noopener noreferrer">Settings</a></li>
+                                <li><a href="https://developers.openai.com/codex/app/automations" target="_blank" rel="noopener noreferrer">Automations</a></li>
+                                <li><a href="https://developers.openai.com/codex/app/local-environments" target="_blank" rel="noopener noreferrer">Local environments</a></li>
+                                <li><a href="https://developers.openai.com/codex/app/worktrees" target="_blank" rel="noopener noreferrer">Worktrees</a></li>
                             </ul>
-                            <p>当你看到"批准一次"或"批准本次会话"等提示时，你正在为工具执行授予不同范围的权限。如果你不确定，请批准最窄的选项并继续迭代。</p>
-                            <p>默认情况下，Codex 将工作范围限定为当前项目。在大多数情况下，这是正确的约束。</p>
-                            <p>如果你的任务需要跨多个仓库或目录工作，请优先打开单独的项目或使用工作树，而不是要求 Codex 在项目根目录之外漫游。</p>
-
-                            <h2>MCP 支持</h2>
-                            <p>Codex 应用、CLI 和 IDE 扩展共享 Model Context Protocol (MCP) 设置。如果你已在其中一个中配置了 MCP 服务器，它们会自动被其他服务器采用。要配置新服务器，请打开应用设置中的 MCP 部分，然后启用推荐的服务器或向配置中添加新服务器。</p>
-
-                            <h2>网页搜索</h2>
-                            <p>Codex 附带一个第一方网页搜索工具。对于 Codex IDE 扩展中的本地任务，Codex 默认启用网页搜索，并从网页搜索缓存中提供结果。如果你将沙盒配置为完全访问，网页搜索默认为实时结果。请参阅配置基础以禁用网页搜索或切换到获取最新数据的实时结果。</p>
-
-                            <h2>图像输入</h2>
-                            <p>你可以将图像拖放到提示编辑器中以将它们作为上下文包含在内。拖放图像时按住 Shift 键以将图像添加到上下文。</p>
-                            <p>你还可以要求 Codex 查看系统上的图像。通过为 Codex 提供截取你正在处理的应用屏幕截图的工具，Codex 可以验证它所做的工作。</p>
-
-                            <h2>通知</h2>
-                            <p>默认情况下，当应用在后台时，Codex 应用会在任务完成或需要批准时发送通知。</p>
-                            <p>在 Codex 应用设置中，你可以选择从不发送通知或始终在应用处于焦点时发送通知。</p>
-
-                            <h2>保持计算机唤醒</h2>
-                            <p>由于你的任务可能需要一段时间才能完成，你可以让 Codex 应用通过启用应用设置中的"运行时防止睡眠"开关来防止计算机进入睡眠状态。</p>
                         </div>
                     </article>
                 </section>
@@ -770,71 +693,31 @@
                 <!-- EXTENSION SECTION -->
                 <section id="extension" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>IDE 插件</h1>
-                        <p class="subtitle">在你最熟悉的开发环境中集成 Codex。</p>
-
+                        <h1>Codex IDE 扩展</h1>
+                        <p class="subtitle">在 VS Code、Cursor、Windsurf 与 JetBrains 中使用 Codex。</p>
                         <div class="intro-block">
-                            <h2>支持的 IDE</h2>
+                            <h2>扩展安装</h2>
                             <ul>
-                                <li><strong>Visual Studio Code</strong> - 完整功能支持</li>
-                                <li><strong>Cursor</strong> - 原生集成 Codex 引擎</li>
-                                <li><strong>Windsurf</strong> - Cascade 工作流支持</li>
-                                <li><strong>JetBrains 全家桶</strong> - IntelliJ IDEA, PyCharm, WebStorm, GoLand</li>
+                                <li><a href="https://marketplace.visualstudio.com/items?itemName=openai.chatgpt" target="_blank" rel="noopener noreferrer">Visual Studio Code Marketplace</a></li>
+                                <li><a href="vscode:extension/openai.chatgpt" target="_blank" rel="noopener noreferrer">Download for Visual Studio Code</a></li>
+                                <li><a href="cursor:extension/openai.chatgpt" target="_blank" rel="noopener noreferrer">Download for Cursor</a></li>
+                                <li><a href="windsurf:extension/openai.chatgpt" target="_blank" rel="noopener noreferrer">Download for Windsurf</a></li>
+                                <li><a href="https://blog.jetbrains.com/ai/2026/01/codex-in-jetbrains-ides/" target="_blank" rel="noopener noreferrer">Install Codex for JetBrains IDEs</a></li>
                             </ul>
-
-                            <h2>安装 VS Code 插件</h2>
-                            <ol>
-                                <li>打开 VS Code，进入扩展面板 (<code>Cmd+Shift+X</code>)</li>
-                                <li>搜索 "Codex" 或 "ChatGPT"</li>
-                                <li>点击安装由 OpenAI 官方发布的插件</li>
-                                <li>安装完成后，点击侧边栏的 Codex 图标</li>
-                                <li>使用 ChatGPT 账号登录即可完成授权</li>
-                            </ol>
-
-                            <h2>核心功能</h2>
-
-                            <h3>1. 智能体模式（默认启用）</h3>
-                            <p>在此模式下，Codex 拥有完整的"读 - 写 - 执行"权限：</p>
+                            <h2>JetBrains IDE 集成</h2>
+                            <h2>使用 IDE 扩展</h2>
+                            <h3>把 Codex 移到右侧边栏</h3>
+                            <h3>登录与升级扩展</h3>
+                            <h3>设置快捷键</h3>
+                            <h3>结合编辑器上下文提问</h3>
+                            <img src="https://cdn.openai.com/devhub/docs/codex-extension.webp" alt="Codex extension" style="width:100%;border-radius:12px;">
+                            <img src="https://cdn.openai.com/devhub/docs/codex-workbench-setting.webp" alt="Codex workbench setting" style="width:100%;border-radius:12px;margin-top:1rem;">
                             <ul>
-                                <li><strong>读取文件：</strong> 自动打开并分析你打开的任何文件</li>
-                                <li><strong>编辑代码：</strong> 直接生成 Diff 并应用到你当前编辑的文件</li>
-                                <li><strong>运行终端命令：</strong> 可以执行 <code>npm install</code>、<code>git commit</code> 等命令</li>
-                                <li><strong>创建/删除文件：</strong> 根据需求生成全新的文件或清理无用文件</li>
+                                <li>价格说明：<a href="https://developers.openai.com/codex/pricing" target="_blank" rel="noopener noreferrer">pricing page</a></li>
+                                <li>Windows 指南：<a href="https://developers.openai.com/codex/windows" target="_blank" rel="noopener noreferrer">Windows setup guide</a></li>
+                                <li>命令：<a href="https://developers.openai.com/codex/ide/commands" target="_blank" rel="noopener noreferrer">IDE extension commands</a></li>
+                                <li>斜杠命令：<a href="https://developers.openai.com/codex/ide/slash-commands" target="_blank" rel="noopener noreferrer">IDE slash commands</a></li>
                             </ul>
-
-                            <h3>2. 内联编辑</h3>
-                            <p>选中一段代码，右键选择 "Codex: 编辑选中内容"，然后输入你的修改指令：</p>
-                            <pre><code># 示例指令
-- "把这个函数改成 async/await 风格"
-- "添加错误处理逻辑"
-- "提取这段重复代码为一个独立函数"</code></pre>
-
-                            <h3>3. 代码解释</h3>
-                            <p>选中不理解的代码，点击 "解释此代码"。Codex 会逐行分析并用自然语言解释其功能和潜在问题。</p>
-
-                            <h3>4. 单元测试生成</h3>
-                            <p>右键点击任何函数或类，选择 "生成测试"，Codex 会自动创建 Jest/Vitest/Pytest 测试文件。</p>
-
-                            <h2>快捷键配置</h2>
-                            <p>打开 <code>settings.json</code> 自定义快捷键：</p>
-                            <pre><code>{
-  "codex.keybindings": {
-    "openChat": "Ctrl+Shift+C",
-    "inlineEdit": "Ctrl+Shift+E",
-    "explainCode": "Ctrl+Shift+X",
-    "generateTests": "Ctrl+Shift+T"
-  }
-}</code></pre>
-
-                            <h2>隐私与安全</h2>
-                            <blockquote>
-                                <p><strong>重要提示：</strong> 在智能体模式下，Codex 有能力修改你的代码库。建议：</p>
-                                <ul>
-                                    <li>在 Codex 执行重大改动前，先提交当前的 Git 快照</li>
-                                    <li>启用"预览 Diff 再应用"选项</li>
-                                    <li>敏感配置文件（如 <code>.env</code>）添加到排除列表</li>
-                                </ul>
-                            </blockquote>
                         </div>
                     </article>
                 </section>
@@ -842,124 +725,24 @@
                 <!-- CLI SECTION -->
                 <section id="cli" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>命令行工具</h1>
-                        <p class="subtitle">终端用户的终极编码利器。</p>
-
+                        <h1>Codex CLI</h1>
+                        <p class="subtitle">开源命令行入口，适合脚本化与终端工作流。</p>
                         <div class="intro-block">
-                            <h2>安装</h2>
-
-                            <h3>使用 npm (推荐)</h3>
-                            <pre><code>npm install -g @openai/codex</code></pre>
-
-                            <h3>使用 Homebrew (macOS)</h3>
-                            <pre><code>brew tap openai/codex
-brew install codex</code></pre>
-
-                            <h3>使用 pip (Python)</h3>
-                            <pre><code>pip install openai-codex</code></pre>
-
-                            <h2>快速入门</h2>
-                            <pre><code># 1. 验证安装
+                            <h2>CLI 安装</h2>
+                            <pre><code>npm install -g @openai/codex
 codex --version
-
-# 2. 登录（浏览器会打开）
-codex login
-
-# 3. 进入项目目录
-cd my-project
-
-# 4. 启动 Codex
-codex</code></pre>
-
-                            <h2>基本用法</h2>
-                            <p>启动后，你进入交互式对话模式：</p>
-                            <pre><code>$ codex
-> 帮我创建一个简单的 HTTP 服务器
-
-✅ 正在创建 server.js...
-✅ 已安装依赖 express
-✅ 服务器已启动在 http://localhost:3000
-
-需要我做其他事吗？</code></pre>
-
-                            <h2>常用命令</h2>
-
-                            <h3>非交互式任务（一次性执行）</h3>
-                            <pre><code># 单行任务
-codex run "重构这个函数的命名规范"
-
-# 读取特定文件
-codex run --file src/main.py "添加类型注解"
-
-# 指定输出模式
-codex run --json "分析 package.json 依赖"</code></pre>
-
-                            <h3>项目管理</h3>
-                            <pre><code># 列出所有项目
-codex projects
-
-# 创建新项目上下文
-codex projects create my-app
-
-# 切换项目
-codex projects select my-app
-
-# 删除项目
-codex projects delete old-project</code></pre>
-
-                            <h3>线程管理</h3>
-                            <pre><code># 查看历史对话
-codex threads
-
-# 恢复之前的对话
-codex threads resume &lt;thread-id&gt;
-
-# 导出对话记录
-codex threads export &lt;thread-id&gt; --format markdown</code></pre>
-
-                            <h2>配置文件</h2>
-                            <p>Codex CLI 的配置文件位于 <code>~/.codex/config.json</code>：</p>
-                            <pre><code>{
-  "defaultModel": "codex-latest",
-  "autoApprove": false,
-  "maxTokens": 4096,
-  "excludePatterns": [
-    "**/node_modules/**",
-    "**/.git/**",
-    "**/*.log"
-  ],
-  "hooks": {
-    "beforeEdit": "git add -A",
-    "afterEdit": "git diff --stat"
-  }
-}</code></pre>
-
-                            <h2>高级技巧</h2>
-
-                            <h3>管道输入</h3>
-                            <pre><code># 将命令输出传递给 Codex
-git diff HEAD~1 | codex run "解释这些改动"
-
-# 处理错误日志
-npm test 2>&1 | codex run "分析测试失败原因"</code></pre>
-
-                            <h3>批处理模式</h3>
-                            <pre><code># 从文件读取指令
-codex run --instructions-file tasks.txt
-
-# tasks.txt 内容:
-1. 修复所有 ESLint 错误
-2. 更新过时的依赖
-3. 生成 API 文档</code></pre>
-
-                            <h3>环境变量</h3>
-                            <pre><code># 使用 API Key 而非浏览器登录
-export OPENAI_API_KEY=sk-...
-codex run "..."
-
-# 指定配置目录
-export CODEX_CONFIG=/path/to/custom/config
-codex</code></pre>
+codex login</code></pre>
+                            <h2>使用 Codex CLI</h2>
+                            <h3>Install</h3>
+                            <h3>Run</h3>
+                            <h3>Upgrade</h3>
+                            <h3>交互式运行</h3>
+                            <ul>
+                                <li>开源仓库：<a href="https://github.com/openai/codex" target="_blank" rel="noopener noreferrer">open source</a></li>
+                                <li>套餐说明：<a href="https://developers.openai.com/codex/pricing" target="_blank" rel="noopener noreferrer">what’s included</a></li>
+                                <li>更新日志：<a href="https://developers.openai.com/codex/changelog" target="_blank" rel="noopener noreferrer">changelog</a></li>
+                                <li>Windows 指南：<a href="https://developers.openai.com/codex/windows" target="_blank" rel="noopener noreferrer">Windows setup guide</a></li>
+                            </ul>
                         </div>
                     </article>
                 </section>
@@ -967,56 +750,18 @@ codex</code></pre>
                 <!-- WEB SECTION -->
                 <section id="web" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>网页端</h1>
-                        <p class="subtitle">在浏览器中体验完整的 Codex 能力。</p>
-
+                        <h1>Codex Web</h1>
+                        <p class="subtitle">在浏览器中发起与管理 Codex 云端任务。</p>
                         <div class="intro-block">
-                            <h2>访问网址</h2>
-                            <p>前往 <a href="https://chatgpt.com/codex" target="_blank" rel="noopener noreferrer">chatgpt.com/codex</a> 登录你的 ChatGPT 账号即可开始使用。</p>
-
-                            <h2>核心功能</h2>
-
-                            <h3>1. 连接 GitHub 仓库</h3>
-                            <p>网页版最大的优势是能够 24/7 不间断运行：</p>
-                            <ol>
-                                <li>点击 "连接仓库" 按钮</li>
-                                <li>授权访问你的 GitHub 账号</li>
-                                <li>选择要操作的仓库</li>
-                                <li>Codex 会自动分析项目结构并准备就绪</li>
-                            </ol>
-
-                            <h3>2. 任务执行模式</h3>
-                            <p>网页版支持两种任务模式：</p>
+                            <h2>Web 设置</h2>
                             <ul>
-                                <li><strong>会话模式：</strong> 实时对话式开发，适合快速迭代和探索</li>
-                                <li><strong>批处理模式：</strong> 提交一个大型任务后，可以关闭页面，任务会在云端继续执行</li>
+                                <li>打开：<a href="https://chatgpt.com/codex" target="_blank" rel="noopener noreferrer">chatgpt.com/codex</a></li>
+                                <li>套餐说明：<a href="https://developers.openai.com/codex/pricing" target="_blank" rel="noopener noreferrer">what’s included</a></li>
+                                <li>企业管理员设置：<a href="https://developers.openai.com/codex/enterprise/admin-setup" target="_blank" rel="noopener noreferrer">admin setup</a></li>
                             </ul>
-
-                            <h3>3. 拉取请求工作流</h3>
-                            <p>当 Codex 完成任务后：</p>
-                            <ol>
-                                <li>你可以在网页上预览完整的 Diff</li>
-                                <li>添加内联评论或要求修改</li>
-                                <li>满意后点击"创建拉取请求"</li>
-                                <li>PR 会自动提交到你的 GitHub 仓库</li>
-                            </ol>
-
-                            <h2>高级功能</h2>
-
-                            <h3>代码审查请求</h3>
-                            <pre><code># 示例提示词
-请审查这个 PR 的代码质量问题：
-- 检查潜在的空指针异常
-- 确认错误处理是否完整
-- 评估性能影响</code></pre>
-
-                            <h3>跨文件重构</h3>
-                            <p>网页版拥有更大的上下文窗口，适合处理需要同时修改多个文件的大型重构任务。</p>
-
-                            <h2>注意事项</h2>
-                            <blockquote>
-                                <p><strong>安全提示：</strong> 网页版执行的所有操作都会创建新分支，不会直接修改主分支。你可以在合并前进行充分的本地测试。</p>
-                            </blockquote>
+                            <h2>在 Web 中工作</h2>
+                            <h3>先学习提示词再启动任务</h3>
+                            <p>参考：<a href="https://developers.openai.com/codex/prompting" target="_blank" rel="noopener noreferrer">prompting</a></p>
                         </div>
                     </article>
                 </section>
@@ -1025,72 +770,14 @@ codex</code></pre>
                 <section id="integrations" class="doc-section full-width">
                     <article class="document-content markdown-body">
                         <h1>集成</h1>
-                        <p class="subtitle">将 Codex 融入你现有的开发工具链。</p>
-
+                        <p class="subtitle">Codex 官方支持的核心集成入口。</p>
                         <div class="intro-block">
-                            <h2>GitHub 集成</h2>
-                            <h3>自动 Issue 处理</h3>
-                            <p>配置 GitHub Actions 让 Codex 自动响应新 Issue：</p>
-                            <pre><code># .github/workflows/codex-triage.yml
-name: Codex Issue Triage
-on:
-  issues:
-    types: [opened]
-jobs:
-  triage:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: openai/codex-action@v1
-        with:
-          api-key: ${{ secrets.OPENAI_API_KEY }}
-          task: "analyze-and-label-issue"</code></pre>
-
-                            <h3>拉取请求自动审查</h3>
-                            <p>每次拉取请求提交后，Codex 自动进行代码审查并留下评论。</p>
-
-                            <h2>Slack 机器人</h2>
-                            <p>在 Slack 中与 Codex 对话，获取代码帮助：</p>
+                            <h2>可用集成</h2>
                             <ul>
-                                <li><code>/codex 解释这段代码...</code> - 粘贴代码获取解释</li>
-                                <li><code>/codex 帮我写个...</code> - 直接生成代码片段</li>
-                                <li><code>/codex review &lt;PR URL&gt;</code> - 审查指定的 PR</li>
+                                <li><a href="https://developers.openai.com/codex/integrations/github" target="_blank" rel="noopener noreferrer">GitHub</a>：代码审查与任务委托。</li>
+                                <li><a href="https://developers.openai.com/codex/integrations/slack" target="_blank" rel="noopener noreferrer">Slack</a>：在聊天中发起云端任务。</li>
+                                <li><a href="https://developers.openai.com/codex/integrations/linear" target="_blank" rel="noopener noreferrer">Linear</a>：从 issue 流程委托 Codex。</li>
                             </ul>
-
-                            <h2>Linear/Jira 集成</h2>
-                            <p>从项目管理工具直接触发 Codex 任务：</p>
-                            <ol>
-                                <li>在任务描述中添加 <code>[CODEX]</code> 标签</li>
-                                <li>Codex 会自动读取任务要求并开始执行</li>
-                                <li>完成后自动更新任务状态并提交代码</li>
-                            </ol>
-
-                            <h2>CI/CD 流水线</h2>
-                            <h3>GitHub Actions</h3>
-                            <pre><code>- name: Codex Auto-Fix
-  uses: openai/codex-action@v1
-  with:
-    task: "fix-eslint-errors"
-    commit-message: "chore: auto-fix ESLint issues"</code></pre>
-
-                            <h3>GitLab CI</h3>
-                            <pre><code>codex-auto-merge:
-  stage: merge
-  script:
-    - codex run "resolve merge conflicts"
-    - git push origin $CI_COMMIT_REF_NAME</code></pre>
-
-                            <h2>Vercel/Netlify 部署</h2>
-                            <p>配置部署钩子让 Codex 在每次部署前自动执行检查和优化。</p>
-
-                            <h2>自定义 Webhook</h2>
-                            <p>通过 REST API 触发 Codex 任务：</p>
-                            <pre><code>curl -X POST https://api.codex.openai.com/v1/tasks \
-  -H "Authorization: Bearer $API_KEY" \
-  -d '{
-    "action": "refactor",
-    "target": "src/auth/jwt.ts",
-    "instructions": "迁移到使用 RS256 算法"
-  }'</code></pre>
                         </div>
                     </article>
                 </section>
@@ -1732,29 +1419,20 @@ my-skill/
                 <!-- APP COMMANDS SECTION -->
                 <section id="app-commands" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>客户端指令</h1>
-                        <p class="subtitle">Codex 客户端支持的指令列表。</p>
+                        <h1>Codex 应用命令</h1>
+                        <p class="subtitle">应用内键盘快捷键与斜杠命令说明。</p>
                         <div class="intro-block">
-                            <h2>内置指令</h2>
+                            <h2>键盘快捷键</h2>
+                            <h2>斜杠命令</h2>
+                            <h3>如何使用斜杠命令</h3>
+                            <h3>可用斜杠命令</h3>
+                            <h2>参见</h2>
                             <ul>
-                                <li><code>/explain</code> - 解释选中的代码</li>
-                                <li><code>/test</code> - 为选中的函数生成测试</li>
-                                <li><code>/refactor</code> - 重构代码</li>
-                                <li><code>/document</code> - 生成文档注释</li>
-                                <li><code>/fix</code> - 修复错误</li>
+                                <li><a href="https://developers.openai.com/codex/skills" target="_blank" rel="noopener noreferrer">Skills</a></li>
+                                <li><a href="https://developers.openai.com/codex/app/features" target="_blank" rel="noopener noreferrer">Features</a></li>
+                                <li><a href="https://developers.openai.com/codex/app/settings" target="_blank" rel="noopener noreferrer">Settings</a></li>
                             </ul>
-
-                            <h2>自定义指令</h2>
-                            <p>在配置文件中添加自定义指令：</p>
-                            <pre><code>{
-  "commands": {
-    "my-custom": {
-      "description": "执行自定义任务",
-      "prompt": "请帮我完成...",
-      "context": ["src/**/*"]
-    }
-  }
-}</code></pre>
+                            <p>官方页面：<a href="https://developers.openai.com/codex/app/commands" target="_blank" rel="noopener noreferrer">developers.openai.com/codex/app/commands</a></p>
                         </div>
                     </article>
                 </section>
@@ -1762,32 +1440,26 @@ my-skill/
                 <!-- APP AUTOMATIONS SECTION -->
                 <section id="app-automations" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>自动化</h1>
-                        <p class="subtitle">设置自动化工作流。</p>
+                        <h1>自动化（Automations）</h1>
+                        <p class="subtitle">把重复任务变成可定时执行的稳定流程。</p>
                         <div class="intro-block">
-                            <h2>触发器类型</h2>
+                            <h2>管理任务</h2>
+                            <h2>安全测试自动化</h2>
+                            <h2>自动化工作树清理</h2>
+                            <h2>权限与安全模型</h2>
+                            <h2>示例</h2>
+                            <h3>自动创建新技能</h3>
+                            <h3>持续跟踪项目变化</h3>
+                            <h3>结合技能自动修复问题</h3>
+                            <picture><source media="(prefers-color-scheme: dark)" srcset="https://developers.openai.com/images/codex/app/create-automation-dark.webp"><img src="https://developers.openai.com/images/codex/app/create-automation-light.webp" alt="Automation" style="width:100%;border-radius:12px;"></picture>
                             <ul>
-                                <li><strong>文件变更：</strong>当特定文件被修改时触发</li>
-                                <li><strong>Git 事件：</strong>推送、拉取请求等事件</li>
-                                <li><strong>定时任务：</strong>按计划执行</li>
+                                <li>技能：<a href="https://developers.openai.com/codex/skills" target="_blank" rel="noopener noreferrer">skills</a></li>
+                                <li>工作树：<a href="https://developers.openai.com/codex/app/worktrees" target="_blank" rel="noopener noreferrer">worktree</a></li>
+                                <li>工作树支持锚点：<a href="https://developers.openai.com/codex/app/features#worktree-support" target="_blank" rel="noopener noreferrer">worktree support</a></li>
+                                <li>规则：<a href="https://developers.openai.com/codex/rules" target="_blank" rel="noopener noreferrer">rules</a></li>
+                                <li>管理员策略：<a href="https://developers.openai.com/codex/security#admin-enforced-requirements-requirementstoml" target="_blank" rel="noopener noreferrer">requirements.toml</a></li>
+                                <li>技能保存位置：<a href="https://developers.openai.com/codex/skills#where-to-save-skills" target="_blank" rel="noopener noreferrer">where to save skills</a></li>
                             </ul>
-
-                            <h2>配置自动化</h2>
-                            <pre><code>{
-  "automations": [
-    {
-      "name": "自动修复 ESLint 错误",
-      "trigger": "file-save",
-      "filter": "**/*.ts",
-      "action": "eslint-fix"
-    },
-    {
-      "name": "PR 描述生成",
-      "trigger": "pr-created",
-      "action": "generate-pr-description"
-    }
-  ]
-}</code></pre>
                         </div>
                     </article>
                 </section>
@@ -1795,20 +1467,17 @@ my-skill/
                 <!-- APP REVIEW SECTION -->
                 <section id="app-review" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>审查</h1>
-                        <p class="subtitle">代码审查和 Diff 查看功能。</p>
+                        <h1>审查（Review）</h1>
+                        <p class="subtitle">在应用内逐文件审查、评论、暂存与回退改动。</p>
                         <div class="intro-block">
-                            <h2>差异视图</h2>
-                            <p>Codex 提供并排 Diff 视图，方便对比修改前后的代码。</p>
-
-                            <h2>内联评论</h2>
-                            <p>在 Diff 视图中添加内联评论，指出问题或建议改进。</p>
-
-                            <h2>审查清单</h2>
-                            <pre><code>- [ ] 代码逻辑正确
-                            - [ ] 测试覆盖率足够
-                            - [ ] 遵循编码规范
-                            - [ ] 没有安全漏洞</code></pre>
+                            <h2>显示哪些改动</h2>
+                            <h2>如何浏览审查面板</h2>
+                            <h2>内联评论反馈</h2>
+                            <h2>代码审查结果</h2>
+                            <h2>暂存与回退文件</h2>
+                            <h3>部分暂存状态</h3>
+                            <picture><source media="(prefers-color-scheme: dark)" srcset="https://developers.openai.com/images/codex/app/inline-code-review-dark.webp"><img src="https://developers.openai.com/images/codex/app/inline-code-review-light.webp" alt="Inline review" style="width:100%;border-radius:12px;"></picture>
+                            <p>相关设置：<a href="https://developers.openai.com/codex/app/settings" target="_blank" rel="noopener noreferrer">settings</a></p>
                         </div>
                     </article>
                 </section>
@@ -1816,21 +1485,23 @@ my-skill/
                 <!-- APP SETTINGS SECTION -->
                 <section id="app-settings" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>客户端设置</h1>
-                        <p class="subtitle">Codex 客户端配置选项。</p>
+                        <h1>Codex 应用设置</h1>
+                        <p class="subtitle">集中管理应用行为、模型与集成。</p>
                         <div class="intro-block">
-                            <h2>通用设置</h2>
+                            <h2>General</h2>
+                            <h2>Appearance</h2>
+                            <h2>Notifications</h2>
+                            <h2>Agent configuration</h2>
+                            <h2>Git</h2>
+                            <h2>Integrations & MCP</h2>
+                            <h2>Personalization</h2>
+                            <h2>Archived threads</h2>
                             <ul>
-                                <li><strong>主题：</strong>深色/浅色/自动</li>
-                                <li><strong>字体大小：</strong>12px - 20px</li>
-                                <li><strong>自动保存：</strong>开启/关闭</li>
-                            </ul>
-
-                            <h2>智能体设置</h2>
-                            <ul>
-                                <li><strong>默认模式：</strong>Agent/Chat</li>
-                                <li><strong>自动批准：</strong>开启/关闭/部分</li>
-                                <li><strong>最大 Token：</strong>4096 - 32768</li>
+                                <li>打开应用设置：<a href="codex://settings" target="_blank" rel="noopener noreferrer">codex://settings</a></li>
+                                <li>安全文档：<a href="https://developers.openai.com/codex/security" target="_blank" rel="noopener noreferrer">Codex security</a></li>
+                                <li>配置基础：<a href="https://developers.openai.com/codex/config-basic" target="_blank" rel="noopener noreferrer">config basics</a></li>
+                                <li>MCP 文档：<a href="https://developers.openai.com/codex/mcp" target="_blank" rel="noopener noreferrer">Model Context Protocol docs</a></li>
+                                <li>个性化指令：<a href="https://developers.openai.com/codex/guides/agents-md" target="_blank" rel="noopener noreferrer">AGENTS.md</a></li>
                             </ul>
                         </div>
                     </article>
@@ -1839,24 +1510,26 @@ my-skill/
                 <!-- APP WORKTREES SECTION -->
                 <section id="app-worktrees" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>工作树</h1>
-                        <p class="subtitle">使用 Git 工作树进行并行开发。</p>
+                        <h1>工作树（Worktrees）</h1>
+                        <p class="subtitle">在同一仓库并行推进多个任务，减少分支冲突。</p>
                         <div class="intro-block">
-                            <h2>什么是工作树？</h2>
-                            <p>Git 工作树允许你在同一仓库的多个独立工作目录之间切换，每个目录都可以独立开发和测试。</p>
-
-                            <h2>Codex 中的工作树</h2>
-                            <p>Codex 会自动为每个新任务创建一个工作树，确保修改不会影响主分支或其他正在进行的任务。</p>
-
-                            <h2>命令</h2>
-                            <pre><code># 创建新的工作树
-codex worktree create feature-branch
-
-# 列出所有工作树
-codex worktree list
-
-# 删除工作树
-codex worktree delete feature-branch</code></pre>
+                            <h2>什么是工作树</h2>
+                            <h2>术语</h2>
+                            <h2>为什么要用工作树</h2>
+                            <h2>快速开始</h2>
+                            <h2>验证并推送改动</h2>
+                            <h2>添加到侧边栏</h2>
+                            <h2>高级细节</h2>
+                            <h2>常见问题</h2>
+                            <h3>方式 1：直接在工作树中开发</h3>
+                            <h3>方式 2：在本地检出目录开发</h3>
+                            <picture><source media="(prefers-color-scheme: dark)" srcset="https://developers.openai.com/images/codex/app/worktree-dark.webp"><img src="https://developers.openai.com/images/codex/app/worktree-light.webp" alt="Worktree" style="width:100%;border-radius:12px;"></picture>
+                            <picture><source media="(prefers-color-scheme: dark)" srcset="https://developers.openai.com/images/codex/app/sync-worktree-dark.webp"><img src="https://developers.openai.com/images/codex/app/sync-worktree-light.webp" alt="Sync worktree" style="width:100%;border-radius:12px;margin-top:1rem;"></picture>
+                            <ul>
+                                <li>Git worktree 文档：<a href="https://git-scm.com/docs/git-worktree" target="_blank" rel="noopener noreferrer">git-scm.com/docs/git-worktree</a></li>
+                                <li>detached HEAD 说明：<a href="https://git-scm.com/docs/git-checkout#_detached_head" target="_blank" rel="noopener noreferrer">git-checkout#_detached_head</a></li>
+                                <li>Local environments：<a href="https://developers.openai.com/codex/app/local-environments" target="_blank" rel="noopener noreferrer">local environment</a></li>
+                            </ul>
                         </div>
                     </article>
                 </section>
@@ -1864,22 +1537,16 @@ codex worktree delete feature-branch</code></pre>
                 <!-- APP LOCAL SECTION -->
                 <section id="app-local" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>本地环境</h1>
-                        <p class="subtitle">在本地运行和调试代码。</p>
+                        <h1>本地环境（Local environments）</h1>
+                        <p class="subtitle">管理 setup 脚本和可复用动作，提升本地执行一致性。</p>
                         <div class="intro-block">
-                            <h2>环境配置</h2>
-                            <p>配置本地开发环境的参数：</p>
-                            <pre><code>{
-  "localEnv": {
-    "nodeVersion": "20.x",
-    "packageManager": "pnpm",
-    "port": 3000,
-    "envFile": ".env.local"
-  }
-}</code></pre>
-
-                            <h2>自动启动服务</h2>
-                            <p>Codex 可以自动启动开发服务器、数据库等依赖服务。</p>
+                            <h2>Setup scripts</h2>
+                            <h2>Actions</h2>
+                            <picture><source media="(prefers-color-scheme: dark)" srcset="https://developers.openai.com/images/codex/app/actions-dark.webp"><img src="https://developers.openai.com/images/codex/app/actions-light.webp" alt="Actions" style="width:100%;border-radius:12px;"></picture>
+                            <ul>
+                                <li>打开设置：<a href="codex://settings" target="_blank" rel="noopener noreferrer">codex://settings</a></li>
+                                <li>集成终端：<a href="https://developers.openai.com/codex/app/features#integrated-terminal" target="_blank" rel="noopener noreferrer">integrated terminal</a></li>
+                            </ul>
                         </div>
                     </article>
                 </section>
@@ -1887,49 +1554,29 @@ codex worktree delete feature-branch</code></pre>
                 <!-- IDE FEATURES SECTION -->
                 <section id="ide-features" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>IDE 插件功能</h1>
-                        <p class="subtitle">使用 Codex IDE 扩展可以做什么。</p>
-
+                        <h1>Codex IDE 扩展功能</h1>
+                        <p class="subtitle">在 IDE 中快速切换模型、审批模式与云端委托。</p>
                         <div class="intro-block">
-                            <p>Codex IDE 扩展让你在 VS Code、Cursor、Windsurf 和其他兼容 VS Code 的编辑器中直接访问 Codex。它使用与 Codex CLI 相同的代理，并共享相同的配置。</p>
-
-                            <h2>向 Codex 发起提示</h2>
-                            <p>在编辑器中使用 Codex 进行聊天、编辑和预览更改。当 Codex 拥有来自打开文件和选定代码的上下文时，你可以编写更简短的提示词，获得更快、更相关的结果。</p>
-                            <p>你可以通过在提示词中标记来引用编辑器中的任何文件：</p>
-                            <pre><code>使用 @example.tsx 作为参考，向应用添加一个名为 "Resources" 的新页面，该页面包含 @resources.ts 中定义的资源列表</code></pre>
-
+                            <h2>向 Codex 提问</h2>
                             <h2>切换模型</h2>
-                            <p>你可以使用聊天输入下方的切换器来切换模型。</p>
-
-                            <h2>调整推理努力程度</h2>
-                            <p>你可以调整推理努力程度来控制 Codex 在响应前思考的时间。更高的努力程度可以帮助处理复杂任务，但响应需要更长时间。更高的努力程度也会使用更多令牌，并可能更快消耗你的速率限制（特别是使用 GPT-5-Codex 时）。</p>
-                            <p>使用上面显示的模型切换器，为每个模型选择低、中或高。从中等开始，只在需要更多深度时切换到高。</p>
-
+                            <img src="https://developers.openai.com/images/codex/ide/switch_model.png" alt="Switch model" style="width:100%;border-radius:12px;">
+                            <h2>调整推理强度</h2>
                             <h2>选择审批模式</h2>
-                            <p>默认情况下，Codex 在智能体模式下运行。在此模式下，Codex 可以自动读取文件、进行编辑并在工作目录中运行命令。Codex 在工作目录之外工作或访问网络时仍需要你的批准。</p>
-                            <p>当你只想聊天，或者想在做出更改之前进行规划时，使用聊天输入下方的切换器切换到对话模式。</p>
-                            <p>如果你需要 Codex 读取文件、进行编辑并运行具有网络访问权限的命令而无需批准，请使用智能体（完全访问）。在这样做之前要谨慎。</p>
-
+                            <img src="https://developers.openai.com/images/codex/ide/approval_mode.png" alt="Approval mode" style="width:100%;border-radius:12px;">
                             <h2>云端委托</h2>
-                            <p>你可以将较大的任务委托给云端的 Codex，然后跟踪进度并查看结果，而无需离开 IDE。</p>
-                            <ol>
-                                <li>为 Codex 设置云端环境。</li>
-                                <li>选择你的环境并选择"在云端运行"。</li>
-                            </ol>
-                            <p>你可以让 Codex 从 main 分支运行（适用于开始新想法），或从本地更改运行（适用于完成任务）。</p>
-                            <p>当你从本地对话开始云端任务时，Codex 会记住对话上下文，以便它可以接着你离开的地方继续。</p>
-
-                            <h2>云端任务跟进</h2>
-                            <p>Codex 扩展使预览云端更改变得简单。你可以要求在云端运行跟进操作，但通常你会希望在本地应用更改以测试和完成。当你在本地继续对话时，Codex 也会保留上下文以节省你的时间。</p>
-                            <p>你也可以在 Codex 云界面中查看云端任务。</p>
-
-                            <h2>网页搜索</h2>
-                            <p>Codex 附带一个第一方网页搜索工具。对于 Codex IDE 扩展中的本地任务，Codex 默认启用网页搜索，并从网页搜索缓存中提供结果。缓存是 OpenAI 维护的网页结果索引，因此缓存模式返回预索引的结果，而不是获取实时页面。这减少了来自任意实时内容的提示注入风险，但你仍应将网页结果视为不受信任的。如果你将沙盒配置为完全访问，网页搜索默认为实时结果。请参阅配置基础以禁用网页搜索或切换到获取最新数据的实时结果。</p>
-                            <p>当 Codex 查找内容时，你会在转录或 <code>codex exec --json</code> 输出中看到 web_search 项目。</p>
-
-                            <h2>拖放图片到提示词中</h2>
-                            <p>你可以将图片拖放到提示词编辑器中，将它们作为上下文包含在内。</p>
-                            <p>拖放图片时按住 Shift 键。否则 VS Code 会阻止扩展接受拖放。</p>
+                            <img src="https://developers.openai.com/images/codex/ide/start_cloud_task.png" alt="Start cloud task" style="width:100%;border-radius:12px;">
+                            <h2>云任务继续跟进</h2>
+                            <img src="https://developers.openai.com/images/codex/ide/load_cloud_task.png" alt="Load cloud task" style="width:100%;border-radius:12px;">
+                            <h2>Web 搜索</h2>
+                            <h2>拖拽图片到提示区</h2>
+                            <h2>参见</h2>
+                            <ul>
+                                <li>云端环境：<a href="https://chatgpt.com/codex/settings/environments" target="_blank" rel="noopener noreferrer">cloud environment for Codex</a></li>
+                                <li>Codex 云界面：<a href="https://chatgpt.com/codex" target="_blank" rel="noopener noreferrer">Codex cloud interface</a></li>
+                                <li>安全模式：<a href="https://developers.openai.com/codex/security" target="_blank" rel="noopener noreferrer">full access</a></li>
+                                <li>扩展设置：<a href="https://developers.openai.com/codex/ide/settings" target="_blank" rel="noopener noreferrer">IDE settings</a></li>
+                            </ul>
+                            <p>官方页面：<a href="https://developers.openai.com/codex/ide/features" target="_blank" rel="noopener noreferrer">developers.openai.com/codex/ide/features</a></p>
                         </div>
                     </article>
                 </section>
@@ -1937,63 +1584,11 @@ codex worktree delete feature-branch</code></pre>
                 <!-- IDE COMMANDS SECTION -->
                 <section id="ide-commands" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>IDE 命令</h1>
-                        <p class="subtitle">Codex IDE 扩展命令和键盘快捷键参考。</p>
-
+                        <h1>Codex IDE 扩展命令</h1>
+                        <p class="subtitle">命令面板与快捷键绑定说明。</p>
                         <div class="intro-block">
-                            <p>使用这些命令从 VS Code 命令面板控制 Codex。你也可以将它们绑定到键盘快捷键。</p>
-
-                            <h2>分配键盘快捷键</h2>
-                            <p>要为 Codex 命令分配或更改键盘快捷键：</p>
-                            <ol>
-                                <li>打开命令面板（macOS 上按 <code>Cmd+Shift+P</code>，Windows/Linux 上按 <code>Ctrl+Shift+P</code>）</li>
-                                <li>运行 <strong>首选项：打开键盘快捷方式</strong></li>
-                                <li>搜索 <code>Codex</code> 或命令 ID（例如 <code>chatgpt.newChat</code>）</li>
-                                <li>选择铅笔图标，然后输入你想要的快捷键</li>
-                            </ol>
-
-                            <h2>扩展命令</h2>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>命令</th>
-                                        <th>默认快捷键</th>
-                                        <th>描述</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><code>chatgpt.addToThread</code></td>
-                                        <td>-</td>
-                                        <td>将选定的文本范围添加为当前对话的上下文</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>chatgpt.addFileToThread</code></td>
-                                        <td>-</td>
-                                        <td>将整个文件添加为当前对话的上下文</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>chatgpt.newChat</code></td>
-                                        <td>macOS: <code>Cmd+N</code><br>Windows/Linux: <code>Ctrl+N</code></td>
-                                        <td>创建新对话</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>chatgpt.implementTodo</code></td>
-                                        <td>-</td>
-                                        <td>要求 Codex 处理选定的 TODO 注释</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>chatgpt.newCodexPanel</code></td>
-                                        <td>-</td>
-                                        <td>创建新的 Codex 面板</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>chatgpt.openSidebar</code></td>
-                                        <td>-</td>
-                                        <td>打开 Codex 侧边栏面板</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <h2>绑定快捷键</h2>
+                            <h2>扩展命令列表</h2>
                         </div>
                     </article>
                 </section>
@@ -2001,58 +1596,11 @@ codex worktree delete feature-branch</code></pre>
                 <!-- IDE SLASH SECTION -->
                 <section id="ide-slash" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>斜杠命令</h1>
-                        <p class="subtitle">Codex IDE 扩展中的斜杠命令参考。</p>
-
+                        <h1>Codex IDE 斜杠命令</h1>
+                        <p class="subtitle">在 IDE 对话中快速调用命令。</p>
                         <div class="intro-block">
-                            <p>斜杠命令让你无需离开聊天输入即可控制 Codex。使用它们来检查状态、在本地和云端模式之间切换，或发送反馈。</p>
-
-                            <h2>使用斜杠命令</h2>
-                            <ol>
-                                <li>在 Codex 聊天输入中，输入 <code>/</code>。</li>
-                                <li>从列表中选择命令，或继续输入以过滤（例如 <code>/status</code>）。</li>
-                                <li>按 Enter。</li>
-                            </ol>
-
-                            <h2>可用的斜杠命令</h2>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>斜杠命令</th>
-                                        <th>描述</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><code>/auto-context</code></td>
-                                        <td>打开或关闭自动上下文，以自动包含最近的文件和 IDE 上下文。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>/cloud</code></td>
-                                        <td>切换到云端模式以远程运行任务（需要云端访问权限）。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>/cloud-environment</code></td>
-                                        <td>选择要使用的云端环境（仅在云端模式下可用）。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>/feedback</code></td>
-                                        <td>打开反馈对话框以提交反馈，并可选择包含日志。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>/local</code></td>
-                                        <td>切换到本地模式以在你的工作区中运行任务。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>/review</code></td>
-                                        <td>启动代码审查模式以审查未提交的更改或与基础分支进行比较。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>/status</code></td>
-                                        <td>显示对话 ID、上下文使用和速率限制。</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <h2>如何使用斜杠命令</h2>
+                            <h2>可用斜杠命令</h2>
                         </div>
                     </article>
                 </section>
@@ -2060,53 +1608,12 @@ codex worktree delete feature-branch</code></pre>
                 <!-- IDE SETTINGS SECTION -->
                 <section id="ide-settings" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>IDE 设置</h1>
-                        <p class="subtitle">Codex IDE 扩展设置参考。</p>
-
+                        <h1>Codex IDE 扩展设置</h1>
+                        <p class="subtitle">配置方式与设置项参考。</p>
                         <div class="intro-block">
-                            <p>使用这些设置来自定义 Codex IDE 扩展。</p>
-
-                            <h2>更改设置</h2>
-                            <p>要更改设置，请按照以下步骤操作：</p>
-                            <ol>
-                                <li>打开你的编辑器设置。</li>
-                                <li>搜索 <code>Codex</code> 或设置名称。</li>
-                                <li>更新值。</li>
-                            </ol>
-
-                            <p>Codex IDE 扩展使用 Codex CLI。某些行为（如默认模型、审批和沙盒设置）需要在共享的 <code>~/.codex/config.toml</code> 文件中配置，而不是在编辑器设置中。请参阅配置基础。</p>
-
-                            <h2>设置参考</h2>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>设置</th>
-                                        <th>描述</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><code>chatgpt.cliExecutable</code></td>
-                                        <td>仅开发使用：Codex CLI 可执行文件的路径。除非你正在积极开发 Codex CLI，否则不需要设置此项。如果手动设置此项，扩展的部分功能可能无法按预期工作。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>chatgpt.commentCodeLensEnabled</code></td>
-                                        <td>在待办注释上方显示 CodeLens，以便你可以使用 Codex 完成它们。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>chatgpt.localeOverride</code></td>
-                                        <td>Codex UI 的首选语言。留空以自动检测。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>chatgpt.openOnStartup</code></td>
-                                        <td>扩展完成启动时聚焦 Codex 侧边栏。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>chatgpt.runCodexInWindowsSubsystemForLinux</code></td>
-                                        <td>仅 Windows：当 Linux 子系统（WSL）可用时在 WSL 中运行 Codex。建议用于改进沙盒安全性和提升性能。Windows 上的 Codex 智能体模式目前需要 WSL。更改此设置会重新加载 VS Code 以应用更改。</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <h2>修改设置</h2>
+                            <h2>设置项参考</h2>
+                            <p>配置基础：<a href="https://developers.openai.com/codex/config-basic" target="_blank" rel="noopener noreferrer">Config basics</a></p>
                         </div>
                     </article>
                 </section>
@@ -2114,111 +1621,34 @@ codex worktree delete feature-branch</code></pre>
                 <!-- CLI FEATURES SECTION -->
                 <section id="cli-features" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>CLI 功能</h1>
-                        <p class="subtitle">Codex 终端客户端功能概述。</p>
-
+                        <h1>Codex CLI 功能</h1>
+                        <p class="subtitle">从交互模式到脚本化运行的完整能力清单。</p>
                         <div class="intro-block">
-                            <p>Codex 支持聊天之外的工作流。使用本指南了解每个功能的作用以及何时使用。</p>
-
-                            <h2>以交互模式运行</h2>
-                            <p>Codex 启动一个全屏终端 UI，可以读取你的仓库、进行编辑并在你迭代时运行命令。每当你想要一个可以实时查看 Codex 操作的对话式工作流时使用它。</p>
-                            <pre><code>codex</code></pre>
-                            <p>你也可以在命令行上指定初始提示。</p>
-                            <pre><code>codex "Explain this codebase to me"</code></pre>
-                            <p>会话打开后，你可以：</p>
-                            <ul>
-                                <li>直接将提示、代码片段或屏幕截图（参见图像输入）发送到编辑器。</li>
-                                <li>观察 Codex 在进行更改之前解释其计划，并内联批准或拒绝步骤。</li>
-                                <li>使用上/下箭头在编辑器中导航草稿历史；Codex 恢复先前的草稿文本和图像占位符。</li>
-                                <li>完成后按 Ctrl+C 或使用 /exit 关闭交互式会话。</li>
-                            </ul>
-
-                            <h2>恢复对话</h2>
-                            <p>Codex 在本地存储你的转录，因此你可以接着离开的地方继续，而无需重复上下文。当你想要重新打开具有相同仓库状态和指令的先前线程时，使用 resume 子命令。</p>
-                            <ul>
-                                <li><code>codex resume</code> 启动最近交互式会话的选择器。高亮显示运行以查看其摘要，然后按 Enter 重新打开。</li>
-                                <li><code>codex resume --all</code> 显示超出当前工作目录的会话，因此你可以重新打开任何本地运行。</li>
-                                <li><code>codex resume --last</code> 跳过选择器，直接进入当前工作目录的最近会话（添加 --all 以忽略当前工作目录过滤器）。</li>
-                                <li><code>codex resume &lt;SESSION_ID&gt;</code> 针对特定运行。你可以从选择器、/status 或 ~/.codex/sessions/ 下的文件中复制 ID。</li>
-                            </ul>
-                            <p>非交互式自动化运行也可以恢复：</p>
-                            <pre><code>codex exec resume --last "Fix the race conditions you found"
-codex exec resume 7f9f9a2e-1b3c-4c7a-9b0e-.... "Implement the plan"</code></pre>
-                            <p>每个恢复的运行保留原始转录、计划历史和批准，因此 Codex 可以在你提供新指令时使用先前的上下文。</p>
-
-                            <h2>模型和推理</h2>
-                            <p>对于大多数 Codex 编码任务，gpt-5.3-codex 是首选模型。它适用于 ChatGPT 认证的 Codex 会话。对于超快速任务，ChatGPT Pro 订阅者可以访问 GPT-5.3-Codex-Spark 模型。</p>
-                            <p>使用 /model 命令在会话中切换模型，或在启动 CLI 时指定一个。</p>
-                            <pre><code>codex --model gpt-5.3-codex</code></pre>
-
-                            <h2>功能标志</h2>
-                            <p>Codex 包含少量功能标志。使用 features 子命令检查可用的功能，并在配置中持久化更改。</p>
-                            <pre><code>codex features list
-codex features enable unified_exec
-codex features disable shell_snapshot</code></pre>
-
-                            <h2>图像输入</h2>
-                            <p>附加屏幕截图或设计规范，以便 Codex 可以 alongside 你的提示读取图像详细信息。你可以将图像粘贴到交互式编辑器中或在命令行上提供文件。</p>
-                            <pre><code>codex -i screenshot.png "Explain this error"
-codex --image img1.png,img2.jpg "Summarize these diagrams"</code></pre>
-                            <p>Codex 接受常见格式，如 PNG 和 JPEG。使用逗号分隔的文件名表示两个或更多图像，并将它们与文本指令结合以添加上下文。</p>
-
-                            <h2>运行本地代码审查</h2>
-                            <p>在 CLI 中输入 /review 打开 Codex 的审查预设。CLI 启动一个专用的审查器，读取你选择的差异，并报告优先的、可操作的发现，而无需触碰你的工作树。</p>
-                            <ul>
-                                <li><strong>Review against a base branch</strong>：选择本地分支；Codex 找到与其上游的合并基础，对比你的工作，并在你打开拉取请求之前高亮显示最大的风险。</li>
-                                <li><strong>Review uncommitted changes</strong>：检查所有已暂存、未暂存或未跟踪的内容，以便你可以在提交之前解决问题。</li>
-                                <li><strong>Review a commit</strong>：列出最近的提交，并让 Codex 读取你选择的 SHA 的确切变更集。</li>
-                                <li><strong>Custom review instructions</strong>：接受你自己的措辞（例如"Focus on accessibility regressions"），并使用该提示运行相同的审查器。</li>
-                            </ul>
-
-                            <h2>网页搜索</h2>
-                            <p>Codex 附带一个第一方网页搜索工具。对于 Codex CLI 中的本地任务，Codex 默认启用网页搜索，并从网页搜索缓存中提供结果。缓存是 OpenAI 维护的网页结果索引，因此缓存模式返回预索引的结果，而不是获取实时页面。这减少了来自任意实时内容的提示注入风险，但你仍应将网页结果视为不受信任的。如果你使用 --yolo 或其他完全访问沙盒设置，网页搜索默认为实时结果。</p>
-
-                            <h2>使用输入提示运行</h2>
-                            <p>当你只需要快速回答时，使用单个提示运行 Codex 并跳过交互式 UI。</p>
-                            <pre><code>codex "explain this codebase"</code></pre>
-                            <p>Codex 将读取工作目录，制定计划，并在退出前将响应流式传输回你的终端。将其与 --path 等标志配对以针对特定目录，或使用 --model 预先调整行为。</p>
-
+                            <h2>交互模式</h2>
+                            <h2>恢复会话</h2>
+                            <h2>模型与推理</h2>
+                            <h2>Feature flags</h2>
+                            <h2>多智能体（实验）</h2>
+                            <h2>图片输入</h2>
+                            <h2>本地代码审查</h2>
+                            <h2>Web 搜索</h2>
+                            <h2>输入提示运行</h2>
                             <h2>Shell 补全</h2>
-                            <p>通过为 shell 安装生成的补全脚本来加快日常使用：</p>
-                            <pre><code>codex completion bash
-codex completion zsh
-codex completion fish</code></pre>
-                            <p>在 shell 配置文件中运行补全脚本以设置新会话的补全。例如，如果你使用 zsh，可以将以下内容添加到 ~/.zshrc 文件的末尾：</p>
-                            <pre><code># ~/.zshrc
-eval "$(codex completion zsh)"</code></pre>
-
                             <h2>审批模式</h2>
-                            <p>审批模式定义 Codex 在停止确认之前可以执行多少操作。在交互式会话中使用 /permissions 切换模式。</p>
+                            <h2>脚本化运行</h2>
+                            <h2>云端任务</h2>
+                            <h2>斜杠命令</h2>
+                            <h2>提示词编辑器</h2>
+                            <h2>MCP</h2>
+                            <h2>Tips and shortcuts</h2>
                             <ul>
-                                <li><strong>Auto (default)</strong>：允许 Codex 读取文件、编辑并在工作目录中运行命令。在触碰该范围之外的任何内容或使用网络之前，它仍会询问。</li>
-                                <li><strong>Read-only</strong>：将 Codex 保持在咨询模式。它可以浏览文件，但在你批准计划之前不会进行更改或运行命令。</li>
-                                <li><strong>完全访问</strong>：授予 Codex 在你的机器上工作的能力，包括网络访问，而无需询问。仅在信任仓库和任务时谨慎使用。</li>
+                                <li>模型页面：<a href="https://developers.openai.com/codex/models" target="_blank" rel="noopener noreferrer">models</a></li>
+                                <li>多智能体：<a href="https://developers.openai.com/codex/multi-agent" target="_blank" rel="noopener noreferrer">multi-agent</a></li>
+                                <li>安全：<a href="https://developers.openai.com/codex/security" target="_blank" rel="noopener noreferrer">full access sandbox</a></li>
+                                <li>MCP：<a href="https://developers.openai.com/codex/mcp" target="_blank" rel="noopener noreferrer">Model Context Protocol</a></li>
+                                <li>斜杠命令指南：<a href="https://developers.openai.com/codex/guides/slash-commands" target="_blank" rel="noopener noreferrer">slash commands guide</a></li>
                             </ul>
-
-                            <h2>脚本化 Codex</h2>
-                            <p>使用 exec 子命令自动化工作流或将 Codex 连接到你现有的脚本中。这将以非交互方式运行 Codex，将最终计划和结果传回 stdout。</p>
-                            <pre><code>codex exec "fix the CI failure"</code></pre>
-                            <p>将 exec 与 shell 脚本结合使用以构建自定义工作流，例如自动更新变更日志、分类问题或在 PR 发布前执行编辑检查。</p>
-
-                            <h2>与 Codex Cloud 一起工作</h2>
-                            <p>codex cloud 命令让你无需离开终端即可分类和启动 Codex Cloud 任务。不带参数运行它以打开交互式选择器，浏览活动或已完成的任务，并将更改应用到本地项目。</p>
-                            <pre><code>codex cloud exec --env ENV_ID "Summarize open bugs"</code></pre>
-                            <p>添加 --attempts (1–4) 以在希望 Codex Cloud 生成多个解决方案时请求最佳 N 次运行。</p>
-
-                            <h2>提示编辑器</h2>
-                            <p>当你起草较长的提示时，切换到完整编辑器然后发送结果回编辑器可能会更容易。</p>
-                            <p>在提示输入中，按 Ctrl+G 打开由 VISUAL 环境变量（如果未设置 VISUAL，则为 EDITOR）定义的编辑器。</p>
-
-                            <h2>技巧和快捷方式</h2>
-                            <ul>
-                                <li>在编辑器中输入 @ 打开工作区根目录的模糊文件搜索；按 Tab 或 Enter 将高亮显示的路径放入你的消息中。</li>
-                                <li>Codex 运行时按 Enter 将新指令注入当前轮次，或按 Tab 为下一轮次排队跟进提示。</li>
-                                <li>在行首使用 ! 运行本地 shell 命令（例如 !ls）。Codex 将输出视为用户提供命令结果，并仍应用你的审批和沙盒设置。</li>
-                                <li>编辑器为空时点击 Esc 两次以编辑你之前的用户消息。继续按 Esc 以在转录中进一步回退，然后按 Enter 从该点分支。</li>
-                                <li>使用 codex --cd &lt;path&gt; 从任何目录启动 Codex 以设置工作根目录，而无需先运行 cd。活动路径显示在 TUI 标题中。</li>
-                            </ul>
+                            <p>官方页面：<a href="https://developers.openai.com/codex/cli/features" target="_blank" rel="noopener noreferrer">developers.openai.com/codex/cli/features</a></p>
                         </div>
                     </article>
                 </section>
@@ -2226,180 +1656,30 @@ eval "$(codex completion zsh)"</code></pre>
                 <!-- CLI REFERENCE SECTION -->
                 <section id="cli-reference" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>CLI 命令参考</h1>
-                        <p class="subtitle">Codex 终端客户端的命令行选项和标志。</p>
-
+                        <h1>命令行选项</h1>
+                        <p class="subtitle">CLI 选项参考与安全组合建议。</p>
                         <div class="intro-block">
-                            <p>本页列出了所有已记录的 Codex CLI 命令和标志。</p>
-
-                            <h2>全局标志</h2>
-                            <p>这些选项适用于基础 codex 命令，并传播到每个子命令，除非下面的部分另有说明。</p>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>标志</th>
-                                        <th>类型/值</th>
-                                        <th>详情</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><code>--add-dir</code></td>
-                                        <td>path</td>
-                                        <td>授予其他目录写权限，与主工作区一起。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>--ask-for-approval, -a</code></td>
-                                        <td>untrusted | on-request | never</td>
-                                        <td>控制 Codex 何时暂停等待人工审批。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>--cd, -C</code></td>
-                                        <td>path</td>
-                                        <td>设置代理处理请求之前的工作目录。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>--config, -c</code></td>
-                                        <td>key=value</td>
-                                        <td>覆盖配置值。值尽可能解析为 JSON；否则使用文字字符串。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>--dangerously-bypass-approvals-and-sandbox, --yolo</code></td>
-                                        <td>boolean</td>
-                                        <td>运行每个命令无需审批或沙盒。仅在外部加固环境中使用。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>--image, -i</code></td>
-                                        <td>path[,path...]</td>
-                                        <td>将一张或多张图像附加到初始提示。用逗号分隔多个路径或重复标志。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>--model, -m</code></td>
-                                        <td>string</td>
-                                        <td>覆盖配置中设置的模型（例如 gpt-5-codex）。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>--profile, -p</code></td>
-                                        <td>string</td>
-                                        <td>从 ~/.codex/config.toml 加载的配置配置文件名称。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>--sandbox, -s</code></td>
-                                        <td>read-only | workspace-write | danger-full-access</td>
-                                        <td>为模型生成的 shell 命令选择沙盒策略。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>--search</code></td>
-                                        <td>boolean</td>
-                                        <td>启用实时网页搜索（设置 web_search = "live"）。</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <h2>命令概览</h2>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>命令</th>
-                                        <th>成熟度</th>
-                                        <th>详情</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><code>codex</code></td>
-                                        <td>Stable</td>
-                                        <td>启动终端 UI。接受全局标志和可选提示或图像附件。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>codex app</code></td>
-                                        <td>Stable</td>
-                                        <td>在 macOS 上启动 Codex 桌面应用，可选打开特定工作区路径。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>codex apply</code></td>
-                                        <td>Stable</td>
-                                        <td>将 Codex Cloud 任务生成的最新差异应用到本地工作树。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>codex cloud</code></td>
-                                        <td>Experimental</td>
-                                        <td>从终端浏览或执行 Codex Cloud 任务，无需打开 TUI。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>codex completion</code></td>
-                                        <td>Stable</td>
-                                        <td>为 Bash、Zsh、Fish 或 PowerShell 生成 shell 补全脚本。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>codex exec</code></td>
-                                        <td>Stable</td>
-                                        <td>以非交互方式运行 Codex。别名：codex e。将结果流式传输到 stdout 或 JSONL。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>codex features</code></td>
-                                        <td>Stable</td>
-                                        <td>列出功能标志并在 config.toml 中持久启用或禁用它们。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>codex fork</code></td>
-                                        <td>Stable</td>
-                                        <td>将先前的交互式会话分叉到新线程，保留原始转录。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>codex login</code></td>
-                                        <td>Stable</td>
-                                        <td>使用 ChatGPT OAuth、设备认证或从 stdin 传输的 API 密钥验证 Codex。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>codex logout</code></td>
-                                        <td>Stable</td>
-                                        <td>删除存储的认证凭证。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>codex mcp</code></td>
-                                        <td>Experimental</td>
-                                        <td>管理模型上下文协议服务器（列出、添加、删除、验证）。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>codex resume</code></td>
-                                        <td>Stable</td>
-                                        <td>按 ID 继续先前的交互式会话或恢复最近的对话。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>codex sandbox</code></td>
-                                        <td>Experimental</td>
-                                        <td>在 Codex 提供的 macOS seatbelt 或 Linux 沙盒中运行任意命令。</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <h2>命令详情</h2>
-
-                            <h3>codex (interactive)</h3>
-                            <p>运行 codex 而不带子命令会启动交互式终端 UI (TUI)。代理接受全局标志和图像附件。</p>
-
+                            <h2>如何阅读参考</h2>
+                            <h2>全局参数</h2>
+                            <h2>命令总览</h2>
+                            <h2>命令细节</h2>
+                            <h3>codex（interactive）</h3>
+                            <h3>codex app-server</h3>
+                            <h3>codex apply</h3>
+                            <h3>codex cloud</h3>
                             <h3>codex exec</h3>
-                            <p>使用 codex exec（或简短形式 codex e）进行脚本化或 CI 样式的运行，无需人工交互即可完成。</p>
-                            <pre><code>codex exec "fix the CI failure"</code></pre>
-                            <p>将 exec 与 shell 脚本结合使用以构建自定义工作流。</p>
-
-                            <h3>codex resume</h3>
-                            <p>按 ID 继续交互式会话或恢复最近的对话。codex resume 将 --last 限定到当前工作目录，除非你传递 --all。</p>
-                            <pre><code>codex resume --last
-codex resume SESSION_ID</code></pre>
-
-                            <h3>codex login</h3>
-                            <p>使用 ChatGPT 账户或 API 密钥验证 CLI。不带标志时，Codex 会打开浏览器进行 ChatGPT OAuth 流程。</p>
-                            <pre><code>codex login
-codex login --with-api-key</code></pre>
-
-                            <h2>标志组合和安全提示</h2>
+                            <h3>codex login / logout</h3>
+                            <h3>codex mcp / mcp-server</h3>
+                            <h3>codex resume / fork / sandbox</h3>
+                            <h2>参数组合与安全建议</h2>
+                            <h2>相关资源</h2>
                             <ul>
-                                <li>设置 --full-auto 以进行无人值守的本地工作，但避免将其与 --dangerously-bypass-approvals-and-sandbox 组合，除非你处于专用沙盒 VM 中。</li>
-                                <li>当你需要授予 Codex 对更多目录的写访问权限时，优先使用 --add-dir 而不是强制使用 --sandbox danger-full-access。</li>
-                                <li>在 CI 中将 --json 与 --output-last-message 配对以捕获机器可读的进度和最终自然语言摘要。</li>
+                                <li><a href="https://developers.openai.com/codex/config-basic#configuration-precedence" target="_blank" rel="noopener noreferrer">configuration precedence</a></li>
+                                <li><a href="https://developers.openai.com/codex/feature-maturity" target="_blank" rel="noopener noreferrer">Feature Maturity</a></li>
+                                <li><a href="https://developers.openai.com/codex/cli" target="_blank" rel="noopener noreferrer">CLI overview</a></li>
+                                <li><a href="https://developers.openai.com/codex/config-advanced" target="_blank" rel="noopener noreferrer">Advanced Config</a></li>
                             </ul>
+                            <p>官方页面：<a href="https://developers.openai.com/codex/cli/reference" target="_blank" rel="noopener noreferrer">developers.openai.com/codex/cli/reference</a></p>
                         </div>
                     </article>
                 </section>
@@ -2407,130 +1687,19 @@ codex login --with-api-key</code></pre>
                 <!-- CLI SLASH SECTION -->
                 <section id="cli-slash" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>CLI 斜杠命令</h1>
-                        <p class="subtitle">在交互会话中控制 Codex。</p>
-
+                        <h1>Codex CLI 斜杠命令</h1>
+                        <p class="subtitle">通过斜杠命令快速控制会话与执行状态。</p>
                         <div class="intro-block">
-                            <p>斜杠命令让你快速、键盘优先地控制 Codex。在编辑器中输入 / 打开斜杠弹出窗口，选择一个命令，Codex 将执行相应操作，如切换模型、调整权限或总结长对话，而无需离开终端。</p>
-
                             <h2>内置斜杠命令</h2>
-                            <p>Codex 附带以下命令。打开斜杠弹出窗口并开始输入命令名称以过滤列表。</p>
-
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>命令</th>
-                                        <th>用途</th>
-                                        <th>何时使用</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><code>/permissions</code></td>
-                                        <td>设置 Codex 无需询问即可执行的操作。</td>
-                                        <td>在会话中放宽或收紧审批要求，例如在 Auto 和 Read Only 之间切换。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>/model</code></td>
-                                        <td>选择活动模型（和推理努力程度）。</td>
-                                        <td>在运行任务之前在通用模型和深度推理模型之间切换。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>/personality</code></td>
-                                        <td>选择响应的沟通风格。</td>
-                                        <td>使 Codex 更简洁、更解释性或更协作，而无需更改你的指令。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>/plan</code></td>
-                                        <td>切换到计划模式。</td>
-                                        <td>要求 Codex 在实施工作开始之前提出执行计划。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>/status</code></td>
-                                        <td>显示会话配置和令牌使用。</td>
-                                        <td>确认活动模型、审批策略、可写根目录和剩余上下文容量。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>/diff</code></td>
-                                        <td>显示 Git 差异。</td>
-                                        <td>在提交或运行测试之前查看 Codex 的编辑。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>/review</code></td>
-                                        <td>要求 Codex 审查你的工作树。</td>
-                                        <td>在 Codex 完成工作或当你希望对本地更改进行第二次检查时运行。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>/compact</code></td>
-                                        <td>总结可见对话以释放令牌。</td>
-                                        <td>在长运行后使用，以便 Codex 保留关键点而不超出上下文窗口。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>/fork</code></td>
-                                        <td>将当前对话分叉到新线程。</td>
-                                        <td>分支活动会话以探索新方法，而不丢失当前转录。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>/new</code></td>
-                                        <td>在同一 CLI 会话中开始新对话。</td>
-                                        <td>重置聊天上下文，无需离开 CLI。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>/resume</code></td>
-                                        <td>从会话列表恢复保存的对话。</td>
-                                        <td>继续先前 CLI 会话的工作，无需重新开始。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>/mcp</code></td>
-                                        <td>列出配置的 Model Context Protocol 工具。</td>
-                                        <td>检查 Codex 可以在会话期间调用哪些外部工具。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>/init</code></td>
-                                        <td>在当前目录中生成 AGENTS.md 支架。</td>
-                                        <td>捕获你正在工作的仓库或子目录的持久指令。</td>
-                                    </tr>
-                                    <tr>
-                                        <td><code>/quit</code> / <code>/exit</code></td>
-                                        <td>退出 CLI。</td>
-                                        <td>离开会话。先保存或提交任何重要工作。</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <h2>使用斜杠命令控制会话</h2>
-
-                            <h3>使用 /model 设置活动模型</h3>
-                            <ol>
-                                <li>启动 Codex 并打开编辑器。</li>
-                                <li>输入 /model 并按 Enter。</li>
-                                <li>从弹出窗口中选择模型，例如 gpt-4.1-mini 或 gpt-4.1。</li>
-                            </ol>
-                            <p>Codex 会在转录中确认新模型。运行 /status 以验证更改。</p>
-
-                            <h3>使用 /personality 设置沟通风格</h3>
-                            <p>使用 /personality 更改 Codex 的沟通方式，而无需重写提示。</p>
-                            <p>Codex 支持 friendly、pragmatic 和 none 个性。使用 none 禁用个性指令。</p>
-
-                            <h3>使用 /plan 切换到计划模式</h3>
-                            <p>输入 /plan 并按 Enter 将活动对话切换到计划模式。可选：提供内联提示文本（例如 /plan 提出此服务的迁移计划）。</p>
-
-                            <h3>使用 /permissions 更新权限</h3>
-                            <ol>
-                                <li>输入 /permissions 并按 Enter。</li>
-                                <li>选择符合你舒适级别的审批预设，例如 Auto 或 Read Only。</li>
-                            </ol>
-                            <p>Codex 会宣布更新的策略。在你再次更改之前，未来操作将遵循新的审批模式。</p>
-
-                            <h3>使用 /status 检查会话</h3>
-                            <p>在任何对话中，输入 /status。查看输出以了解活动模型、审批策略、可写根目录和当前令牌使用情况。</p>
-
-                            <h3>使用 /compact 精简转录</h3>
-                            <p>在长时间交换后，输入 /compact。当 Codex 提供总结对话的机会时，请确认。</p>
-                            <p>Codex 将用简洁的摘要替换早期的轮次，释放上下文同时保留关键细节。</p>
-
-                            <h3>使用 /diff 查看更改</h3>
-                            <p>输入 /diff 检查 Git 差异。在 CLI 中滚动查看输出以查看编辑和添加的文件。</p>
+                            <h3>/model /personality /plan</h3>
+                            <h3>/permissions /sandbox-add-read-dir</h3>
+                            <h3>/status /debug-config /statusline /ps</h3>
+                            <h3>/compact /diff /mention /review</h3>
+                            <h3>/new /resume /fork</h3>
+                            <h3>/mcp /apps /agent /feedback</h3>
+                            <h3>/logout /quit /exit</h3>
+                            <h2>用斜杠命令控制会话</h2>
+                            <p>官方页面：<a href="https://developers.openai.com/codex/cli/slash-commands" target="_blank" rel="noopener noreferrer">developers.openai.com/codex/cli/slash-commands</a></p>
                         </div>
                     </article>
                 </section>
@@ -2720,12 +1889,19 @@ git diff | codex run "解释"</code></pre>
                 <section id="cloud-env" class="doc-section full-width">
                     <article class="document-content markdown-body">
                         <h1>云端环境</h1>
-                        <p class="subtitle">在云端运行 Codex 任务。</p>
+                        <p class="subtitle">了解云任务如何运行、配置与缓存。</p>
                         <div class="intro-block">
+                            <h2>云任务运行方式</h2>
+                            <h2>默认通用镜像</h2>
+                            <h2>环境变量与密钥</h2>
+                            <h2>自动 setup</h2>
+                            <h2>手动 setup</h2>
+                            <h2>容器缓存</h2>
+                            <h2>互联网访问与代理</h2>
                             <ul>
-                                <li><strong>标准环境：</strong>2 vCPU, 4GB RAM</li>
-                                <li><strong>性能环境：</strong>4 vCPU, 8GB RAM</li>
-                                <li><strong>企业环境：</strong>8 vCPU, 16GB RAM</li>
+                                <li>环境设置：<a href="https://chatgpt.com/codex/settings/environments" target="_blank" rel="noopener noreferrer">Codex settings</a></li>
+                                <li>互联网访问：<a href="https://developers.openai.com/codex/cloud/internet-access" target="_blank" rel="noopener noreferrer">agent internet access</a></li>
+                                <li>通用镜像仓库：<a href="https://github.com/openai/codex-universal" target="_blank" rel="noopener noreferrer">openai/codex-universal</a></li>
                             </ul>
                         </div>
                     </article>
@@ -2734,10 +1910,17 @@ git diff | codex run "解释"</code></pre>
                 <!-- CLOUD INTERNET SECTION -->
                 <section id="cloud-internet" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>互联网访问</h1>
-                        <p class="subtitle">云端环境的网络配置。</p>
+                        <h1>智能体互联网访问</h1>
+                        <p class="subtitle">配置域名白名单与方法限制，降低提示注入风险。</p>
                         <div class="intro-block">
-                            <p>云端环境可以访问外部 API 和服务，包括 GitHub API、npm registry 等。</p>
+                            <h2>互联网访问风险</h2>
+                            <h2>如何配置互联网访问</h2>
+                            <h2>预置域名列表</h2>
+                            <h3>域名白名单</h3>
+                            <h3>允许的 HTTP 方法</h3>
+                            <h3>常见依赖域名</h3>
+                            <img src="https://cdn.openai.com/API/docs/codex/prompt-injection-example.png" alt="Prompt injection example" style="width:100%;border-radius:12px;">
+                            <p>官方页面：<a href="https://developers.openai.com/codex/cloud/internet-access" target="_blank" rel="noopener noreferrer">developers.openai.com/codex/cloud/internet-access</a></p>
                         </div>
                     </article>
                 </section>
@@ -2745,13 +1928,20 @@ git diff | codex run "解释"</code></pre>
                 <!-- GITHUB SECTION -->
                 <section id="github" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>GitHub 集成</h1>
-                        <p class="subtitle">与 GitHub 深度集成。</p>
+                        <h1>在 GitHub 中使用 Codex</h1>
+                        <p class="subtitle">在 PR 流程里配置审查、触发规则与任务委托。</p>
                         <div class="intro-block">
+                            <h2>设置代码审查</h2>
+                            <img src="https://developers.openai.com/images/codex/code-review/code-review-settings.png" alt="Code review settings" style="width:100%;border-radius:12px;">
+                            <h2>请求审查</h2>
+                            <img src="https://developers.openai.com/images/codex/code-review/review-trigger.png" alt="Review trigger" style="width:100%;border-radius:12px;">
+                            <h2>启用自动审查</h2>
+                            <h2>自定义审查范围</h2>
+                            <h2>给 Codex 其他任务</h2>
+                            <img src="https://developers.openai.com/images/codex/code-review/review-example.png" alt="Review example" style="width:100%;border-radius:12px;">
                             <ul>
-                                <li>自动 PR 创建</li>
-                                <li>Issue 自动响应</li>
-                                <li>代码审查建议</li>
+                                <li>Codex cloud：<a href="https://developers.openai.com/codex/cloud" target="_blank" rel="noopener noreferrer">cloud</a></li>
+                                <li>Code review 设置：<a href="https://chatgpt.com/codex/settings/code-review" target="_blank" rel="noopener noreferrer">settings</a></li>
                             </ul>
                         </div>
                     </article>
@@ -2760,12 +1950,29 @@ git diff | codex run "解释"</code></pre>
                 <!-- LINEAR SECTION -->
                 <section id="linear" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>Linear 集成</h1>
-                        <p class="subtitle">与 Linear 项目管理集成。</p>
+                        <h1>在 Linear 中使用 Codex</h1>
+                        <p class="subtitle">从 issue 委托、评论触发到自动分配的完整流程。</p>
                         <div class="intro-block">
+                            <h2>设置 Linear 集成</h2>
+                            <h2>把工作委托给 Codex</h2>
+                            <h3>方式 1：直接分配 issue 给 Codex</h3>
+                            <picture><source media="(prefers-color-scheme: dark)" srcset="https://developers.openai.com/images/codex/integrations/linear-assign-codex-dark.webp"><img src="https://developers.openai.com/images/codex/integrations/linear-assign-codex-light.webp" alt="Assign issue" style="width:100%;border-radius:12px;"></picture>
+                            <h3>方式 2：评论中 @Codex</h3>
+                            <picture><source media="(prefers-color-scheme: dark)" srcset="https://developers.openai.com/images/codex/integrations/linear-comment-dark.webp"><img src="https://developers.openai.com/images/codex/integrations/linear-comment-light.webp" alt="Comment" style="width:100%;border-radius:12px;"></picture>
+                            <h2>自动把 issue 分配给 Codex</h2>
+                            <picture><source media="(prefers-color-scheme: dark)" srcset="https://developers.openai.com/images/codex/integrations/linear-triage-rule-dark.webp"><img src="https://developers.openai.com/images/codex/integrations/linear-triage-rule-light.webp" alt="Triage rule" style="width:100%;border-radius:12px;"></picture>
+                            <h2>数据使用、隐私与安全</h2>
+                            <h2>Tips 与故障排除</h2>
+                            <h2>本地任务连接 Linear（MCP）</h2>
+                            <h3>推荐：CLI 方式</h3>
+                            <h3>手动配置</h3>
                             <ul>
-                                <li>从 Issue 创建任务</li>
-                                <li>自动更新 Issue 状态</li>
+                                <li>Pricing：<a href="https://developers.openai.com/codex/pricing" target="_blank" rel="noopener noreferrer">pricing</a></li>
+                                <li>管理员设置：<a href="https://chatgpt.com/admin/settings" target="_blank" rel="noopener noreferrer">workspace settings</a></li>
+                                <li>连接器：<a href="https://chatgpt.com/codex/settings/connectors" target="_blank" rel="noopener noreferrer">Codex settings</a></li>
+                                <li>管理员连接器页：<a href="https://chatgpt.com/admin/ca" target="_blank" rel="noopener noreferrer">connector settings</a></li>
+                                <li>管理员连接器页：<a href="https://chatgpt.com/admin/ca" target="_blank" rel="noopener noreferrer">connector settings</a></li>
+                                <li>Linear MCP 文档：<a href="https://linear.app/integrations/codex-mcp" target="_blank" rel="noopener noreferrer">Linear MCP docs</a></li>
                             </ul>
                         </div>
                     </article>
@@ -2774,13 +1981,21 @@ git diff | codex run "解释"</code></pre>
                 <!-- SLACK SECTION -->
                 <section id="slack" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>Slack 集成</h1>
-                        <p class="subtitle">在 Slack 中使用 Codex。</p>
+                        <h1>在 Slack 中使用 Codex</h1>
+                        <p class="subtitle">在聊天上下文中发起与跟进 Codex 云端任务。</p>
                         <div class="intro-block">
+                            <h2>设置 Slack 应用</h2>
+                            <h2>启动任务</h2>
+                            <img src="https://developers.openai.com/images/codex/integrations/slack-example.png" alt="Slack example" style="width:100%;border-radius:12px;">
+                            <h3>环境与仓库如何选择</h3>
+                            <h3>企业数据控制</h3>
+                            <h3>数据使用、隐私与安全</h3>
+                            <h3>Tips 与故障排除</h3>
                             <ul>
-                                <li><code>/codex help</code> - 显示帮助</li>
-                                <li><code>/codex explain</code> - 解释代码</li>
-                                <li><code>/codex review</code> - 审查 PR</li>
+                                <li>云任务：<a href="https://developers.openai.com/codex/cloud" target="_blank" rel="noopener noreferrer">Codex cloud tasks</a></li>
+                                <li>环境文档：<a href="https://developers.openai.com/codex/cloud/environments" target="_blank" rel="noopener noreferrer">environment</a></li>
+                                <li>连接器设置：<a href="https://chatgpt.com/codex/settings/connectors" target="_blank" rel="noopener noreferrer">Codex settings</a></li>
+                                <li>政策：<a href="https://openai.com/privacy" target="_blank" rel="noopener noreferrer">Privacy</a> / <a href="https://openai.com/terms/" target="_blank" rel="noopener noreferrer">Terms</a></li>
                             </ul>
                         </div>
                     </article>
