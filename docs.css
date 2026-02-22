@@ -635,6 +635,120 @@ body {
     font-size: 0.95rem;
 }
 
+.explore-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin-top: 1rem;
+}
+
+.explore-card {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 0.9rem;
+    background: var(--hover-bg);
+}
+
+.explore-card img {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 0.6rem;
+}
+
+.explore-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+}
+
+.explore-card p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.quickstart-item {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 0.9rem;
+    background: var(--hover-bg);
+    margin-bottom: 0.9rem;
+}
+
+.quickstart-item img {
+    width: 28px;
+    height: 28px;
+    margin-top: 0.2rem;
+}
+
+.quickstart-item h3 {
+    margin-top: 0;
+}
+
+.quickstart-item ul {
+    margin-bottom: 0;
+}
+
+.pricing-plan-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin-top: 0.75rem;
+}
+
+.pricing-plan-card {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 0.9rem;
+    background: var(--hover-bg);
+}
+
+.pricing-plan-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.pricing-plan-card p {
+    margin-bottom: 0.7rem;
+}
+
+.pricing-plan-card a {
+    font-size: 0.92rem;
+}
+
+.models-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin-top: 0.9rem;
+}
+
+.model-card {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 0.75rem;
+    background: var(--hover-bg);
+}
+
+.model-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 0.6rem;
+}
+
+.model-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.model-card p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
 /* Responsiveness */
 @media (max-width: 1024px) {
     .doc-section {
@@ -646,6 +760,14 @@ body {
     }
 
     .overview-links-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .explore-card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .models-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
@@ -676,6 +798,18 @@ body {
     }
 
     .overview-links-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .explore-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-plan-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .models-grid {
         grid-template-columns: 1fr;
     }
 }
