@@ -958,7 +958,7 @@ project_doc_max_bytes = 65536</code></pre>
 <h2>后续步骤</h2>
 <ul>
 <li>访问官方 <a href="https://agents.md" rel="noopener noreferrer" target="_blank">AGENTS.md</a> 网站了解更多信息。</li>
-<li>Review <a href="https://developers.openai.com/codex/prompting" rel="noopener noreferrer" target="_blank">提示法典</a> 寻找与持续指导完美结合的对话模式。</li>
+<li>Review <a href="https://developers.openai.com/codex/prompting" rel="noopener noreferrer" target="_blank">提示 Codex</a> 寻找与持续指导完美结合的对话模式。</li>
 </ul> </div></article>
 </section>
  MCP部分 
@@ -1413,7 +1413,7 @@ description: Stage and commit changes in semantic groups. Use when the user want
 <p>选择您关心的代码（可选但推荐）。</p>
 </li>
 <li>
-<p>提示法典：</p>
+<p>提示 Codex：</p>
 <pre><code>Explain how the request flows through the selected code.
 
 Include:
@@ -1486,7 +1486,7 @@ Start by reproducing the bug locally, then propose a patch and run checks.</code
 <p>打开您认为错误所在的文件以及最近的调用者。</p>
 </li>
 <li>
-<p>提示法典：</p>
+<p>提示 Codex：</p>
 <pre><code>Find the bug causing "Saved" to show without persisting changes. After proposing the fix, tell me how to verify it in the UI.</code></pre>
 </li>
 </ol>
@@ -1502,7 +1502,7 @@ Start by reproducing the bug locally, then propose a patch and run checks.</code
 <p>选择定义函数的行。从命令面板中选择“Add to Codex thread”，将这些行添加到上下文中。</p>
 </li>
 <li>
-<p>提示法典：</p>
+<p>提示 Codex：</p>
 <pre><code>Write a unit test for this function. Follow conventions used in other tests.</code></pre>
 </li>
 </ol>
@@ -1566,7 +1566,7 @@ Deliverables:
 <p>在 Codex 聊天中附加图像（拖放或粘贴）。</p>
 </li>
 <li>
-<p>提示法典：</p>
+<p>提示 Codex：</p>
 <pre><code>Create a new settings page. Use the attached screenshot as the target UI.
 Follow design and visual patterns from other files in this project.</code></pre>
 </li>
@@ -2233,11 +2233,11 @@ eval "$(codex completion zsh)"</code></pre>
 <p>将 Codex 云任务中的最新差异应用到本地存储库。您必须进行身份验证并有权访问该任务。</p>
 <table><thead><tr><th>Key</th><th>类型/值</th><th>Details</th></tr></thead><tbody><tr><td><code>TASK_ID</code></td><td><code>string</code></td><td>应应用差异的 Codex Cloud 任务的标识符。</td></tr></tbody></table>
 <p>Codex 打印修复后的文件并在以下情况下以非零值退出 <code>git apply</code> 失败（例如，由于冲突）。</p>
-<h3>法典云</h3>
+<h3>Codex 云</h3>
 <p>从终端与 Codex 云任务交互。默认命令打开一个交互式选择器； <code>codex cloud exec</code> 直接提交任务，并且 <code>codex cloud list</code> 返回最近的任务以进行脚本编写或快速检查。</p>
 <table><thead><tr><th>Key</th><th>类型/值</th><th>Details</th></tr></thead><tbody><tr><td><code>--attempts</code></td><td><code>1-4</code></td><td>Codex Cloud 应运行的助手尝试次数（N 次最佳）。</td></tr><tr><td><code>--env</code></td><td><code>ENV_ID</code></td><td>目标 Codex Cloud 环境标识符（必需）。使用“codex cloud”启动选项。</td></tr><tr><td><code>QUERY</code></td><td><code>string</code></td><td>任务提示。如果简洁，Codex 会以交互方式提示您提供详细信息。</td></tr></tbody></table>
 <p>身份验证遵循与主 CLI 相同的凭据。如果任务提交失败，Codex 将非零值退出。</p>
-<h4>法典云列表</h4>
+<h4>Codex 云列表</h4>
 <p>列出最近的云任务，并提供可选的过滤和分页功能。</p>
 <table><thead><tr><th>Key</th><th>类型/值</th><th>Details</th></tr></thead><tbody><tr><td><code>--cursor</code></td><td><code>string</code></td><td>前一个请求返回的分页游标。</td></tr><tr><td><code>--env</code></td><td><code>ENV_ID</code></td><td>按环境标识符过滤任务。</td></tr><tr><td><code>--json</code></td><td><code>boolean</code></td><td>发出文本机器的 JSON 而不是纯的。</td></tr><tr><td><code>--limit</code></td><td><code>1-20</code></td><td>返回的最大任务数。</td></tr></tbody></table>
 <p>纯文本输出打印任务URL，后面跟状态详细信息。使用 <code>--json</code> 用于自动化。JSON有效负载包含 <code>tasks</code> 数组加上一个可选的 <code>cursor</code> 价值。每个任务包括 <code>id</code>, <code>url</code>, <code>title</code>, <code>status</code>, <code>updated_at</code>, <code>environment_id</code>, <code>environment_label</code>, <code>summary</code>, <code>is_review</code>， 和 <code>attempt_total</code>.</p>
@@ -2305,7 +2305,7 @@ eval "$(codex completion zsh)"</code></pre>
 </ul>
 <h2>内置斜杠命令</h2>
 <p>Codex 附带以下命令。打开斜杠弹出窗口并开始输入命令名称以过滤列表。</p>
-<table><thead><tr><th>Command</th><th>Purpose</th><th>何时使用它</th></tr></thead><tbody><tr><td><a href="#update-permissions-with-permissions"><code>/permissions</code></a></td><td>设置 Codex 预先询问即可执行的操作。</td><td>在会话中放松或收紧批准要求，例如在自动和只读之间切换。</td></tr><tr><td><a href="#grant-sandbox-read-access-with-sandbox-add-read-dir"><code>/sandbox-add-read-dir</code></a></td><td>沙箱授予额外目录的读取权限（仅限Windows）。</td><td>取消阻止需要读取当前可读根目录之外的绝对目录路径的命令。</td></tr><tr><td><a href="#switch-agent-threads-with-agent"><code>/agent</code></a></td><td>切换活动代理线程。</td><td>检查或继续在生成的子代理线程中工作。</td></tr><tr><td><a href="#browse-apps-with-apps"><code>/apps</code></a></td><td>浏览应用程序（连接器）并将它们插入到您的提示中。</td><td>将应用程序附加为 <code>$app-slug</code> 要求 Codex 之前使用它。</td></tr><tr><td><a href="#keep-transcripts-lean-with-compact"><code>/compact</code></a></td><td>将可见对话总结为免费代币。</td><td>在长时间运行后使用，便于Codex保留关键点，而不会破坏上下文窗口。</td></tr><tr><td><a href="#review-changes-with-diff"><code>/diff</code></a></td><td>显示 Git 差异，包括 Git 尚未跟踪的文件。</td><td>在提交或运行测试之前查看 Codex 的编辑。</td></tr><tr><td><a href="#exit-the-cli-with-quit-or-exit"><code>/exit</code></a></td><td>退出CLI（与 <code>/quit</code>).</td><td>替代拼写；这两个命令都退出会话。</td></tr><tr><td><a href="#toggle-experimental-features-with-experimental"><code>/experimental</code></a></td><td>切换实验性功能。</td><td>启用可选功能，例如来自 CLI 的子代理。</td></tr><tr><td><a href="#send-feedback-with-feedback"><code>/feedback</code></a></td><td>将日志发送给 Codex 维护者。</td><td>报告问题或与支持人员分享诊断结果。</td></tr><tr><td><a href="#generate-agentsmd-with-init"><code>/init</code></a></td><td>生成一个 <code>AGENTS.md</code> 当前目录中的脚手架。</td><td>捕获您正在使用的存储库或子目录的持久指令。</td></tr><tr><td><a href="#sign-out-with-logout"><code>/logout</code></a></td><td>退出法典。</td><td>使用共享计算机时清除本地凭据。</td></tr><tr><td><a href="#list-mcp-tools-with-mcp"><code>/mcp</code></a></td><td>已推出模型上下文协议 (MCP) 工具。</td><td>在会话期间查看 Codex 可以调用哪些外部工具。</td></tr><tr><td><a href="#highlight-files-with-mention"><code>/mention</code></a></td><td>将文件附加到对话中。</td><td>将 Codex 指向您希望接下来检查的特定文件或文件夹。</td></tr><tr><td><a href="#set-the-active-model-with-model"><code>/model</code></a></td><td>选择活动模型（以及推理工作，如果可用）。</td><td>通用型号之间的切换（<code>gpt-4.1-mini</code>）和运行任务之前更深入的推理模型。</td></tr><tr><td><a href="#switch-to-plan-mode-with-plan"><code>/plan</code></a></td><td>切换到计划模式并可选择发送提示。</td><td>在实施工作开始之前，请法典委员会提出执行计划。</td></tr><tr><td><a href="#set-a-communication-style-with-personality"><code>/personality</code></a></td><td>选择响应的沟通方式。</td><td>在不改变说明的情况下，使 Codex 更加简洁、增加解释性或增加协作性。</td></tr><tr><td><a href="#check-background-terminals-with-ps"><code>/ps</code></a></td><td>显示实验后台终端及其最近的输出。</td><td>检查长时间运行的命令而不留下主要记录。</td></tr><tr><td><a href="#fork-the-current-conversation-with-fork"><code>/fork</code></a></td><td>将当前对话分叉到一个新线程中。</td><td>对活动会话进行分支以探索新方法，而不会丢失当前的记录。</td></tr><tr><td><a href="#resume-a-saved-conversation-with-resume"><code>/resume</code></a></td><td>从会话列表中恢复已保存的对话。</td><td>继续之前 CLI 会话的工作，消耗重新开始。</td></tr><tr><td><a href="#start-a-new-conversation-with-new"><code>/new</code></a></td><td>在同一个 CLI 会话中开始新的对话。</td><td>当您希望在同一存储库中获得新的提示时，退出 CLI 即可重置聊天上下文。</td></tr><tr><td><a href="#exit-the-cli-with-quit-or-exit"><code>/quit</code></a></td><td>退出 CLI。</td><td>立即离开会议。</td></tr><tr><td><a href="#ask-for-a-working-tree-review-with-review"><code>/review</code></a></td><td>请 Codex 审查您的工作树。</td><td>在 Codex 完成工作后或当您需要第二次关注本地更改时运行。</td></tr><tr><td><a href="#inspect-the-session-with-status"><code>/status</code></a></td><td>显示会话配置和令牌使用情况。</td><td>确认活动模型、审批策略、可写根和剩余上下文容量。</td></tr><tr><td><a href="#inspect-config-layers-with-debug-config"><code>/debug-config</code></a></td><td>打印配置层和需求诊断。</td><td>调试优先级和策略要求，包括实验网络限制。</td></tr><tr><td><a href="#configure-footer-items-with-statusline"><code>/statusline</code></a></td><td>以交互方式配置 TUI 状态行字段。</td><td>选择并重新排序页脚项目 (model/context/limits/git/tokens/session) 并保留在 config.toml 中。</td></tr></tbody></table>
+<table><thead><tr><th>Command</th><th>Purpose</th><th>何时使用它</th></tr></thead><tbody><tr><td><a href="#update-permissions-with-permissions"><code>/permissions</code></a></td><td>设置 Codex 预先询问即可执行的操作。</td><td>在会话中放松或收紧批准要求，例如在自动和只读之间切换。</td></tr><tr><td><a href="#grant-sandbox-read-access-with-sandbox-add-read-dir"><code>/sandbox-add-read-dir</code></a></td><td>沙箱授予额外目录的读取权限（仅限Windows）。</td><td>取消阻止需要读取当前可读根目录之外的绝对目录路径的命令。</td></tr><tr><td><a href="#switch-agent-threads-with-agent"><code>/agent</code></a></td><td>切换活动代理线程。</td><td>检查或继续在生成的子代理线程中工作。</td></tr><tr><td><a href="#browse-apps-with-apps"><code>/apps</code></a></td><td>浏览应用程序（连接器）并将它们插入到您的提示中。</td><td>将应用程序附加为 <code>$app-slug</code> 要求 Codex 之前使用它。</td></tr><tr><td><a href="#keep-transcripts-lean-with-compact"><code>/compact</code></a></td><td>将可见对话总结为免费代币。</td><td>在长时间运行后使用，便于Codex保留关键点，而不会破坏上下文窗口。</td></tr><tr><td><a href="#review-changes-with-diff"><code>/diff</code></a></td><td>显示 Git 差异，包括 Git 尚未跟踪的文件。</td><td>在提交或运行测试之前查看 Codex 的编辑。</td></tr><tr><td><a href="#exit-the-cli-with-quit-or-exit"><code>/exit</code></a></td><td>退出CLI（与 <code>/quit</code>).</td><td>替代拼写；这两个命令都退出会话。</td></tr><tr><td><a href="#toggle-experimental-features-with-experimental"><code>/experimental</code></a></td><td>切换实验性功能。</td><td>启用可选功能，例如来自 CLI 的子代理。</td></tr><tr><td><a href="#send-feedback-with-feedback"><code>/feedback</code></a></td><td>将日志发送给 Codex 维护者。</td><td>报告问题或与支持人员分享诊断结果。</td></tr><tr><td><a href="#generate-agentsmd-with-init"><code>/init</code></a></td><td>生成一个 <code>AGENTS.md</code> 当前目录中的脚手架。</td><td>捕获您正在使用的存储库或子目录的持久指令。</td></tr><tr><td><a href="#sign-out-with-logout"><code>/logout</code></a></td><td>退出法典。</td><td>使用共享计算机时清除本地凭据。</td></tr><tr><td><a href="#list-mcp-tools-with-mcp"><code>/mcp</code></a></td><td>已推出模型上下文协议 (MCP) 工具。</td><td>在会话期间查看 Codex 可以调用哪些外部工具。</td></tr><tr><td><a href="#highlight-files-with-mention"><code>/mention</code></a></td><td>将文件附加到对话中。</td><td>将 Codex 指向您希望接下来检查的特定文件或文件夹。</td></tr><tr><td><a href="#set-the-active-model-with-model"><code>/model</code></a></td><td>选择活动模型（以及推理工作，如果可用）。</td><td>通用型号之间的切换（<code>gpt-4.1-mini</code>）和运行任务之前更深入的推理模型。</td></tr><tr><td><a href="#switch-to-plan-mode-with-plan"><code>/plan</code></a></td><td>切换到计划模式并可选择发送提示。</td><td>在实施工作开始之前，请Codex提出执行计划。</td></tr><tr><td><a href="#set-a-communication-style-with-personality"><code>/personality</code></a></td><td>选择响应的沟通方式。</td><td>在不改变说明的情况下，使 Codex 更加简洁、增加解释性或增加协作性。</td></tr><tr><td><a href="#check-background-terminals-with-ps"><code>/ps</code></a></td><td>显示实验后台终端及其最近的输出。</td><td>检查长时间运行的命令而不留下主要记录。</td></tr><tr><td><a href="#fork-the-current-conversation-with-fork"><code>/fork</code></a></td><td>将当前对话分叉到一个新线程中。</td><td>对活动会话进行分支以探索新方法，而不会丢失当前的记录。</td></tr><tr><td><a href="#resume-a-saved-conversation-with-resume"><code>/resume</code></a></td><td>从会话列表中恢复已保存的对话。</td><td>继续之前 CLI 会话的工作，消耗重新开始。</td></tr><tr><td><a href="#start-a-new-conversation-with-new"><code>/new</code></a></td><td>在同一个 CLI 会话中开始新的对话。</td><td>当您希望在同一存储库中获得新的提示时，退出 CLI 即可重置聊天上下文。</td></tr><tr><td><a href="#exit-the-cli-with-quit-or-exit"><code>/quit</code></a></td><td>退出 CLI。</td><td>立即离开会议。</td></tr><tr><td><a href="#ask-for-a-working-tree-review-with-review"><code>/review</code></a></td><td>请 Codex 审查您的工作树。</td><td>在 Codex 完成工作后或当您需要第二次关注本地更改时运行。</td></tr><tr><td><a href="#inspect-the-session-with-status"><code>/status</code></a></td><td>显示会话配置和令牌使用情况。</td><td>确认活动模型、审批策略、可写根和剩余上下文容量。</td></tr><tr><td><a href="#inspect-config-layers-with-debug-config"><code>/debug-config</code></a></td><td>打印配置层和需求诊断。</td><td>调试优先级和策略要求，包括实验网络限制。</td></tr><tr><td><a href="#configure-footer-items-with-statusline"><code>/statusline</code></a></td><td>以交互方式配置 TUI 状态行字段。</td><td>选择并重新排序页脚项目 (model/context/limits/git/tokens/session) 并保留在 config.toml 中。</td></tr></tbody></table>
 <p><code>/quit</code> and <code>/exit</code> 两者都退出 CLI。只需在保存或提交任何重要工作后才使用它们。</p>
 <p>The <code>/approvals</code> 命令仍然用作别名，但它不再出现在斜杠弹出列表中。</p>
 <h2>使用斜杠命令控制您的会话</h2>
@@ -2316,7 +2316,7 @@ eval "$(codex completion zsh)"</code></pre>
 <li>Type <code>/model</code> 并按 Enter 键。</li>
 <li>选择一个模型，例如 <code>gpt-4.1-mini</code> or <code>gpt-4.1</code> 从弹出窗口中。</li>
 </ol>
-<p>预期：食品法典委员会确认记录中的新模型。跑步 <code>/status</code> 以验证更改。</p>
+<p>预期：食品Codex确认记录中的新模型。跑步 <code>/status</code> 以验证更改。</p>
 <h3>设定沟通方式/个性</h3>
 <p>Use <code>/personality</code> 更改了 Codex 的通信方式，而取代了重写提示。</p>
 <ol>
@@ -2763,7 +2763,7 @@ jobs:
  云环境部分 
 <section class="doc-section full-width" id="cloud-env">
 <article class="document-content markdown-body"><h1>环境</h1><p class="subtitle">为 Codex 依赖定制项和工具</p><div class="intro-block"> <p>在云任务期间使用环境来控制 Codex 安装和运行的内容。例如，您可以添加依赖项、安装 linter 和清理程序等工具以及设置环境变量。</p>
-<p>配置环境 <a href="https://chatgpt.com/codex/settings/environments" rel="noopener noreferrer" target="_blank">法典设置</a>.</p>
+<p>配置环境 <a href="https://chatgpt.com/codex/settings/environments" rel="noopener noreferrer" target="_blank">Codex 设置</a>.</p>
 <h2>Codex 云任务如何运行</h2>
 <p>以下是您提交任务时会发生的情况：</p>
 <ol>
@@ -2943,8 +2943,8 @@ yarnpkg.com</code></pre> </div></article>
 <br/>
 <h2>设置代码审查</h2>
 <ol>
-<li>设置 <a href="https://developers.openai.com/codex/cloud" rel="noopener noreferrer" target="_blank">法典云</a>.</li>
-<li>前往 <a href="https://chatgpt.com/codex/settings/code-review" rel="noopener noreferrer" target="_blank">法典设置</a> 并打开 <strong>代码审查</strong> 为您的存储库。</li>
+<li>设置 <a href="https://developers.openai.com/codex/cloud" rel="noopener noreferrer" target="_blank">Codex 云</a>.</li>
+<li>前往 <a href="https://chatgpt.com/codex/settings/code-review" rel="noopener noreferrer" target="_blank">Codex 设置</a> 并打开 <strong>代码审查</strong> 为您的存储库。</li>
 </ol>
 <img alt="Codex settings showing the Code review toggle" src="https://developers.openai.com/images/codex/code-review/code-review-settings.png"/>
 <br/>
@@ -2959,7 +2959,7 @@ yarnpkg.com</code></pre> </div></article>
 <img alt="Example Codex code review on a pull request" src="https://developers.openai.com/images/codex/code-review/review-example.png"/>
 <br/>
 <h2>启用自动评论</h2>
-<p>如果您希望 Codex 自动审查每个拉取请求，请打开 <strong>自动评论</strong> in <a href="https://chatgpt.com/codex/settings/code-review" rel="noopener noreferrer" target="_blank">法典设置</a>。每当有新的PR开放供审查时，Codex都会发布审查，消耗 <code>@codex review</code> comment.</p>
+<p>如果您希望 Codex 自动审查每个拉取请求，请打开 <strong>自动评论</strong> in <a href="https://chatgpt.com/codex/settings/code-review" rel="noopener noreferrer" target="_blank">Codex 设置</a>。每当有新的PR开放供审查时，Codex都会发布审查，消耗 <code>@codex review</code> comment.</p>
 <h2>自定义 Codex 的评论内容</h2>
 <p>Codex 在您的存储库中搜索 <code>AGENTS.md</code> 文件并遵循任何 <strong>审查指南</strong> 你包括。</p>
 <p>要为存储库设置准则，请添加或更新顶级 <code>AGENTS.md</code> 像这样的部分：</p>
@@ -2967,12 +2967,12 @@ yarnpkg.com</code></pre> </div></article>
 
 - Don't log PII.
 - Verify that authentication middleware wraps every route.</code></pre>
-<p>食典委采用最近的指导 <code>AGENTS.md</code> 到每个更改的文件。当特定包需要额外检查时，您可以将更具体的指令放置在树的更深处。</p>
+<p>Codex采用最近的指导 <code>AGENTS.md</code> 到每个更改的文件。当特定包需要额外检查时，您可以将更具体的指令放置在树的更深处。</p>
 <p>对于一次性焦点，请将其添加到您的拉取请求评论中，例如：</p>
 <p><code>@codex review for security regressions</code></p>
 <p>在 GitHub 中，Codex 仅标记 P0 和 P1 问题。如果您希望 Codex 标记文档中的拼写错误，请在 <code>AGENTS.md</code> （例如，“将文档中的备注错误视为 P1。”）。</p>
 <h2>赋予法典其他任务</h2>
-<p>如果你提到 <code>@codex</code> 在评论中除了 <code>review</code>，法典委员会启动 <a href="https://developers.openai.com/codex/cloud" rel="noopener noreferrer" target="_blank">云任务</a> 使用您的拉取请求作为上下文。</p>
+<p>如果你提到 <code>@codex</code> 在评论中除了 <code>review</code>，Codex启动 <a href="https://developers.openai.com/codex/cloud" rel="noopener noreferrer" target="_blank">云任务</a> 使用您的拉取请求作为上下文。</p>
 <pre><code>@codex fix the CI failures</code></pre> </div></article>
 </section>
  线性部分 
@@ -2983,10 +2983,10 @@ yarnpkg.com</code></pre> </div></article>
 <h2>设置线性积分</h2>
 <ol>
 <li>设置 <a href="https://developers.openai.com/codex/cloud" rel="noopener noreferrer" target="_blank">Codex 云任务</a> 通过连接GitHub <a href="https://chatgpt.com/codex" rel="noopener noreferrer" target="_blank">Codex</a> 并创建一个 <a href="https://developers.openai.com/codex/cloud/environments" rel="noopener noreferrer" target="_blank">environment</a> 您希望 Codex 在其中工作的存储库中。</li>
-<li>前往 <a href="https://chatgpt.com/codex/settings/connectors" rel="noopener noreferrer" target="_blank">法典设置</a> 并安装 <strong>线性法典</strong> 为您的工作空间。</li>
+<li>前往 <a href="https://chatgpt.com/codex/settings/connectors" rel="noopener noreferrer" target="_blank">Codex 设置</a> 并安装 <strong>线性法典</strong> 为您的工作空间。</li>
 <li>通过参考链接您的线性帐户 <code>@Codex</code> 在线性问题的评论线程中。</li>
 </ol>
-<h2>将工作委托给食典委</h2>
+<h2>将工作委托给Codex</h2>
 <p>您可以通过两种方式进行委托：</p>
 <h3>将问题分配给 Codex</h3>
 <p>安装集成后，您可以将问题分配给 Codex，就像将问题分配给团队成员一样。 Codex 开始工作并更新发布回问题。</p>
@@ -3058,7 +3058,7 @@ url = "https://mcp.linear.app/mcp"</code></pre>
 <h2>设置 Slack 应用程序</h2>
 <ol>
 <li>设置 <a href="https://developers.openai.com/codex/cloud" rel="noopener noreferrer" target="_blank">Codex 云任务</a>。您需要 Plus、Pro、Business、Enterprise 或 Edu 计划（请参阅 <a href="https://chatgpt.com/pricing" rel="noopener noreferrer" target="_blank">ChatGPT 定价</a>）、一个已连接的 GitHub 帐户，以及至少一个 <a href="https://developers.openai.com/codex/cloud/environments" rel="noopener noreferrer" target="_blank">environment</a>.</li>
-<li>前往 <a href="https://chatgpt.com/codex/settings/connectors" rel="noopener noreferrer" target="_blank">法典设置</a> 并为您的工作区安装 Slack 应用程序。根据您的 Slack 工作区策略，管理员可能需要批准安装。</li>
+<li>前往 <a href="https://chatgpt.com/codex/settings/connectors" rel="noopener noreferrer" target="_blank">Codex 设置</a> 并为您的工作区安装 Slack 应用程序。根据您的 Slack 工作区策略，管理员可能需要批准安装。</li>
 <li>Add <code>@Codex</code> 到一个频道。如果您尚未添加，Slack 会在您提及时进行提示。</li>
 </ol>
 <h2>开始任务</h2>
@@ -3967,7 +3967,7 @@ Codex 需要 10 分钟才能出现在 ChatGPT 中。</p>
 <li>选择环境可见性。</li>
 <li>Select <strong>创造环境</strong>.</li>
 </ol>
-<p>Codex 通过检查您的代码库自动优化您的环境设置。在观察到特定性能问题之前，请避免高级环境配置。有关更多信息，请参阅 <a href="https://developers.openai.com/codex/cloud" rel="noopener noreferrer" target="_blank">法典云</a>.</p>
+<p>Codex 通过检查您的代码库自动优化您的环境设置。在观察到特定性能问题之前，请避免高级环境配置。有关更多信息，请参阅 <a href="https://developers.openai.com/codex/cloud" rel="noopener noreferrer" target="_blank">Codex 云</a>.</p>
 <h3>与用户共享设置说明</h3>
 <p>您可以与最终用户共享这些步骤：</p>
 <ol>
@@ -4114,7 +4114,7 @@ Codex 需要 10 分钟才能出现在 ChatGPT 中。</p>
 </ul>
 <p>Codex根据运行位置使用不同的沙箱模式：</p>
 <ul>
-<li><strong>法典云</strong>：在隔离的 OpenAI 管理的容器中运行，阻止访问您的主机系统或不相关的数据。您可以在需要时扩展访问权限（例如，安装依赖项或特定域）。在设置阶段始终启用网络访问，该阶段在代理可以访问您的代码运行之前。</li>
+<li><strong>Codex 云</strong>：在隔离的 OpenAI 管理的容器中运行，阻止访问您的主机系统或不相关的数据。您可以在需要时扩展访问权限（例如，安装依赖项或特定域）。在设置阶段始终启用网络访问，该阶段在代理可以访问您的代码运行之前。</li>
 <li><strong>Codex CLI/IDE 扩展</strong>：操作系统级机制强制执行沙箱策略。默认值包括无网络访问权限和仅限于活动工作区的写入权限。您可以根据您的风险承受能力配置沙箱、审批策略和网络设置。</li>
 </ul>
 <p>在 <code>Auto</code> 预设（例如， <code>--full-auto</code>），Codex 可以自动读取工作目录中的文件、进行编辑和运行命令。</p>
@@ -4387,10 +4387,10 @@ log_user_prompt = false            # keep prompts redacted
  模型部分 
 <section class="doc-section full-width" id="models">
 <article class="document-content markdown-body"><h1>模型</h1><p class="subtitle">了解 Codex 提供支持的 AI 模型</p><div class="intro-block"> <h2>推荐型号</h2>
-xs<img alt="gpt-5.3-codex" height="280" src="https://developers.openai.com/images/codex/codex-wallpaper-1.webp" width="480"/>gpt-5.3-codex<p>迄今为止最强大的代理编码模型，将前沿编码性能与更强的推理和专业知识能力相结合。</p>codex-m gpt-5.3-codex<button>复制命令</button>$CapabilitySpeedCodex CLI 和 SDKCodex 应用程序和 IDE 扩展法典云ChatGPT 积分API 访问/<img alt="gpt-5.3-codex-spark" height="280" src="https://developers.openai.com/images/codex/codex-wallpaper-2.webp" width="480"/>gpt-5.3-codex-spark<p>纯文本研究预览模型针对近乎即时的实时编码迭代进行了优化。供ChatGPT Pro用户使用。</p>codex-m gpt-5.3-codex-spark<button>复制命令</button>$CapabilitySpeedCodex CLI 和 SDKCodex 应用程序和 IDE 扩展法典云ChatGPT 积分API 访问/<img alt="gpt-5.2-codex" height="280" src="https://developers.openai.com/images/codex/gpt-5.2-codex.png" width="480"/>gpt-5.2-codex<p>适用于现实世界工程的高级编码模型。由 GPT-5.3-Codex 继承。</p>codex-m gpt-5.2-codex<button>复制命令</button>$CapabilitySpeedCodex CLI 和 SDKCodex 应用程序和 IDE 扩展法典云ChatGPT 积分API 访问/
+xs<img alt="gpt-5.3-codex" height="280" src="https://developers.openai.com/images/codex/codex-wallpaper-1.webp" width="480"/>gpt-5.3-codex<p>迄今为止最强大的代理编码模型，将前沿编码性能与更强的推理和专业知识能力相结合。</p>codex-m gpt-5.3-codex<button>复制命令</button>$CapabilitySpeedCodex CLI 和 SDKCodex 应用程序和 IDE 扩展Codex 云ChatGPT 积分API 访问/<img alt="gpt-5.3-codex-spark" height="280" src="https://developers.openai.com/images/codex/codex-wallpaper-2.webp" width="480"/>gpt-5.3-codex-spark<p>纯文本研究预览模型针对近乎即时的实时编码迭代进行了优化。供ChatGPT Pro用户使用。</p>codex-m gpt-5.3-codex-spark<button>复制命令</button>$CapabilitySpeedCodex CLI 和 SDKCodex 应用程序和 IDE 扩展Codex 云ChatGPT 积分API 访问/<img alt="gpt-5.2-codex" height="280" src="https://developers.openai.com/images/codex/gpt-5.2-codex.png" width="480"/>gpt-5.2-codex<p>适用于现实世界工程的高级编码模型。由 GPT-5.3-Codex 继承。</p>codex-m gpt-5.2-codex<button>复制命令</button>$CapabilitySpeedCodex CLI 和 SDKCodex 应用程序和 IDE 扩展Codex 云ChatGPT 积分API 访问/
 <p>对于 Codex 中的大多数编码任务，请从 gpt-5.3-codex 开始。它可用于
 Codex 应用程序、CLI、IDE 扩展和中流程 ChatGPT 验证的 Codex 会话
-法典云。 GPT-5.3-Codex 的 API 访问即将推出。
+Codex 云。 GPT-5.3-Codex 的 API 访问即将推出。
 gpt-5.3-codex-spark 模型可用于 ChatGPT Pro 的研究预览版
 订户。</p>
 <h2>替代型号</h2>
@@ -7030,7 +7030,7 @@ Use the ExecPlan skeleton and fill it in with concrete references to the actual 
 <li>Codex 无法从代码推断的空白（SLA、操作环境、业主）</li>
 <li>健全性检查图表和说明</li>
 </ul>
-<h3>2.1 要求食典委起草概述</h3>
+<h3>2.1 要求Codex起草概述</h3>
 <pre><code>Create or update pilot_reporting_overview.md with two top-level sections: “Inventory for the pilot” and “Modernization Technical Report for the pilot”.
 Use pilot_execplan.md to identify the pilot flow.
 
