@@ -331,117 +331,54 @@
 <p><strong>审查代码</strong>：Codex 分析代码以识别潜在的错误、逻辑错误和未处理的边缘情况。</p>
 </li>
 <li>
-<p><strong>调试并修复问题</strong>：当出现问题时，Codex 可以帮助追踪故障、诊断根本原因并提出有存储的修复建议。</p>
+<p><strong>调试并修复问题</strong>：当出现问题时，Codex 可以帮助追踪故障、诊断根本原因并给出可执行的修复建议。</p>
 </li>
 <li>
 <p><strong>自动化开发任务</strong>：Codex 可以运行重复的工作流程，例如重构、测试、迁移和设置任务，以便您可以专注于更高级别的工程工作。</p>
 </li>
 </ul> <a href="https://developers.openai.com/codex/quickstart" rel="noopener noreferrer" target="_blank"> 开始使用 Codex </a>
-<a href="https://developers.openai.com/codex/quickstart" rel="noopener noreferrer" target="_blank"> <h3>快速入门</h3> <p> 下载并开始使用 Codex 进行构建。 </p>   开始使用   </a><a href="https://developers.openai.com/codex/explore" rel="noopener noreferrer" target="_blank"> <h3>探索</h3> <p> 您可以从使用 Codex 构建的内容中获取灵感。 </p>   了解更多   </a><a href="https://developers.openai.com/codex/community/meetups" rel="noopener noreferrer" target="_blank"> <h3>社区</h3> <p> 按地点探索法典大使和即将举行的社区聚会。 </p>   查看社区   </a> </div></article>
+<a href="https://developers.openai.com/codex/quickstart" rel="noopener noreferrer" target="_blank"> <h3>快速入门</h3> <p> 下载并开始使用 Codex 进行构建。 </p>   开始使用   </a><a href="https://developers.openai.com/codex/explore" rel="noopener noreferrer" target="_blank"> <h3>探索</h3> <p> 您可以从使用 Codex 构建的内容中获取灵感。 </p>   了解更多   </a><a href="https://developers.openai.com/codex/community/meetups" rel="noopener noreferrer" target="_blank"> <h3>社区</h3> <p> 按地点探索 Codex 大使与即将举行的社区聚会。 </p>   查看社区   </a> </div></article>
 </section>
 <section class="doc-section full-width" id="quickstart">
-<article class="document-content markdown-body"><h1>快速开始</h1><p class="subtitle">开始在 IDE、CLI 或云中使用 Codex</p><div class="intro-block"> <p>ChatGPT Plus、Pro、Business、Edu 和 Enterprise 计划包括 Codex。通过您的 ChatGPT 订阅使用 Codex，您可以访问最新的 Codex 模型和功能。</p>
-<p>您还可以通过使用 OpenAI API 密钥登录来使用带有 API 积分的 Codex。</p>
-<p>在有限的时间内， <strong>在 ChatGPT Free 和 Go 中免费试用 Codex</strong>，或享受
-<strong>2x Codex 速率限制</strong> 包含Plus、Pro、Business 和 Enterprise
-订阅。</p>
+<article class="document-content markdown-body"><h1>快速开始</h1><p class="subtitle">在 IDE、CLI 或云端开始使用 Codex</p><div class="intro-block"> <p>ChatGPT Plus、Pro、Business、Edu 与 Enterprise 计划均包含 Codex。通过 ChatGPT 订阅使用 Codex，可访问最新模型与功能。</p>
+<p>你也可以使用 OpenAI API 密钥登录，以 API 积分方式使用 Codex。</p>
+<p>限时期间，<strong>ChatGPT Free 与 Go</strong> 用户可免费试用 Codex；Plus、Pro、Business、Enterprise 可享受 <strong>2x Codex 速率额度</strong>。</p>
 <h2>设置</h2>
-
-   选择一个选项   <button>应用程序推荐（仅限macOS）</button><button>IDE 中的 IDE 扩展Codex</button><button>终端中的 CLICodex</button><button>浏览器中的CloudCodex</button> <p>Codex应用程序可在macOS (Apple Silicon) 上使用。</p> <ol>
-<li>
-<p>下载并安装Codex应用程序</p>
-<p>Codex应用程序目前仅适用于macOS。</p>
-<a href="https://persistent.oaistatic.com/codex-app-prod/Codex.dmg" rel="noopener noreferrer" target="_blank"> 下载 macOS 版 </a>
-<p><a href="https://openai.com/form/codex-app/" rel="noopener noreferrer" target="_blank">获取 Windows 和 Linux 的通知</a></p>
-</li>
-<li>
-<p>Codex 并登录</p>
-<p>下载并安装 Codex 应用程序后，打开它并使用您的 ChatGPT 帐户或 OpenAI API 密钥登录。</p>
-<p>如果您使用 OpenAI API 密钥登录，则某些功能例如 <a href="https://developers.openai.com/codex/prompting#threads" rel="noopener noreferrer" target="_blank">云线程</a> 可能不可用。</p>
-</li>
-<li>
-<p>选择一个项目</p>
-<p>在其中工作的项目文件夹中选择您想要的 Codex。</p>
-</li>
-</ol><p>如果您之前使用过 Codex 应用程序、CLI 或 IDE 扩展，您将看到您过去处理过的项目。</p><ol>
-<li>
-<p>发送您的第一条消息</p>
-<p>选择项目后，请确保 <strong>Local</strong> 选择让 Codex 在您的计算机上运行 Codex 发送您的第一条消息。</p>
-<p>您可以向 Codex 询问有关该项目或您的计算机的任何信息。以下是一些示例：</p>
-<button><img alt="" src="https://developers.openai.com/codex/colorcons/brain.png"/>告诉我这个项目</button><button><img alt="" src="https://developers.openai.com/codex/colorcons/gamepad.png"/>在此存储库中构建经典的贪吃蛇游戏。</button><button><img alt="" src="https://developers.openai.com/codex/colorcons/search.png"/>通过最少的、高可信度的更改查找并修复我的代码库中的错误。</button>
-<p>如果您需要更多灵感，请查看 <a href="https://developers.openai.com/codex/explore" rel="noopener noreferrer" target="_blank">探索页面</a>。</p>
-<a href="https://developers.openai.com/codex/app" rel="noopener noreferrer" target="_blank"> 了解有关 Codex 应用程序的更多信息 </a>
-</li>
-</ol> <p>为您的IDE安装Codex扩展。</p> <ol>
-<li>
-<p>安装 Codex 扩展</p>
-<p>为您的编辑器下载它：</p>
-<ul>
-<li><a href="vscode:extension/openai.chatgpt" rel="noopener noreferrer" target="_blank">下载 Visual Studio Code</a></li>
-<li><a href="cursor:extension/openai.chatgpt" rel="noopener noreferrer" target="_blank">下载光标</a></li>
-<li><a href="windsurf:extension/openai.chatgpt" rel="noopener noreferrer" target="_blank">下载风帆冲浪</a></li>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=openai.chatgpt" rel="noopener noreferrer" target="_blank">供 Visual Studio Code Insider 下载</a></li>
-</ul>
-</li>
-<li>
-<p>打开法典面板</p>
-<p>安装后，Codex扩展程序将与其他扩展程序一起显示在侧边栏。它可以隐藏在折叠部分中。如果您愿意，可以将Codex面板移至编辑器的右侧。</p>
-</li>
-<li>
-<p>登录并开始您的第一个任务</p>
-<p>使用您的ChatGPT帐户或API密钥登录即可开始。</p>
-<p>Codex 默认以代理模式启动，它可以读取文件、命令以及在项目目录中读取运行更改。</p>
-<button><img alt="" src="https://developers.openai.com/codex/colorcons/brain.png"/>告诉我这个项目</button><button><img alt="" src="https://developers.openai.com/codex/colorcons/gamepad.png"/>在此存储库中构建经典的贪吃蛇游戏。</button><button><img alt="" src="https://developers.openai.com/codex/colorcons/search.png"/>通过最少的、高可信度的更改查找并修复我的代码库中的错误。</button>
-</li>
-<li>
-<p>使用Git检查点</p>
-<p>Codex 可以修改您的代码库，因此请在每个任务之前考虑并创建 Git 检查点，以便您可以在需要时轻松恢复更改。</p>
-<a href="https://developers.openai.com/codex/ide" rel="noopener noreferrer" target="_blank"> 了解有关 Codex IDE 扩展的更多信息 </a>
-</li>
-</ol> <p>Codex CLI 在 macOS、Windows 和 Linux 上受到支持。</p> <ol>
-<li>
-<p>安装 Codex CLI</p>
-<p>使用npm安装：</p>
-<pre><code>npm install -g @openai/codex</code></pre>
-<p>使用自制程序安装：</p>
-<pre><code>brew install codex</code></pre>
-</li>
-<li>
-<p>Run <code>codex</code> 并登录</p>
-<p>Run <code>codex</code> 在您的终端中开始。系统会使用 ChatGPT 帐户提示或 API 密钥登录。</p>
-</li>
-<li>
-<p>要求 Codex 在您当前的目录中工作</p>
-<p>通过身份验证后，您可以要求Codex在当前目录中执行任务。</p>
-<button><img alt="" src="https://developers.openai.com/codex/colorcons/brain.png"/>告诉我这个项目</button><button><img alt="" src="https://developers.openai.com/codex/colorcons/gamepad.png"/>在此存储库中构建经典的贪吃蛇游戏。</button><button><img alt="" src="https://developers.openai.com/codex/colorcons/search.png"/>通过最少的、高可信度的更改查找并修复我的代码库中的错误。</button>
-</li>
-<li>
-<p>使用Git检查点</p>
-<p>Codex 可以修改您的代码库，因此请在每个任务之前考虑并创建 Git 检查点，以便您可以在需要时轻松恢复更改。</p>
-</li>
-</ol> <a href="https://developers.openai.com/codex/cli" rel="noopener noreferrer" target="_blank"> 了解有关 Codex CLI 的更多信息 </a> <p>在云端使用 Codex，网址为 <a href="https://chatgpt.com/codex" rel="noopener noreferrer" target="_blank">chatgpt.com/codex</a>。</p> <ol>
-<li>
-<p>在浏览器中打开 Codex</p>
-<p>前往 <a href="https://chatgpt.com/codex" rel="noopener noreferrer" target="_blank">chatgpt.com/codex</a>。您还可以通过标记将任务委托给 Codex <code>@codex</code> 在 GitHub 拉取请求评论中（需要登录 ChatGPT）。</p>
-</li>
-<li>
-<p>设置环境</p>
-<p>在开始第一个任务之前，请为 Codex 设置环境。打开环境设置 <a href="https://chatgpt.com/codex/settings/environments" rel="noopener noreferrer" target="_blank">chatgpt.com/codex</a> 并按照步骤连接GitHub存储库。</p>
-</li>
-<li>
-<p>启动任务并监控进度</p>
-<p>环境准备就绪后，从 <a href="https://chatgpt.com/codex" rel="noopener noreferrer" target="_blank">Codex 界面</a>。您可以通过查看日志来实时监控进度，或者让任务在后台运行。</p>
-<button><img alt="" src="https://developers.openai.com/codex/colorcons/brain.png"/>告诉我这个项目</button><button><img alt="" src="https://developers.openai.com/codex/colorcons/brain.png"/>解释我的应用程序架构的主要故障模式。</button><button><img alt="" src="https://developers.openai.com/codex/colorcons/search.png"/>通过最少的、高可信度的更改查找并修复我的代码库中的错误。</button>
-</li>
-<li>
-<p>检查更改并创建拉取请求</p>
-<p>任务完成后，在差异视图中查看建议的更改。您可以迭代结果或直接在 GitHub 存储库中创建拉取请求。</p>
-<p>Codex 还提供了更改的预览。您可以按原样接受 PR，或在本地查看分支来测试更改：</p>
-<pre><code>git fetch
-git checkout &lt;branch-name&gt;</code></pre>
-<a href="https://developers.openai.com/codex/cloud" rel="noopener noreferrer" target="_blank"> 了解有关 Codex 云的更多信息 </a>
-</li>
-</ol> </div></article>
+<p>请选择一种使用方式：</p>
+<p>Codex 应用目前支持 macOS（Apple Silicon）。</p>
+<ol>
+<li><p>下载并安装 Codex 应用。</p><a href="https://persistent.oaistatic.com/codex-app-prod/Codex.dmg" rel="noopener noreferrer" target="_blank">下载 macOS 版</a><p><a href="https://openai.com/form/codex-app/" rel="noopener noreferrer" target="_blank">获取 Windows 与 Linux 通知</a></p></li>
+<li><p>打开应用并登录 ChatGPT 账号或 OpenAI API 密钥。</p><p>若使用 API 密钥登录，部分功能（例如 <a href="https://developers.openai.com/codex/prompting#threads" rel="noopener noreferrer" target="_blank">云线程</a>）可能不可用。</p></li>
+<li><p>选择一个项目目录并开始会话。</p></li>
+<li><p>选择 <strong>Local</strong>，发送你的第一条消息。</p><button><img alt="" src="https://developers.openai.com/codex/colorcons/brain.png"/>告诉我这个项目</button><button><img alt="" src="https://developers.openai.com/codex/colorcons/gamepad.png"/>在这个仓库里实现一个经典贪吃蛇游戏。</button><button><img alt="" src="https://developers.openai.com/codex/colorcons/search.png"/>用最小且高置信度的改动修复代码库中的问题。</button></li>
+</ol>
+<p>如果需要更多灵感，可查看 <a href="https://developers.openai.com/codex/explore" rel="noopener noreferrer" target="_blank">探索页面</a>。</p>
+<a href="https://developers.openai.com/codex/app" rel="noopener noreferrer" target="_blank">了解 Codex 应用的更多信息</a>
+<p>在你的 IDE 中安装 Codex 扩展。</p>
+<ol>
+<li><p>为编辑器安装扩展：</p><ul><li><a href="vscode:extension/openai.chatgpt" rel="noopener noreferrer" target="_blank">Visual Studio Code</a></li><li><a href="cursor:extension/openai.chatgpt" rel="noopener noreferrer" target="_blank">Cursor</a></li><li><a href="windsurf:extension/openai.chatgpt" rel="noopener noreferrer" target="_blank">Windsurf</a></li><li><a href="https://marketplace.visualstudio.com/items?itemName=openai.chatgpt" rel="noopener noreferrer" target="_blank">Visual Studio Code Insiders</a></li></ul></li>
+<li><p>打开 Codex 面板并登录（ChatGPT 账号或 API 密钥）。</p></li>
+<li><p>开始第一个任务（默认 Agent 模式可读写项目并运行命令）。</p><button><img alt="" src="https://developers.openai.com/codex/colorcons/brain.png"/>告诉我这个项目</button><button><img alt="" src="https://developers.openai.com/codex/colorcons/gamepad.png"/>在这个仓库里实现一个经典贪吃蛇游戏。</button><button><img alt="" src="https://developers.openai.com/codex/colorcons/search.png"/>用最小且高置信度的改动修复代码库中的问题。</button></li>
+<li><p>建议在每个任务前创建 Git 检查点，便于回滚。</p></li>
+</ol>
+<a href="https://developers.openai.com/codex/ide" rel="noopener noreferrer" target="_blank">了解 Codex IDE 扩展</a>
+<p>Codex CLI 支持 macOS、Windows 与 Linux。</p>
+<ol>
+<li><p>安装 CLI：</p><pre><code>npm install -g @openai/codex</code></pre><p>或</p><pre><code>brew install codex</code></pre></li>
+<li><p>运行 <code>codex</code> 并登录（ChatGPT 账号或 API 密钥）。</p></li>
+<li><p>在当前目录下开始任务。</p><button><img alt="" src="https://developers.openai.com/codex/colorcons/brain.png"/>告诉我这个项目</button><button><img alt="" src="https://developers.openai.com/codex/colorcons/gamepad.png"/>在这个仓库里实现一个经典贪吃蛇游戏。</button><button><img alt="" src="https://developers.openai.com/codex/colorcons/search.png"/>用最小且高置信度的改动修复代码库中的问题。</button></li>
+<li><p>建议在每次任务前创建 Git 检查点。</p></li>
+</ol>
+<a href="https://developers.openai.com/codex/cli" rel="noopener noreferrer" target="_blank">了解 Codex CLI</a>
+<p>在浏览器中使用 Codex：<a href="https://chatgpt.com/codex" rel="noopener noreferrer" target="_blank">chatgpt.com/codex</a>。</p>
+<ol>
+<li><p>访问 <a href="https://chatgpt.com/codex" rel="noopener noreferrer" target="_blank">chatgpt.com/codex</a>，或在 GitHub PR 评论中使用 <code>@codex</code>。</p></li>
+<li><p>先配置环境：<a href="https://chatgpt.com/codex/settings/environments" rel="noopener noreferrer" target="_blank">环境设置</a> 中连接你的 GitHub 仓库。</p></li>
+<li><p>启动任务并查看日志进度（可前台监控或后台运行）。</p><button><img alt="" src="https://developers.openai.com/codex/colorcons/brain.png"/>告诉我这个项目</button><button><img alt="" src="https://developers.openai.com/codex/colorcons/brain.png"/>解释这个应用架构的主要故障模式。</button><button><img alt="" src="https://developers.openai.com/codex/colorcons/search.png"/>用最小且高置信度的改动修复代码库中的问题。</button></li>
+<li><p>完成后检查 diff 并创建 PR；也可本地拉取分支测试：</p><pre><code>git fetch
+git checkout &lt;branch-name&gt;</code></pre></li>
+</ol>
+<a href="https://developers.openai.com/codex/cloud" rel="noopener noreferrer" target="_blank">了解 Codex 云</a> </div></article>
 </section>
 <section class="doc-section full-width" id="app-overview">
 <article class="document-content markdown-body"><h1>概览</h1><p class="subtitle">您的 Codex 指挥中心</p><div class="intro-block"> <p>Codex 应用是专为 Codex 线程打造的桌面工作台，内置工作树支持、自动化和 Git 工具。</p>
@@ -546,99 +483,44 @@ git checkout &lt;branch-name&gt;</code></pre>
 <p><strong>字体渲染不正确</strong></p>
 <p>Codex 对浏览调用、集成终端和应用程序内显示的任何其他代码使用相同的字体。您可以在里面配置字体 <a href="codex://settings" rel="noopener noreferrer" target="_blank">Settings</a> 窗格为 <strong>代码字体</strong>.</p> </div></article>
 </section>
- 应用程序功能部分 
 <section class="doc-section full-width" id="app-features">
-<article class="document-content markdown-body"><h1>功能特性</h1><p class="subtitle">您可以使用 Codex 应用程序做什么</p><div class="intro-block"> <p>Codex 应用程序的一个重点是处理 Codex 线程的桌面体验，
-具有内置的工作树支持、自动化和Git功能。</p>
+<article class="document-content markdown-body"><h1>功能特性</h1><p class="subtitle">Codex 应用能做什么</p><div class="intro-block"> <p>Codex 应用是一套围绕线程工作流打造的桌面体验，内置工作树、自动化与 Git 能力。</p>
 <hr/>
-<h2>跨项目的多任务</h2><p>使用 Codex 应用程序窗口跨项目运行任务。为每个项目添加一个项目
-代码库并根据需要在它们之间切换。</p><p>如果您使用过 <a href="https://developers.openai.com/codex/cli" rel="noopener noreferrer" target="_blank">法典 CLI</a>，一个项目就像开始一个
-特定目录中的会话。</p><p>如果您在包含两个或多个应用程序或包的单个存储库中工作，请拆分
-不同的项目分成单独的应用程序项目，因此 <a href="https://developers.openai.com/codex/security" rel="noopener noreferrer" target="_blank">sandbox</a>
-仅包含该项目的文件。</p> <button> <img alt="Codex app showing multiple projects in the sidebar and threads in the main pane" src="https://developers.openai.com/images/codex/app/multitask-light.webp" style="max-height: 400px;"/> <img alt="Codex app showing multiple projects in the sidebar and threads in the main pane" src="https://developers.openai.com/images/codex/app/multitask-dark.webp" style="max-height: 400px;"/> </button>
-<h2>技能支持</h2><p>Codex应用程序支持相同的 <a href="https://developers.openai.com/codex/skills" rel="noopener noreferrer" target="_blank">代理技巧</a> 作为 CLI 和
-IDE 扩展。您还可以查看和探索您的团队拥有的新技能
-通过单击项目侧边的技能来跨不同的创建。</p> <button> <img alt="Skills picker showing available skills in the Codex app" src="https://developers.openai.com/images/codex/app/skill-selector-light.webp" style="max-height: 400px;"/> <img alt="Skills picker showing available skills in the Codex app" src="https://developers.openai.com/images/codex/app/skill-selector-dark.webp" style="max-height: 400px;"/> </button>
-<h2>自动化</h2><p>您还可以将技能与 <a href="https://developers.openai.com/codex/app/automations" rel="noopener noreferrer" target="_blank">automations</a> 执行日常任务
-例如评估遥测中的错误并提交修复或创建最近的报告
-代码库更改。</p> <button> <img alt="Automation creation form with schedule and prompt fields" src="https://developers.openai.com/images/codex/app/create-automation-light.webp" style="max-height: 400px;"/> <img alt="Automation creation form with schedule and prompt fields" src="https://developers.openai.com/images/codex/app/create-automation-dark.webp" style="max-height: 400px;"/> </button>
-<h2>模式</h2><p>每个线程都以选定的模式运行。启动线程时，您可以选择：</p><ul>
-<li><strong>Local</strong>：直接在当前项目目录中工作。</li>
-<li><strong>Worktree</strong>：隔离Git工作树中的更改。 <a href="https://developers.openai.com/codex/app/worktrees" rel="noopener noreferrer" target="_blank">了解更多</a>。</li>
-<li><strong>Cloud</strong>：在配置的云环境中远程运行。</li>
-</ul><p>Both <strong>Local</strong> and <strong>Worktree</strong> 线程将在您的计算机上运行。</p><p>有关完整的术语表和概念，请探索 <a href="https://developers.openai.com/codex/prompting" rel="noopener noreferrer" target="_blank">概念部分</a>。</p> <button> <img alt="New thread composer with Local, Worktree, and Cloud mode options" src="https://developers.openai.com/images/codex/app/modes-light.webp" style="max-height: 400px;"/> <img alt="New thread composer with Local, Worktree, and Cloud mode options" src="https://developers.openai.com/images/codex/app/modes-dark.webp" style="max-height: 400px;"/> </button>
-<h2>内置 Git 工具</h2><p>Codex应用程序直接在应用程序内提供常见的Git功能。</p><p>diff 用来显示本地项目或工作树标记出中的更改的 Git 差异。
-还可以为 Codex 添加内联注释来处理和暂存或恢复特定块或整个文件。</p><p>您还可以直接从本地和工作树任务提交、主动和创建拉取请求
-在Codex应用程序中。</p><p>对于更高级的 Git 任务，请使用 <a href="#integrated-terminal">综合终端</a>.</p> <button> <img alt="Git diff and commit panel with a commit message field" src="https://developers.openai.com/images/codex/app/git-commit-light.webp" style="max-height: 400px;"/> <img alt="Git diff and commit panel with a commit message field" src="https://developers.openai.com/images/codex/app/git-commit-dark.webp" style="max-height: 400px;"/> </button>
-<h2>工作树支持</h2><p>创建新线程时，选择 <strong>Local</strong> or <strong>Worktree</strong>. <strong>Local</strong> 作品
-直接在您的项目中。 <strong>Worktree</strong> 创建一个新的 <a href="https://git-scm.com/docs/git-worktree" rel="noopener noreferrer" target="_blank">Git 工作树</a> 因此更改与您的常规项目保持隔离。</p><p>Use <strong>Worktree</strong> 当你想尝试一个新的想法而不是当前的想法时
-工作，或者当您希望 Codex 在同一环境中任务运行独立任务时
-项目。</p><p>自动化在 Git 存储库的专用后台工作树中运行，对于非版本控制项目则直接在项目目录中运行。</p><p><a href="https://developers.openai.com/codex/app/worktrees" rel="noopener noreferrer" target="_blank">了解有关在 Codex 应用程序中使用工作树的更多信息。</a></p> <button> <img alt="Worktree thread view showing branch actions and worktree details" src="https://developers.openai.com/images/codex/app/worktree-light.webp" style="max-height: 400px;"/> <img alt="Worktree thread view showing branch actions and worktree details" src="https://developers.openai.com/images/codex/app/worktree-dark.webp" style="max-height: 400px;"/> </button>
-<h2>综合终端</h2><p>每个线程都包含一个范围仅限于当前项目的内置语句或者
-工作树。使用应用程序右上角的终端图标或通过
-按 Cmd+J。</p><p>使用终端验证更改、运行脚本并执行 Git 操作
-消耗留下应用程序。</p><p>常见任务包括：</p><ul>
+<h2>跨项目多任务</h2><p>你可以在同一个应用窗口中管理多个项目，并在项目间快速切换线程。</p><p>如果你用过 <a href="https://developers.openai.com/codex/cli" rel="noopener noreferrer" target="_blank">Codex CLI</a>，这里的“项目”概念基本等同于“在某个目录里开启会话”。</p><p>如果是单仓多应用场景，建议按应用拆分项目入口，以便 <a href="https://developers.openai.com/codex/security" rel="noopener noreferrer" target="_blank">sandbox</a> 仅覆盖该应用相关文件。</p> <button> <img alt="Codex app showing multiple projects in the sidebar and threads in the main pane" src="https://developers.openai.com/images/codex/app/multitask-light.webp" style="max-height: 400px;"/> <img alt="Codex app showing multiple projects in the sidebar and threads in the main pane" src="https://developers.openai.com/images/codex/app/multitask-dark.webp" style="max-height: 400px;"/> </button>
+<h2>技能支持</h2><p>Codex 应用与 CLI、IDE 扩展共享同一套 <a href="https://developers.openai.com/codex/skills" rel="noopener noreferrer" target="_blank">Skills</a> 机制。你可以在项目侧边栏直接查看并调用可用技能。</p> <button> <img alt="Skills picker showing available skills in the Codex app" src="https://developers.openai.com/images/codex/app/skill-selector-light.webp" style="max-height: 400px;"/> <img alt="Skills picker showing available skills in the Codex app" src="https://developers.openai.com/images/codex/app/skill-selector-dark.webp" style="max-height: 400px;"/> </button>
+<h2>自动化</h2><p>你可以把技能和 <a href="https://developers.openai.com/codex/app/automations" rel="noopener noreferrer" target="_blank">Automations</a> 组合起来执行周期性任务，例如排查错误、生成日报或同步项目状态。</p> <button> <img alt="Automation creation form with schedule and prompt fields" src="https://developers.openai.com/images/codex/app/create-automation-light.webp" style="max-height: 400px;"/> <img alt="Automation creation form with schedule and prompt fields" src="https://developers.openai.com/images/codex/app/create-automation-dark.webp" style="max-height: 400px;"/> </button>
+<h2>线程模式</h2><p>每个线程都会在指定模式下运行，创建线程时可选择：</p><ul>
+<li><strong>Local</strong>：直接在当前项目目录工作。</li>
+<li><strong>Worktree</strong>：在隔离工作树中处理更改（<a href="https://developers.openai.com/codex/app/worktrees" rel="noopener noreferrer" target="_blank">了解更多</a>）。</li>
+<li><strong>Cloud</strong>：在配置好的云环境中远程运行。</li>
+</ul><p><strong>Local</strong> 与 <strong>Worktree</strong> 都运行在你的本机环境中。概念说明可参考 <a href="https://developers.openai.com/codex/prompting" rel="noopener noreferrer" target="_blank">提示与线程</a>。</p> <button> <img alt="New thread composer with Local, Worktree, and Cloud mode options" src="https://developers.openai.com/images/codex/app/modes-light.webp" style="max-height: 400px;"/> <img alt="New thread composer with Local, Worktree, and Cloud mode options" src="https://developers.openai.com/images/codex/app/modes-dark.webp" style="max-height: 400px;"/> </button>
+<h2>内置 Git 工具</h2><p>应用内可直接查看 diff、添加行内评论、按文件/块暂存或恢复更改，并完成提交流程。</p><p>对更复杂的 Git 操作，建议配合 <a href="#integrated-terminal">集成终端</a> 使用。</p> <button> <img alt="Git diff and commit panel with a commit message field" src="https://developers.openai.com/images/codex/app/git-commit-light.webp" style="max-height: 400px;"/> <img alt="Git diff and commit panel with a commit message field" src="https://developers.openai.com/images/codex/app/git-commit-dark.webp" style="max-height: 400px;"/> </button>
+<h2 id="worktree-support">工作树支持</h2><p>在新线程中选择 <strong>Worktree</strong> 后，Codex 会基于当前仓库创建一个新的 <a href="https://git-scm.com/docs/git-worktree" rel="noopener noreferrer" target="_blank">Git worktree</a>，实现与主工作目录隔离。</p><p>这适合“并行尝试新思路”或“多个任务同时推进”的场景。自动化任务也会优先运行在后台工作树中。</p><p><a href="https://developers.openai.com/codex/app/worktrees" rel="noopener noreferrer" target="_blank">了解在 Codex 应用中使用工作树的完整细节</a>。</p> <button> <img alt="Worktree thread view showing branch actions and worktree details" src="https://developers.openai.com/images/codex/app/worktree-light.webp" style="max-height: 400px;"/> <img alt="Worktree thread view showing branch actions and worktree details" src="https://developers.openai.com/images/codex/app/worktree-dark.webp" style="max-height: 400px;"/> </button>
+<h2 id="integrated-terminal">集成终端</h2><p>每个线程都带有内置终端，范围限制在当前项目或当前工作树。可通过右上角图标或 <code>Cmd+J</code> 打开。</p><p>常见用法包括验证改动、执行脚本和处理 Git 操作：</p><ul>
 <li><code>git status</code></li>
 <li><code>git pull --rebase</code></li>
-<li><code>pnpm test</code> or <code>npm test</code></li>
-<li><code>pnpm run lint</code> 或类似的项目命令</li>
-</ul><p>如果您定期运行任务，则可以定义一个 <strong>action</strong> 在你的里面 <a href="https://developers.openai.com/codex/app/local-environments" rel="noopener noreferrer" target="_blank">本地环境</a> 将快捷按钮添加到Codex应用程序窗口的顶部。</p><p>请注意，Cmd+K 打开 Codex 中的命令选项板
-应用程序。它不会清除终端。要清除终端，请使用 Ctrl+L。</p> <button> <img alt="Integrated terminal drawer open beneath a Codex thread" src="https://developers.openai.com/images/codex/app/integrated-terminal-light.webp" style="max-height: 400px;"/> <img alt="Integrated terminal drawer open beneath a Codex thread" src="https://developers.openai.com/images/codex/app/integrated-terminal-dark.webp" style="max-height: 400px;"/> </button>
-<h2>语音听写</h2><p>使用您的声音来提示 Codex。此时曲家可见时按住 Ctrl+M 并开始讲话。您的声音将被重新调整。编辑调整的提示或点击发送以使 Codex 开始工作。</p> <button> <img alt="Voice dictation indicator in the composer with a transcribed prompt" src="https://developers.openai.com/images/codex/app/voice-dictation-light.webp" style="max-height: 400px;"/> <img alt="Voice dictation indicator in the composer with a transcribed prompt" src="https://developers.openai.com/images/codex/app/voice-dictation-dark.webp" style="max-height: 400px;"/> </button>
-<h2>浮动弹出窗口</h2><p>将活动对话线程弹出到单独的窗口中并将其移动到
-你正在积极工作。这是前端工作的理想选择，您可以在其中保留
-快速迭代时，您的浏览器、编辑器或设计预览附近的线程。</p><p>当您希望弹出窗口保留在顶部时，您还可以将其切换为保留在顶部
-在整个工作流程中可见。</p> <button> <img alt="Pop-out window preview in light mode" src="https://developers.openai.com/images/codex/app/popover-light.webp" style="max-height: 400px;"/> <img alt="Pop-out window preview in light mode" src="https://developers.openai.com/images/codex/app/popover-dark.webp" style="max-height: 400px;"/> </button>
+<li><code>pnpm test</code> 或 <code>npm test</code></li>
+<li><code>pnpm run lint</code> 等项目命令</li>
+</ul><p>你也可以在 <a href="https://developers.openai.com/codex/app/local-environments" rel="noopener noreferrer" target="_blank">本地环境</a> 里预设常用 action，快速执行重复命令。</p><p>注意：<code>Cmd+K</code> 打开命令面板，不会清空终端；清屏请使用 <code>Ctrl+L</code>。</p> <button> <img alt="Integrated terminal drawer open beneath a Codex thread" src="https://developers.openai.com/images/codex/app/integrated-terminal-light.webp" style="max-height: 400px;"/> <img alt="Integrated terminal drawer open beneath a Codex thread" src="https://developers.openai.com/images/codex/app/integrated-terminal-dark.webp" style="max-height: 400px;"/> </button>
+<h2>语音听写</h2><p>按住 <code>Ctrl+M</code> 可启用语音输入。系统会先转写文本，你可编辑后再发送给 Codex。</p> <button> <img alt="Voice dictation indicator in the composer with a transcribed prompt" src="https://developers.openai.com/images/codex/app/voice-dictation-light.webp" style="max-height: 400px;"/> <img alt="Voice dictation indicator in the composer with a transcribed prompt" src="https://developers.openai.com/images/codex/app/voice-dictation-dark.webp" style="max-height: 400px;"/> </button>
+<h2>浮动弹窗</h2><p>可将当前线程弹出为独立窗口，便于与浏览器、IDE 或设计稿并排工作，也可设置始终置顶。</p> <button> <img alt="Pop-out window preview in light mode" src="https://developers.openai.com/images/codex/app/popover-light.webp" style="max-height: 400px;"/> <img alt="Pop-out window preview in light mode" src="https://developers.openai.com/images/codex/app/popover-dark.webp" style="max-height: 400px;"/> </button>
 <hr/>
 <h2>与 IDE 扩展同步</h2>
-<p>如果您有 <a href="https://developers.openai.com/codex/ide" rel="noopener noreferrer" target="_blank">Codex IDE 扩展</a> 安装在你的编辑器中，
-当您的 Codex 应用程序和 IDE 扩展位于相同目录时，它们会自动同步
-项目。</p>
-<p>当它们同步时，您会看到 <strong>IDE环境</strong> Codex应用程序编辑器中的选项。通过“自动上下文”
-启用后，Codex应用程序会跟踪您正在查看的文件，因此您可以间接引用它们（例如
-例如，“这个文件是关于什么的？”）。您还可以在 Codex 应用程序中看到运行的线程
-IDE扩展，反之亦然。</p>
-<p>如果您不确定应用程序是否包含上下文，请将其关闭并询问
-再次提出同样的问题来比较结果。</p>
-<h2>批准和沙盒</h2>
-<p>您的批准和沙箱设置会限制 Codex 操作。</p>
-<ul>
-<li>批准决定 Codex 在运行命令之前暂停请求许可。</li>
-<li>沙箱控制 Codex 可以使用哪些目录和网络访问。</li>
-</ul>
-<p>当您看到“批准一次”或“批准此会话”等提示时，您就
-授予工具执行不同范围的权限。如果您不确定，
-批准最窄的选项并继续迭代。</p>
-<p>默认情况下，Codex范围适用于当前项目。大多数情况下，这就是
-右约束。</p>
-<p>如果您的任务需要跨多个存储库或目录进行工作，请首选
-单独的项目或使用工作树而不要求公开 Codex 的混乱
-在项目根目录之外。</p>
-<p>有关Codex如何处理沙盒的详细信息，请查看 <a href="https://developers.openai.com/codex/security" rel="noopener noreferrer" target="_blank">安全文档</a>。</p>
+<p>安装 <a href="https://developers.openai.com/codex/ide" rel="noopener noreferrer" target="_blank">Codex IDE 扩展</a> 后，当应用与 IDE 打开同一项目目录时，会自动同步线程与上下文。</p>
+<p>开启自动上下文后，应用会感知你在 IDE 中查看的文件，从而在提问时自动补充相关上下文。</p>
+<h2>审批与沙箱</h2>
+<p>审批策略决定命令是否需要人工确认；沙箱策略决定可访问目录与网络范围。</p>
+<p>默认建议保持最小权限，按需放开。详细安全行为见 <a href="https://developers.openai.com/codex/security" rel="noopener noreferrer" target="_blank">安全文档</a>。</p>
 <h2>MCP 支持</h2>
-<p>Codex应用程序、CLI和IDE扩展共享 <a href="https://developers.openai.com/codex/mcp" rel="noopener noreferrer" target="_blank">模型上下文协议 (MCP)</a> 设置。
-如果您已在其中一台服务器中配置了 MCP 服务器，其他服务器会自动采用它们。至
-配置新服务器，打开应用程序设置中的MCP部分，然后启用推荐的服务器
-服务器或将新服务器添加到您的配置中。</p>
+<p>Codex App、CLI、IDE 扩展共享同一套 <a href="https://developers.openai.com/codex/mcp" rel="noopener noreferrer" target="_blank">MCP</a> 配置。你在任一端新增服务器，其他端可直接复用。</p>
 <h2>网页搜索</h2>
-<p>Codex 附带第一方网络搜索工具。对于 Codex IDE 扩展中的本地任务，Codex
-默认情况下启用 Web 搜索并提供来自 Web 搜索缓存的结果。如果您配置了您的
-沙箱用于 <a href="https://developers.openai.com/codex/security" rel="noopener noreferrer" target="_blank">完全访问权限</a>，网络搜索默认为实时结果。看
-<a href="https://developers.openai.com/codex/config-basic" rel="noopener noreferrer" target="_blank">配置基础知识</a> 禁用网络搜索或切换到获取的实时结果
-最新数据。</p>
+<p>本地任务默认可使用网页搜索缓存；若沙箱设为完全访问，则可切换到实时抓取。可在 <a href="https://developers.openai.com/codex/config-basic" rel="noopener noreferrer" target="_blank">配置基础</a> 中调整。</p>
 <h2>图像输入</h2>
-<p>您可以将图像拖放到提示编辑器中，将它们作为上下文包含在内。按住 <code>Shift</code>
-删除图像以将图像添加到上下文中。</p>
-<p>您还可以要求 Codex 查看您系统上的图像。通过提供 Codex 工具来截取屏幕截图
-对于您正在开发的应用程序，Codex 可以验证其正在执行的工作。</p>
+<p>可将图片拖入编辑器作为上下文。你也可以让 Codex 基于截图验证页面或功能是否符合预期。</p>
 <h2>通知</h2>
-<p>默认情况下，当任务完成或需要批准时，Codex应用程序会发送通知
-在后面。</p>
-<p>在Codex应用程序设置中，您可以选择从不发送通知或始终发送通知，即使
-当应用程序成为焦点时。</p>
-<h2>让你的电脑保持清醒</h2>
-<p>由于您的任务可能需要一段时间才能完成，因此您可以让 Codex 应用程序阻止您的计算机
-通过在应用程序设置中启用“运行时防止睡眠”开关来防止进入睡眠状态。</p>
+<p>默认在任务完成或等待审批时通知。可在设置中改为“仅后台通知”或“始终通知”。</p>
+<h2>防止休眠</h2>
+<p>任务运行时间较长时，可在设置里开启“运行期间防止休眠”。</p>
 <h2>参见</h2>
 <ul>
 <li><a href="https://developers.openai.com/codex/app/settings" rel="noopener noreferrer" target="_blank">Settings</a></li>
@@ -725,15 +607,16 @@ IDE扩展，反之亦然。</p>
 </section>
  CLI 部分 
 <section class="doc-section full-width" id="cli">
-<article class="document-content markdown-body"><h1>概览</h1><p class="subtitle">与终端中的Codex码头</p><div class="intro-block"> <p>Codex CLI 是 OpenAI 的编码代理，您可以从终端运行。它可以读取、更改和运行计算机上选定目录中的代码。
-它是 <a href="https://github.com/openai/codex" rel="noopener noreferrer" target="_blank">开源</a> 并内置 Rust 以提高速度和效率。</p>
-<p>Codex 包含在 ChatGPT Plus、Pro、Business、Edu 和 Enterprise 计划中。了解更多关于 <a href="https://developers.openai.com/codex/pricing" rel="noopener noreferrer" target="_blank">包含什么</a>.</p>
+<article class="document-content markdown-body"><h1>概览</h1><p class="subtitle">在终端中使用 Codex</p><div class="intro-block"> <p>Codex CLI 是 OpenAI 的终端编码代理，可在你指定目录中读取、修改并运行代码。它是 <a href="https://github.com/openai/codex" rel="noopener noreferrer" target="_blank">开源</a> 的，并使用 Rust 构建以获得更好的性能。</p>
+<p>Codex 已包含在 ChatGPT Plus、Pro、Business、Edu 与 Enterprise 计划中，详情见 <a href="https://developers.openai.com/codex/pricing" rel="noopener noreferrer" target="_blank">价格说明</a>。</p>
 <br/>
-<h2>CLI设置</h2>
-xs您选择的包管理器<button>npm</button><button>Homebrew</button><ol><li>1<h3>安装</h3><p>安装 Codex CLI $npm/.</p>$npm 安装命令/npm i -g @openai/codex<button>份</button></li><li>2<h3>跑步</h3><p>在终端中运行Codex。它可以检查您的存储库、编辑文件和运行命令。</p>$运行 Codex 命令/codex<button>份</button><p>首次运行Codex时，系统会提示您登录。使用您的ChatGPT账户或API密钥进行身份验证。</p><p>请参阅 <a href="https://developers.openai.com/codex/pricing" rel="noopener noreferrer" target="_blank">定价页面</a> 如果您不确定哪些计划包含法典访问权限。</p></li><li>3<h3>升级</h3><p>新版本的 Codex CLI 会定期发布。请参阅 <a href="https://developers.openai.com/codex/changelog" rel="noopener noreferrer" target="_blank">changelog</a> 获取发行说明。用$npm/升级，跑步：</p>$npm 升级命令/npm i -g @openai/codex@latest<button>份</button></li></ol>
-<p>Codex CLI 可以在 macOS 和 Linux 上使用。 Windows 支持是
-实验性的。为了获得最佳的 Windows 体验，请在 WSL 工作区中使用 Codex
-并关注我们的 <a href="https://developers.openai.com/codex/windows" rel="noopener noreferrer" target="_blank">Windows 设置指南</a>。</p>
+<h2>CLI 设置</h2>
+<ol>
+<li><h3>安装</h3><p>使用 npm：</p><pre><code>npm i -g @openai/codex</code></pre><p>或使用 Homebrew：</p><pre><code>brew install codex</code></pre></li>
+<li><h3>运行并登录</h3><p>在终端执行：</p><pre><code>codex</code></pre><p>首次运行会提示使用 ChatGPT 账号或 API 密钥登录。</p></li>
+<li><h3>升级</h3><p>查看 <a href="https://developers.openai.com/codex/changelog" rel="noopener noreferrer" target="_blank">changelog</a> 获取版本说明。升级命令：</p><pre><code>npm i -g @openai/codex@latest</code></pre></li>
+</ol>
+<p>Codex CLI 支持 macOS 与 Linux。Windows 当前仍偏实验性质，建议在 WSL 中使用，并参考 <a href="https://developers.openai.com/codex/windows" rel="noopener noreferrer" target="_blank">Windows 设置指南</a>。</p>
 <hr/>
 <h2>使用 Codex CLI</h2>
 <a href="https://developers.openai.com/codex/cli/features#running-in-interactive-mode" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>以交互方式运行 Codex</h3><p>Run <code>codex</code> 启动交互式终端 UI (TUI) 会话。</p></article></a><a href="https://developers.openai.com/codex/cli/features#models-reasoning" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>控制模型与推理</h3><p>Use <code>/model</code> 在 GPT-5.3-Codex 和其他可用模型之间切换，或调整推理级别。</p></article></a><a href="https://developers.openai.com/codex/cli/features#image-inputs" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>图像输入</h3><p>附上屏幕截图或设计规范，以便 Codex 在您旁边的提示中阅读它们。</p></article></a><a href="https://developers.openai.com/codex/cli/features#running-local-code-review" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>运行本地代码审查</h3><p>在提交或主动更改之前，让 Codex 代理审查您的代码。</p></article></a><a href="https://developers.openai.com/codex/multi-agent" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>使用多代理</h3><p>实现实验性多代理协作并并行化复杂任务。</p></article></a><a href="https://developers.openai.com/codex/cli/features#web-search" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>网页搜索</h3><p>使用 Codex 搜索网络并获取与您的任务相关的最新信息。</p></article></a><a href="https://developers.openai.com/codex/cli/features#working-with-codex-cloud" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>Codex 云任务</h3><p>启动 Codex Cloud 任务，选择环境，然后应用生成的差异，而退出终端。</p></article></a><a href="https://developers.openai.com/codex/sdk#using-codex-cli-programmatically" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>脚本法典</h3><p>通过使用 Codex 脚本来自动化可重复的工作流程 <code>exec</code> command.</p></article></a><a href="https://developers.openai.com/codex/mcp" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>模型上下文协议</h3><p>通过模型上下文协议 (MCP)，让 Codex 能够访问其他第三方工具和上下文。</p></article></a><a href="https://developers.openai.com/codex/cli/features#approval-modes" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>审批方式</h3><p>在 Codex 编辑或运行命令之前，选择适合您舒适度的批准模式。</p></article></a> </div></article>
@@ -1850,20 +1733,20 @@ Constraints:
 </ul> </div></article>
 </section>
 <section class="doc-section full-width" id="app-commands">
-<article class="document-content markdown-body"><h1>指令</h1><p class="subtitle">Codex应用程序命令和键盘快捷键参考</p><div class="intro-block"> <p>使用这些命令和键盘快捷键来导航 Codex 应用程序。</p>
+<article class="document-content markdown-body"><h1>指令</h1><p class="subtitle">Codex 应用命令与快捷键参考</p><div class="intro-block"> <p>使用以下命令与快捷键可更高效地操作 Codex 应用。</p>
 <h2>键盘快捷键</h2>
-<table><thead><tr><th></th><th>Action</th><th>macOS 快捷方式</th></tr></thead><tbody><tr><td><strong>General</strong></td><td></td><td></td></tr><tr><td></td><td>命令菜单</td><td>Cmd + Shift + P 或 Cmd + K</td></tr><tr><td></td><td>Settings</td><td>cmd + ,</td></tr><tr><td></td><td>打开文件夹</td><td>命令+O</td></tr><tr><td></td><td>返回</td><td>cmd + [</td></tr><tr><td></td><td>向前导航</td><td>命令+]</td></tr><tr><td></td><td>增加字体大小</td><td>Cmd + + 或 Cmd + =</td></tr><tr><td></td><td>减小字体大小</td><td>Cmd + - 或 Cmd + _</td></tr><tr><td></td><td>切换侧边栏</td><td>Cmd + B</td></tr><tr><td></td><td>切换差异面板</td><td>Cmd + 选项 + B</td></tr><tr><td></td><td>切换终端</td><td>Cmd + J</td></tr><tr><td></td><td>清除终端</td><td>Ctrl + L</td></tr><tr><td><strong>Thread</strong></td><td></td><td></td></tr><tr><td></td><td>新话题</td><td>Cmd + N 或 Cmd + Shift + O</td></tr><tr><td></td><td>在话题中查找</td><td>Cmd + F</td></tr><tr><td></td><td>上一个线程</td><td>Cmd + Shift + [</td></tr><tr><td></td><td>下一个话题</td><td>Cmd + Shift + ]</td></tr><tr><td></td><td>Dictation</td><td>Ctrl+M</td></tr></tbody></table>
+<table><thead><tr><th></th><th>操作</th><th>macOS 快捷键</th></tr></thead><tbody><tr><td><strong>通用</strong></td><td></td><td></td></tr><tr><td></td><td>命令面板</td><td>Cmd + Shift + P 或 Cmd + K</td></tr><tr><td></td><td>打开设置</td><td>Cmd + ,</td></tr><tr><td></td><td>打开文件夹</td><td>Cmd + O</td></tr><tr><td></td><td>后退</td><td>Cmd + [</td></tr><tr><td></td><td>前进</td><td>Cmd + ]</td></tr><tr><td></td><td>增大字体</td><td>Cmd + + 或 Cmd + =</td></tr><tr><td></td><td>减小字体</td><td>Cmd + - 或 Cmd + _</td></tr><tr><td></td><td>切换侧边栏</td><td>Cmd + B</td></tr><tr><td></td><td>切换差异面板</td><td>Cmd + Option + B</td></tr><tr><td></td><td>切换终端</td><td>Cmd + J</td></tr><tr><td></td><td>终端清屏</td><td>Ctrl + L</td></tr><tr><td><strong>线程</strong></td><td></td><td></td></tr><tr><td></td><td>新线程</td><td>Cmd + N 或 Cmd + Shift + O</td></tr><tr><td></td><td>线程内查找</td><td>Cmd + F</td></tr><tr><td></td><td>上一个线程</td><td>Cmd + Shift + [</td></tr><tr><td></td><td>下一个线程</td><td>Cmd + Shift + ]</td></tr><tr><td></td><td>语音听写</td><td>Ctrl + M</td></tr></tbody></table>
 <h2>斜杠命令</h2>
-<p>斜线命令让您离开线程编辑器即可控制Codex。可用命令因您的环境和访问权限而异。</p>
+<p>斜杠命令可在不离开编辑器的情况下控制 Codex。可用项会随环境与权限变化。</p>
 <h3>使用斜杠命令</h3>
 <ol>
-<li>在线程编辑器中，输入 <code>/</code>.</li>
-<li>从列表中选择一个命令，或继续键入以进行过滤（例如， <code>/status</code>).</li>
+<li>在线程编辑器输入 <code>/</code>。</li>
+<li>从列表中选择，或继续输入进行过滤（如 <code>/status</code>）。</li>
 </ol>
-<p>您还可以通过键入显式调用技能 <code>$</code> 在线程编辑器中。看 <a href="https://developers.openai.com/codex/skills" rel="noopener noreferrer" target="_blank">Skills</a>.</p>
-<p>启用的技能也会出现在斜杠命令列表中（例如， <code>/imagegen</code>).</p>
+<p>你也可以在编辑器中输入 <code>$skill-name</code> 显式调用技能，详情见 <a href="https://developers.openai.com/codex/skills" rel="noopener noreferrer" target="_blank">Skills</a>。</p>
+<p>已启用技能也会出现在斜杠命令列表中（例如 <code>/imagegen</code>）。</p>
 <h3>可用的斜杠命令</h3>
-<table><thead><tr><th>斜线命令</th><th>Description</th></tr></thead><tbody><tr><td><code>/feedback</code></td><td>打开反馈对话框以提交反馈并可选择包含日志。</td></tr><tr><td><code>/mcp</code></td><td>打开MCP状态以查看连接的服务器。</td></tr><tr><td><code>/plan-mode</code></td><td>切换计划模式以进行多步骤计划。</td></tr><tr><td><code>/review</code></td><td>启动代码审查模式以审查未提交的更改或与基础分支进行比较。</td></tr><tr><td><code>/status</code></td><td>显示线程ID、上下文使用情况和速率限制。</td></tr></tbody></table>
+<table><thead><tr><th>斜杠命令</th><th>说明</th></tr></thead><tbody><tr><td><code>/feedback</code></td><td>提交反馈，可选择附带日志。</td></tr><tr><td><code>/mcp</code></td><td>查看 MCP 连接状态与可用服务器。</td></tr><tr><td><code>/plan-mode</code></td><td>切换计划模式，进行多步骤规划。</td></tr><tr><td><code>/review</code></td><td>发起代码审阅，检查未提交改动或与基线分支比较。</td></tr><tr><td><code>/status</code></td><td>查看线程 ID、上下文占用与速率限制。</td></tr></tbody></table>
 <h2>参见</h2>
 <ul>
 <li><a href="https://developers.openai.com/codex/app/features" rel="noopener noreferrer" target="_blank">Features</a></li>
@@ -2006,220 +1889,133 @@ Summarize the root cause, the fix, and the verification performed. Make it expli
 <pre><code>Check my commits from the last 24h and submit a $recent-code-bugfix.</code></pre> </div></article>
 </section>
 <section class="doc-section full-width" id="app-review">
-<article class="document-content markdown-body"><h1>审查</h1><p class="subtitle">使用 Codex 检查并迭代应用程序内部的更改</p><div class="intro-block"> <p>审核可帮助您了解 Codex 更改的内容、提供有缓冲的反馈并决定保留哪些内容。</p>
-<p>它仅适用于 Git 存储库内的项目。如果你的项目
-还不是 Git 存储库，审阅将会提示您创建一个。</p>
-<h2>它显示了什么变化</h2>
-<p>浏览器反映了 Git 存储库的状态，而不仅仅是 Codex 的状态
-编辑。这意味着将显示：</p>
+<article class="document-content markdown-body"><h1>审查</h1><p class="subtitle">在应用内检查、反馈并迭代改动</p><div class="intro-block"> <p>审查面板用于查看改动、给出精确反馈，并决定哪些改动需要保留。</p>
+<p>该功能仅适用于 Git 仓库项目。如果当前目录还不是 Git 仓库，应用会提示你初始化。</p>
+<h2>会显示哪些改动</h2>
+<p>审查面板基于 Git 状态展示变更，不仅限于 Codex 产生的改动。它会包含：</p>
 <ul>
-<li>食典委做出的修改</li>
-<li>你自己做出的改变</li>
-<li>存储库中任何其他未提交的更改</li>
+<li>Codex 产生的改动</li>
+<li>你手动产生的改动</li>
+<li>仓库内其他未提交改动</li>
 </ul>
-<p>默认情况下，审阅窗格重点关注 <strong>未提交的更改</strong>。您还可以
-将范围切换到：</p>
+<p>默认聚焦 <strong>未提交改动</strong>。你也可以切换为：</p>
 <ul>
-<li><strong>所有分支变更</strong> （与您的基础分支不同）</li>
-<li><strong>最后回合变化</strong> （只是最近的助理回合）</li>
+<li><strong>分支全部改动</strong>（相对基线分支）</li>
+<li><strong>上一轮改动</strong>（仅最近一次助手回合）</li>
 </ul>
-<p>在本地工作时，您还可以在 <strong>Unstaged</strong> and <strong>Staged</strong>
-changes.</p>
-<h2>浏览审阅窗格</h2>
+<p>本地模式下还可以在 <strong>Unstaged</strong> 与 <strong>Staged</strong> 视图间切换。</p>
+<h2>如何浏览审查面板</h2>
 <ul>
-<li>单击文件名通常会在您选择的编辑器中打开该文件。您可以在中选择默认编辑器 <a href="https://developers.openai.com/codex/app/settings" rel="noopener noreferrer" target="_blank">settings</a>.</li>
-<li>单击文件名背景可展开或折叠差异。</li>
-<li>按住 Cmd 选择的同时单击一行将在您的编辑器中打开该行。</li>
-<li>如果您对更改感到满意，您可以 <a href="#staging-and-reverting-files">暂存更改或恢复更改</a> 你不喜欢。</li>
+<li>点击文件名可在默认编辑器中打开文件（编辑器可在 <a href="https://developers.openai.com/codex/app/settings" rel="noopener noreferrer" target="_blank">settings</a> 配置）。</li>
+<li>点击文件行背景可展开/收起对应 diff。</li>
+<li>按住 <code>Cmd</code> 点击行号可直接定位到编辑器中的该行。</li>
+<li>若你只想保留部分改动，可使用 <a href="#staging-and-reverting-files">暂存或恢复</a> 功能进行筛选。</li>
 </ul>
-<h2>内嵌评论以获取反馈</h2>
-<p>内联注释使您可以将反馈直接附加到差异中的特定行。
-这通常是引导 Codex 找到正确解决方案的最快方法。</p>
-<p>要留下内嵌评论：</p>
+<h2>行内评论反馈</h2>
+<p>行内评论可把反馈精确绑定到具体代码行，通常比泛化指令更高效。</p>
+<p>操作步骤：</p>
 <ol>
-<li>打开审阅窗格。</li>
-<li>将鼠标悬停在您要评论的行上。</li>
-<li>单击 <strong>+</strong> 出现的按钮。</li>
-<li>写下您的反馈并提交。</li>
-<li>完成所有反馈后，将消息发送回主题。</li>
+<li>打开审查面板。</li>
+<li>悬停到目标行。</li>
+<li>点击出现的 <strong>+</strong> 按钮。</li>
+<li>输入反馈并提交。</li>
+<li>提交完评论后，再发送一条线程消息让 Codex 执行修改。</li>
 </ol>
-<p>收益注释固定在一行上，Codex 通常可以响应更多内容
-与一般指令相比更准确。</p>
-<p>内嵌评论被视为审阅指导。留下评论后，发送
-明确表达您意图的后续消息，例如“解决
-内联评论并保持最小范围。”</p>
+<p>建议配合明确指令，例如“请处理以上行内评论，并保持最小改动范围”。</p>
 <h2>代码审查结果</h2>
-<p>如果你使用 <code>/review</code> 运行代码审查，评论将直接显示
-内联在审阅窗格中。</p>
+<p>如果你使用 <code>/review</code> 发起审查，结果会直接以内联形式出现在审查面板中。</p>
 <button> <img alt="Inline code review comments displayed in the review pane" src="https://developers.openai.com/images/codex/app/inline-code-review-light.webp" style="max-height: 400px;"/> <img alt="Inline code review comments displayed in the review pane" src="https://developers.openai.com/images/codex/app/inline-code-review-dark.webp" style="max-height: 400px;"/> </button>
-<h2>暂存和恢复文件</h2>
-<p>审阅必须包含 Git 操作，因此您可以在执行之前调整差异
-提交。</p>
-<p>您可以在多个级别暂存、取消暂存或恢复更改：</p>
+<h2 id="staging-and-reverting-files">暂存与恢复文件</h2>
+<p>你可以在提交前，通过 Git 维度精细控制改动：</p>
 <ul>
-<li><strong>整个差异</strong>：使用审阅标题中的操作按钮（例如，
-“全部暂存”或“全部恢复”）</li>
-<li><strong>每个文件</strong>：暂存、取消暂存或恢复单个文件</li>
-<li><strong>每个大块头</strong>：暂存、取消暂存或恢复单个块</li>
+<li><strong>整批改动</strong>：在审查头部使用“全部暂存/全部恢复”。</li>
+<li><strong>文件级</strong>：对单文件进行暂存、取消暂存、恢复。</li>
+<li><strong>块级</strong>：对单个 hunk 进行暂存、取消暂存、恢复。</li>
 </ul>
-<p>当您想要接受部分工作时使用暂存，并在需要时恢复
-丢弃它。</p>
-<h3>部分阶段状态</h3>
-<p>Git 可以表示相同文件中的暂存和未暂存更改。
-发生这种情况时，看起来可能会显示“同一个文件两个”
-分阶段和非分阶段视图。这是正常的 Git 行为。</p> </div></article>
+<p>当你只接受部分改动时，建议优先使用块级操作。</p>
+<h3>部分暂存状态说明</h3>
+<p>同一文件同时存在已暂存与未暂存改动是 Git 的正常行为，不是异常。</p> </div></article>
 </section>
 <section class="doc-section full-width" id="app-settings">
-<article class="document-content markdown-body"><h1>设置</h1><p class="subtitle">配置 Codex 应用程序行为和首选项</p><div class="intro-block"> <p>使用设置面板来调整Codex应用程序的行为方式、打开文件的方式、
-它以及如何连接到工具。打开 <a href="codex://settings" rel="noopener noreferrer" target="_blank"><strong>Settings</strong></a> 从应用程序菜单或
-按 Cmd+,。</p>
-<h2>一般的</h2>
-<p>选择文件打开位置以及线程中显示的命令输出数量。您还可以
-需要 Cmd+Enter 来显示多行提示或在运行时阻止睡眠
-线程运行。</p>
-<h2>外貌</h2>
-<p>选择一个主题，决定是否是实心的，并调整UI或代码字体。字体
-选择适用于整个应用程序，包括差异审查面板和终端。</p>
+<article class="document-content markdown-body"><h1>设置</h1><p class="subtitle">配置 Codex 应用行为与偏好</p><div class="intro-block"> <p>通过设置面板，你可以调整应用行为、文件打开方式以及工具连接方式。可从应用菜单进入 <a href="codex://settings" rel="noopener noreferrer" target="_blank"><strong>Settings</strong></a>，或使用 <code>Cmd+,</code> 快捷键。</p>
+<h2>通用</h2>
+<p>可配置文件默认打开位置、线程中命令输出展示方式，以及是否要求 <code>Cmd+Enter</code> 才发送多行提示。你也可以启用“任务运行时防止休眠”。</p>
+<h2>外观</h2>
+<p>可切换主题、调整 UI 字体与代码字体。字体设置会同步作用于差异审阅与集成终端。</p>
 <h2>通知</h2>
-<p>选择何时出现转弯完成通知，以及应用程序是否应提示
-通知权限。</p>
+<p>可设置何时发送“任务完成/等待审批”通知，以及是否提示系统通知权限。</p>
 <h2>代理配置</h2>
-<p>应用程序中的 Codex 代理继承与 IDE 和 CLI 扩展相同的配置。
-使用应用程序内控件进行常用设置，或编辑 <code>config.toml</code> 对于高级
-选项。看 <a href="https://developers.openai.com/codex/security" rel="noopener noreferrer" target="_blank">食品法典安全</a> and
-<a href="https://developers.openai.com/codex/config-basic" rel="noopener noreferrer" target="_blank">配置基础知识</a> 了解更多详情。</p>
-<h2>git</h2>
-<p>使用 Git 设置标准化分支命名并选择 Codex 是否使用强制
-推动。
-您还可以设置 Codex 用于生成提交消息和拉取请求描述的提示。</p>
-<h2>集成和MCP</h2>
-<p>通过MCP（模型上下文协议）连接外部工具。启用推荐服务器的或
-添加您自己的。如果服务器需要OAuth，应用程序将启动身份验证流程。这些设置
-也适用于 Codex CLI 和 IDE 扩展，因为 MCP 配置位于
-<code>config.toml</code>。请参阅 <a href="https://developers.openai.com/codex/mcp" rel="noopener noreferrer" target="_blank">模型上下文协议文档</a> 了解详情。</p>
+<p>应用中的代理配置与 IDE/CLI 共享。常用项可在界面直接设置；高级项可编辑 <code>config.toml</code>。详情参考 <a href="https://developers.openai.com/codex/security" rel="noopener noreferrer" target="_blank">安全文档</a> 与 <a href="https://developers.openai.com/codex/config-basic" rel="noopener noreferrer" target="_blank">配置基础</a>。</p>
+<h2>Git</h2>
+<p>可设置分支命名规范、是否允许强制推送，并配置提交信息与 PR 描述生成提示。</p>
+<h2>集成与 MCP</h2>
+<p>可通过 MCP（模型上下文协议）连接外部服务。你可以启用推荐服务器或添加自定义服务器；如需 OAuth，应用会自动引导授权流程。相关配置写入 <code>config.toml</code>，并与 CLI/IDE 共享。</p>
 <h2>个性化</h2>
-<p>Choose <strong>Friendly</strong>, <strong>Pragmatic</strong>， 或者 <strong>None</strong> 作为你的默认个性。使用
-<strong>None</strong> 禁用个性指令。您可以随时更新此内容。</p>
-<p>您还可以添加自己的自定义说明。编辑自定义说明会更新您的
-<a href="https://developers.openai.com/codex/guides/agents-md" rel="noopener noreferrer" target="_blank">个人指示 <code>AGENTS.md</code></a>.</p>
-<h2>已存档的话题</h2>
-<p>The <strong>已存档的话题</strong> 部分列出了已存档的聊天记录以及日期和项目
-上下文。使用 <strong>Unarchive</strong> 恢复一个线程。</p> </div></article>
+<p>可设置默认对话风格：<strong>Friendly</strong>、<strong>Pragmatic</strong> 或 <strong>None</strong>。选择 <strong>None</strong> 表示关闭风格注入。</p>
+<p>你还可以维护自定义指令；这会同步更新你的 <a href="https://developers.openai.com/codex/guides/agents-md" rel="noopener noreferrer" target="_blank">个人 <code>AGENTS.md</code></a>。</p>
+<h2>已归档线程</h2>
+<p><strong>已归档线程</strong> 区域会列出历史归档会话及其项目上下文。点击 <strong>Unarchive</strong> 可恢复线程。</p> </div></article>
 </section>
 <section class="doc-section full-width" id="app-worktrees">
-<article class="document-content markdown-body"><h1>工作树</h1><p class="subtitle">利用 Codex 应用程序中的 Git 工作树让 Codex 工具工作</p><div class="intro-block"> <p>在Codex应用程序中，工作树让Codex在同一个项目中运行多个独立任务，而不会相互干扰。对于Git存储库来说， <a href="https://developers.openai.com/codex/app/automations" rel="noopener noreferrer" target="_blank">automations</a> 在专用的后台工作树上运行，这样它们就不会与您正在进行的工作发生冲突。在非版本控制的项目中，自动化直接在项目目录中运行。您还可以手动在工作树上启动线程。</p>
+<article class="document-content markdown-body"><h1>工作树</h1><p class="subtitle">使用 Git Worktree 并行推进多个任务</p><div class="intro-block"> <p>在 Codex 应用中，工作树可让你在同一仓库中并行运行多个线程，彼此互不干扰。对于 Git 项目，<a href="https://developers.openai.com/codex/app/automations" rel="noopener noreferrer" target="_blank">Automations</a> 默认在后台专用工作树中执行。</p>
 <h2>什么是工作树</h2>
-<p>工作树仅适用于属于 Git 存储库的项目，因为它们使用 <a href="https://git-scm.com/docs/git-worktree" rel="noopener noreferrer" target="_blank">Git 工作树</a> 在引擎盖下。工作树允许您创建存储库的第二个副本（“签出”）。每个工作树都有自己的存储库中每个文件的副本，但它们都共享相同的元数据（<code>.git</code> 文件夹）有关提交、分支等。这允许您并行签出并处理多个分支。</p>
-<h2>术语</h2>
+<p>工作树基于 <a href="https://git-scm.com/docs/git-worktree" rel="noopener noreferrer" target="_blank">Git worktree</a>：它为同一仓库创建多个独立检出目录，共享提交历史，但各自拥有独立工作目录。</p>
+<h2>何时使用</h2>
 <ul>
-<li><strong>本地结帐</strong>：您创建的存储库。有时简称为 <strong>Local</strong> 在Codex应用程序中。</li>
-<li><strong>Worktree</strong>: 一个 <a href="https://git-scm.com/docs/git-worktree" rel="noopener noreferrer" target="_blank">Git 工作树</a> 这是通过 Codex 应用程序中的本地结账创建的。</li>
+<li>你想并行推进多个需求，且避免相互覆盖改动。</li>
+<li>你希望让 Codex 在隔离环境中尝试高风险改动。</li>
+<li>你需要让自动化任务在后台长期运行。</li>
 </ul>
-<h2>为什么使用工作树</h2>
+<h2>快速开始</h2>
 <ol>
-<li>与 Codex 工具工作，而不会在工作时交互干扰。</li>
-<li>启动与您当前工作无关的线程
+<li>在新线程创建时选择 <strong>Worktree</strong> 模式。</li>
+<li>选择起始分支（如 <code>main</code>/<code>master</code> 或功能分支）。</li>
+<li>提交提示，Codex 会创建对应工作树并开始执行。</li>
+<li>完成后按需“在工作树内继续”或“同步到本地检出”。</li>
+</ol>
+<h2 id="verifying-and-pushing-workflow-changes">验证并推送改动</h2>
+<p>Git 同一时间只允许一个分支在一个检出目录里保持活动状态。因此，推荐两条路径：</p>
+<ol>
+<li id="option-1-working-on-the-worktree">直接在工作树中验证和提交：适合在隔离目录内就能完成测试的项目。</li>
+<li id="option-2-working-in-your-local-checkout">同步回本地检出再验证：适合需要主工作目录环境的项目。</li>
+</ol>
+<h3>路径 1：在工作树中完成</h3>
+<p>你可以在该线程中直接创建分支、提交改动、推送远端并发起 PR。</p> <button> <img alt="Worktree thread view with branch controls and worktree details" src="https://developers.openai.com/images/codex/app/worktree-light.webp" style="max-height: 400px;"/> <img alt="Worktree thread view with branch controls and worktree details" src="https://developers.openai.com/images/codex/app/worktree-dark.webp" style="max-height: 400px;"/> </button>
+<h3>路径 2：同步到本地检出</h3>
+<p>线程标题中可选择“与本地同步”，并选择同步方向与策略：</p>
 <ul>
-<li>用于对您希望Codex启动但尚未准备好测试的工作进行排队的暂存区域。</li>
-</ul>
-</li>
-</ol>
-<h2>入门</h2>
-<p>工作树需要 Git 存储库。确保您选择的项目位于其中。</p>
-<ol>
-<li>
-<p>选择“工作树”</p>
-<p>在新线程视图中，选择 <strong>Worktree</strong> 在作曲家之下。
-或者，选择一个 <a href="https://developers.openai.com/codex/app/local-environments" rel="noopener noreferrer" target="_blank">本地环境</a> 运行工作树的设置脚本。</p>
-</li>
-<li>
-<p>选择起始分支</p>
-<p>在编辑器下方，选择基于工作树的 Git 分支。这可以是你的 <code>main</code> / <code>master</code> 分支、功能分支或具有未暂存本地更改的当前分支。</p>
-</li>
-<li>
-<p>提交您的提示</p>
-<p>提交您的任务，Codex 将根据您选择的分支创建一个 Git 工作树。默认情况下，Codex 工作在 <a href="https://git-scm.com/docs/git-checkout#_detached_head" rel="noopener noreferrer" target="_blank">“独立的头”</a>.</p>
-</li>
-<li>
-<p>验证您的更改</p>
-<p>准备好后，请遵循其中一条路径 <a href="#verifying-and-pushing-workflow-changes">below</a>
-根据您的项目和流程。</p>
-</li>
-</ol>
-<h2>验证并推送工作流程变更</h2>
-<p>工作树的外观和感觉很像您本地的结帐处。但 <strong>Git 只允许一次在一个地方签出一个分支</strong>。如果你检查工作树上的一个分支，你 <strong>不能</strong> 同时在本地结帐处查看，反之亦然。</p>
-<p>因此，您选择所需的验证方式并提交 Codex 在工作树上进行的更改：</p>
-<ol>
-<li><a href="#option-1-working-on-the-worktree">专门在工作树上工作</a>。当您可以直接在工作树上验证更改时，此路径效果最佳，例如，因为您使用使用安装了依赖项和工具 <a href="https://developers.openai.com/codex/app/local-environments" rel="noopener noreferrer" target="_blank">本地环境设置脚本</a>.</li>
-<li><a href="#option-2-working-in-your-local-checkout">在当地结帐处工作</a>。当您需要将更改带回主结账时，请使用此选项，例如因为您只能运行应用程序的一个实例。</li>
-</ol>
-<h3>选项 1：在工作树上工作</h3>
-<p>如果您想仅将更改保留在工作树上，请使用以下命令将工作树变成分支： <strong>在这里创建分支</strong> 线程标题中的按钮。</p><p>从这里，您可以提交更改、将分支活跃到远程存储库，并在 GitHub 上打开拉取请求。</p><p>您可以使用标题中的“打开”按钮将 IDE 打开到工作树、使用集成终端或需要从工作树目录执行的任何其他操作。</p> <button> <img alt="Worktree thread view with branch controls and worktree details" src="https://developers.openai.com/images/codex/app/worktree-light.webp" style="max-height: 400px;"/> <img alt="Worktree thread view with branch controls and worktree details" src="https://developers.openai.com/images/codex/app/worktree-dark.webp" style="max-height: 400px;"/> </button>
-<p>请记住，如果您在工作树上创建分支，则无法在任何其他工作树中检出它，包括本地检出。</p>
-<p>如果您打算继续在这个分支上工作，您可以 <a href="#adding-a-worktree-to-the-sidebar">将其添加到侧边栏</a>。否则，请在完成后存档线程，以便可以删除工作树。</p>
-<h3>选项 2：在本地结帐处工作</h3>
-<p>如果您不想直接在工作树上验证更改，而是在本地结账上检查它们，请单击 <strong>与本地同步</strong> 在你的线程的标题中。</p><p>您将看到创建新分支或同步到现有分支的选项。</p><p>您可以随时与本地同步。为此，请单击 <strong>与本地同步</strong> 再次在标题中。从这里，您可以选择同步方向（到本地或从本地）和同步方法：</p><ul>
-<li><strong>Overwrite</strong>：使目标签出与源签出的文件和提交历史记录匹配。</li>
-<li><strong>Apply</strong>：计算自最近的共享提交以来的源更改，并将该补丁应用到目标签出，保留目标提交历史记录，同时引入源代码更改（不是源提交）。</li>
+<li><strong>Overwrite</strong>：目标目录完全覆盖为源目录状态。</li>
+<li><strong>Apply</strong>：仅应用变更补丁，尽量保留目标目录已有历史。</li>
 </ul> <button> <img alt="Sync worktree dialog with options to apply or pull changes" src="https://developers.openai.com/images/codex/app/sync-worktree-light.webp" style="max-height: 400px;"/> <img alt="Sync worktree dialog with options to apply or pull changes" src="https://developers.openai.com/images/codex/app/sync-worktree-dark.webp" style="max-height: 400px;"/> </button>
-<p>您可以创建多个工作树并将它们同步到同一功能分支，以将工作拆分为并行线程。</p>
-<p>在某些情况下，工作树上的更改可能会与本​​地结账上的更改发生冲突，例如测试先前工作树时的更改。在这些情况下，您可以使用 <strong>覆盖本地</strong> 选项重置以前的更改并干净地应用您的工作树更改。</p>
-<p>由于此过程使用 Git，操作因此属于该过程的任何文件 <code>.gitignore</code> 同步过程中不会传输文件。</p>
-<h2>将工作树添加到侧边栏</h2>
-<p>如果您选择上面的选项一（在工作树上工作），则在工作树上创建分支后，标题中会出现一个选项，用于将工作树添加到侧边栏。这将工作树提升为永久的家。当您这样做时，它永远不会被自动删除，您甚至可以从同一工作树启动新线程。</p>
-<h2>高级细节</h2>
-<h3>Codex 如何为您管理工作树</h3>
-<p>Codex 将在中创建一个工作树 <code>$CODEX_HOME/worktrees</code>。起始提交将是 <code>HEAD</code> 启动线程时选择的分支的提交。如果您选择具有本地更改的分支，则未提交的更改也将应用于工作树。工作树将 <em>not</em> 作为分支签出。它将在一个 <a href="https://git-scm.com/docs/git-checkout#_detached_head" rel="noopener noreferrer" target="_blank">分离头</a> 状态。这意味着您可以创建多个工作树而不会污染您的分支。</p>
-<h3>分支机构限制</h3>
-<p>假设 Codex 完成了工作树上的一些工作，并且您选择创建一个 <code>feature/a</code> 使用它的分支 <strong>在这里创建分支</strong>。现在，您想在本地结帐处尝试一下。如果您尝试签出该分支，您将收到以下错误：</p>
-<pre><code>fatal: 'feature/a' is already used by worktree at '&lt;WORKTREE_PATH&gt;'</code></pre>
-<p>要解决此问题，您需要检查另一个分支而不是 <code>feature/a</code> 在工作树上。</p>
-<p>如果您计划在本地检查分支，请尝试工作流程 2 (<a href="#option-2-working-in-your-local-checkout">与本地同步</a>).</p>
-为什么存在这个限制<p>Git 阻止同一分支同时在工作树中检出，因为多个分支代表单个可变引用（<code>refs/heads/&lt;name&gt;</code>）其含义是工作树的“当前签出状态”。</p><p>当签出分支时，Git 将其 HEAD 视为该工作树所拥有，并要求提交、重置、变基和合并等操作以明确定义的序列化方式推进该引用。多个工作树同时签出同一分支会产生歧义和竞争条件，工作树的操作会围绕该更新分支引用，从而可能导致条件丢失、索引冲突或冲突解决不明确。</p><p>通过强制允许每个工作树一个分支规则，Git 保证每个分支都有一个权威的工作副本，同时仍然通过分离的 HEAD 或单独的分支安全地引用相同的提交。</p>
-<h3>工作树清理</h3>
-<p>工作树可能会占用大量磁盘空间。每个人都有自己的一组存储库文件、依赖项、构建存储等。因此，Codex 应用程序尝试将工作树的数量保持在合理的限制范围内。</p>
-<p>如果出现以下情况，工作树将永远不会被清理：</p>
-<ul>
-<li>固定对话与其绑定</li>
-<li>工作树已添加到侧边栏（见上文）</li>
-</ul>
-<p>在以下情况下，工作树有资格进行清理：</p>
-<ul>
-<li>已经超过 4 天了</li>
-<li>您有超过 10 个工作树</li>
-</ul>
-<p>当这些满足条件之一时，Codex 会在您归档线程时自动清理工作树，或者在应用程序启动时如果发现没有关联线程的工作树。</p>
-<p>在清理工作树之前，Codex 会保存工作的快照，您可以在新工作树中的任意点恢复该快照。如果您在清理工作树后打开对话框，您将看到恢复它的选项。</p>
+<h2 id="adding-a-worktree-to-the-sidebar">将工作树固定到侧边栏</h2>
+<p>当某个工作树需要长期保留时，可将其加入侧边栏。被固定的工作树不会被自动清理，并可继续用于新线程。</p>
+<h2>工作树清理策略</h2>
+<p>工作树会占用磁盘空间。未固定且长时间不活跃的工作树会被自动回收。回收前会保存快照，以便后续恢复。</p>
 <h2>常见问题</h2>
-我可以控制工作树的创建位置吗？<p>不是今天。 Codex 在下面创建工作树 <code>$CODEX_HOME/worktrees</code> 所以它可以
-一致地管理它们。</p>
-我可以在工作树之间移动会话吗？<p>还没有。如果需要更改环境，则必须在中启动新线程
-目标环境并重述提示。您可以使用向上箭头键
-在作曲家中尝试恢复您的提示。</p>
-如果删除工作树，线程会发生什么？<p>即使简单的工作树目录，线程也可以保留在您的历史记录中
-被清理干净了。但是，Codex在执行之前会保存工作树的快照
-如果您重新打开关联的线程，请清理它并恢复它
-和它。</p> </div></article>
+<h3>可以自定义工作树目录吗？</h3>
+<p>目前不支持。Codex 默认使用 <code>$CODEX_HOME/worktrees</code> 统一管理。</p>
+<h3>可以在线程间移动工作树吗？</h3>
+<p>当前不支持直接迁移。建议在目标环境新建线程并复用提示。</p>
+<h3>工作树被清理后会丢失线程吗？</h3>
+<p>不会。线程历史会保留；若存在快照，可在重新打开线程时恢复。</p> </div></article>
 </section>
 <section class="doc-section full-width" id="app-local">
-<article class="document-content markdown-body"><h1>本地环境</h1><p class="subtitle">为工作树配置常见操作和设置脚本</p><div class="intro-block"> <p>本地环境允许您配置工作树的设置步骤以及项目的常见操作。</p>
-<p>您可以通过以下方式配置本地环境 <a href="codex://settings" rel="noopener noreferrer" target="_blank">Codex 应用程序设置</a> 同样。您的项目可以将生成的文件签入的Git存储库中以与其他人共享。</p>
-<p>Codex 计量存储在 <code>.codex</code> 根目录下的文件夹
-项目。如果您的存储库包含多个项目，请打开该项目
-包含共享的目录 <code>.codex</code> folder.</p>
+<article class="document-content markdown-body"><h1>本地环境</h1><p class="subtitle">为工作树配置初始化脚本与常用操作</p><div class="intro-block"> <p>本地环境用于配置工作树启动时的准备步骤，以及项目级常用命令。</p>
+<p>你可以在 <a href="codex://settings" rel="noopener noreferrer" target="_blank">Codex 应用设置</a> 中管理本地环境，也可以将生成文件提交到仓库，供团队共享。</p>
+<p>Codex 会在项目根目录下使用 <code>.codex</code> 文件夹存放相关配置。若仓库包含多个子项目，请在包含共享 <code>.codex</code> 的目录打开项目。</p>
 <h2>设置脚本</h2>
-<p>由于工作树与本地任务在不同的目录中运行，因此您的项目未完全设置，并且可能缺少未签入存储库的依赖项或文件。当 Codex 在新线程开始时创建新工作树时，脚本安装会自动运行。</p>
-<p>使用此脚本运行配置环境所需的任何命令，例如安装依赖项或运行构建过程。</p>
-<p>例如，对于 TypeScript 项目，您可能需要安装依赖项并使用安装脚本进行初始化构建：</p>
+<p>工作树与本地目录是不同检出路径，可能缺少未提交文件或本地依赖。每次新建工作树线程时，设置脚本会自动执行。</p>
+<p>可在脚本中写入环境准备命令，例如安装依赖、生成构建产物。</p>
+<p>例如 TypeScript 项目可配置为：</p>
 <pre><code>npm install
 npm run build</code></pre>
-<p>如果您的设置是特定于平台的，请定义 macOS、Windows 或 Linux 的设置脚本以覆盖默认设置。</p>
-<h2>行动</h2>
-<p>使用操作来定义常见任务，例如启动应用程序的开发服务器或运行测试套件。这些操作显示在Codex应用程序顶部栏，方便快速访问。这些操作将在应用程序的内部运行 <a href="https://developers.openai.com/codex/app/features#integrated-terminal" rel="noopener noreferrer" target="_blank">综合终端</a>.</p><p>操作有助于防止您键入常见操作，例如触发项目构建或启动开发服务器。如需一次性快速调试，您可以直接使用集成终端。</p> <button> <img alt="Project actions list shown in Codex app settings" src="https://developers.openai.com/images/codex/app/actions-light.webp" style="max-height: 400px;"/> <img alt="Project actions list shown in Codex app settings" src="https://developers.openai.com/images/codex/app/actions-dark.webp" style="max-height: 400px;"/> </button>
-<p>例如，对于 Node.js 项目，您可以创建一个包含以下脚本的“运行”操作：</p>
+<p>如果命令与平台相关，可分别配置 macOS、Windows、Linux 脚本覆盖默认值。</p>
+<h2>操作（Actions）</h2>
+<p>你可以定义常用操作（例如启动开发服务、运行测试套件）。这些操作会显示在应用顶部栏，并在 <a href="https://developers.openai.com/codex/app/features#integrated-terminal" rel="noopener noreferrer" target="_blank">集成终端</a> 中执行。</p>
+<p>对于高频命令，Actions 可显著减少重复输入；临时排查场景仍可直接使用终端。</p> <button> <img alt="Project actions list shown in Codex app settings" src="https://developers.openai.com/images/codex/app/actions-light.webp" style="max-height: 400px;"/> <img alt="Project actions list shown in Codex app settings" src="https://developers.openai.com/images/codex/app/actions-dark.webp" style="max-height: 400px;"/> </button>
+<p>例如 Node.js 项目可添加一个 “Run” 操作：</p>
 <pre><code>npm start</code></pre>
-<p>如果操作的命令是特定于平台的，请为 macOS、Windows 和 Linux 定义特定于平台的脚本。</p>
-<p>要识别您的操作，请选择与每个操作关联的图标。</p> </div></article>
+<p>同样支持按平台配置不同命令，并可为每个操作选择图标便于识别。</p> </div></article>
 </section>
  IDE 功能部分 
 <section class="doc-section full-width" id="ide-features">
@@ -7939,7 +7735,7 @@ Create template_modernization_execplan.md that a team can copy when modernizing 
                     { id: 'cloud', label: 'Cloud', subtitle: '在浏览器中使用 Codex', nodes: pickNodes(cliEnd + 1, cloudEnd) }
                 ];
 
-                const defaultTab = 'ide';
+                const defaultTab = 'app';
 
                 const tabs = document.createElement('div');
                 tabs.className = 'quickstart-tabs';
@@ -8026,7 +7822,7 @@ Create template_modernization_execplan.md that a team can copy when modernizing 
                 }
             }
 
-            function resolveInternalSectionFromHref(rawHref) {
+            function resolveInternalTargetFromHref(rawHref) {
                 if (!rawHref) {
                     return null;
                 }
@@ -8051,28 +7847,39 @@ Create template_modernization_execplan.md that a team can copy when modernizing 
                     return null;
                 }
 
+                let sectionId = null;
                 if (pathToSection.has(path)) {
-                    return pathToSection.get(path);
+                    sectionId = pathToSection.get(path);
                 }
 
-                for (const candidate of sortedPaths) {
-                    if (path === candidate || path.startsWith(`${candidate}/`)) {
-                        return pathToSection.get(candidate);
+                if (!sectionId) {
+                    for (const candidate of sortedPaths) {
+                        if (path === candidate || path.startsWith(`${candidate}/`)) {
+                            sectionId = pathToSection.get(candidate);
+                            break;
+                        }
                     }
                 }
 
-                return null;
+                if (!sectionId) {
+                    return null;
+                }
+
+                const hashId = url.hash ? decodeURIComponent(url.hash.slice(1)) : '';
+                const anchorId = hashId && document.getElementById(hashId) ? hashId : null;
+                return { sectionId, anchorId };
             }
 
             function normalizeInternalLinks() {
                 document.querySelectorAll('a[href]').forEach(anchor => {
                     const href = anchor.getAttribute('href');
-                    const sectionId = resolveInternalSectionFromHref(href);
-                    if (!sectionId) {
+                    const target = resolveInternalTargetFromHref(href);
+                    if (!target) {
                         return;
                     }
-                    anchor.setAttribute('href', `#${sectionId}`);
-                    anchor.dataset.target = anchor.dataset.target || sectionId;
+                    const finalHash = target.anchorId || target.sectionId;
+                    anchor.setAttribute('href', `#${finalHash}`);
+                    anchor.dataset.target = anchor.dataset.target || target.sectionId;
                     anchor.removeAttribute('target');
                     anchor.removeAttribute('rel');
                 });
@@ -8087,6 +7894,33 @@ Create template_modernization_execplan.md that a team can copy when modernizing 
                     anchor.removeAttribute('target');
                     anchor.removeAttribute('rel');
                 });
+            }
+
+            function openHashTarget(rawHash) {
+                if (!rawHash) {
+                    return false;
+                }
+                const targetId = rawHash.startsWith('#') ? rawHash.slice(1) : rawHash;
+                if (!targetId) {
+                    return false;
+                }
+                const targetEl = document.getElementById(targetId);
+                if (!targetEl) {
+                    return false;
+                }
+
+                const targetSection = targetEl.classList.contains('doc-section') ? targetEl : targetEl.closest('.doc-section');
+                if (!targetSection) {
+                    return false;
+                }
+
+                showSection(targetSection.id);
+                if (!targetEl.classList.contains('doc-section')) {
+                    requestAnimationFrame(() => {
+                        targetEl.scrollIntoView({ block: 'start' });
+                    });
+                }
+                return true;
             }
 
             removeOrphanTextNodes();
@@ -8140,23 +7974,17 @@ Create template_modernization_execplan.md that a team can copy when modernizing 
                 if (!anchor || anchor.classList.contains('with-arrow')) {
                     return;
                 }
-                const targetId = anchor.getAttribute('href').slice(1);
-                if (!targetId) {
-                    return;
-                }
-                const targetSection = document.getElementById(targetId);
-                if (!targetSection || !targetSection.classList.contains('doc-section')) {
-                    return;
-                }
-
                 const isModifiedClick = e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button === 1;
                 if (isModifiedClick) {
                     return;
                 }
 
+                const hash = anchor.getAttribute('href');
+                if (!openHashTarget(hash)) {
+                    return;
+                }
                 e.preventDefault();
-                showSection(targetId);
-                window.history.pushState(null, null, `#${targetId}`);
+                window.history.pushState(null, null, hash);
             });
 
             // 侧栏搜索
@@ -8244,17 +8072,18 @@ Create template_modernization_execplan.md that a team can copy when modernizing 
 
             // Handle initial direct load
             if (window.location.hash) {
-                const pureHash = window.location.hash.substring(1);
-                showSection(pureHash);
+                const handled = openHashTarget(window.location.hash);
+                if (!handled) {
+                    showSection('overview');
+                }
             } else {
                 showSection('overview');
             }
 
             // Handle hash changes
             window.addEventListener('hashchange', () => {
-                const pureHash = window.location.hash.substring(1);
-                if (pureHash) {
-                    showSection(pureHash);
+                if (window.location.hash) {
+                    openHashTarget(window.location.hash);
                 }
             });
         });
