@@ -168,7 +168,7 @@
                         <li><a href="#agents-md" class="doc-link" data-target="agents-md">AGENTS.md</a></li>
                         <li><a href="#mcp" class="doc-link" data-target="mcp">MCP 协议</a></li>
                         <li><a href="#skills" class="doc-link" data-target="skills">自定义技能</a></li>
-                        <li><a href="#multi-agents" class="doc-link" data-target="multi-agents">多智能体</a></li>
+                        <li><a href="#config-multi-agent" class="doc-link" data-target="config-multi-agent">多智能体</a></li>
                     </ul>
                 </div>
 
@@ -785,102 +785,74 @@ codex login</code></pre>
                 <!-- CONFIG FILE SECTION -->
                 <section id="config-file" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>配置文件</h1>
-                        <p class="subtitle">深度定制 Codex 的行为和偏好。</p>
+                        <h1>配置基础</h1>
+                        <p class="subtitle">先理解配置层级，再按需调默认模型、审批策略、沙箱与功能开关。</p>
 
                         <div class="intro-block">
-                            <h2>配置文件位置</h2>
+                            <p>Codex 会从多个位置读取配置。你的个人默认值通常放在 <code>~/.codex/config.toml</code>；项目内可用 <code>.codex/config.toml</code> 做覆盖（仅在受信任项目中生效）。</p>
+
+                            <h2>Codex 配置文件</h2>
+                            <p>CLI 与 IDE 扩展共享同一套配置层。你可以用它来设置默认模型、审批策略、沙箱模式和 MCP 服务器。</p>
                             <ul>
-                                <li><strong>全局配置：</strong> <code>~/.codex/config.json</code></li>
-                                <li><strong>项目配置：</strong> <code>&lt;project&gt;/.codex.json</code></li>
-                                <li><strong>环境变量：</strong> 以 <code>CODEX_</code> 开头的环境变量会覆盖配置文件</li>
+                                <li>配置基础（官方）：<a href="https://developers.openai.com/codex/config-basic" target="_blank" rel="noopener noreferrer">developers.openai.com/codex/config-basic</a></li>
+                                <li>安全（审批与沙箱）：<a href="https://developers.openai.com/codex/security#sandbox-and-approvals" target="_blank" rel="noopener noreferrer">sandbox-and-approvals</a></li>
+                                <li>MCP：<a href="https://developers.openai.com/codex/mcp" target="_blank" rel="noopener noreferrer">Model Context Protocol</a></li>
                             </ul>
 
-                            <h2>完整配置示例</h2>
-                            <pre><code>{
-  "$schema": "https://codex.openai.com/schema/config.json",
-  "model": {
-    "name": "codex-latest",
-    "temperature": 0.3,
-    "maxTokens": 8192
-  },
-  "behavior": {
-    "autoApprove": false,
-    "previewChanges": true,
-    "confirmBeforeExecute": ["npm publish", "rm -rf", "DROP TABLE"],
-    "silentMode": false
-  },
-  "context": {
-    "maxFiles": 100,
-    "excludePatterns": [
-      "node_modules/**",
-      ".git/**",
-      "**/*.lock",
-      "**/dist/**",
-      ".env*"
-    ],
-    "includePatterns": [
-      "**/*.ts",
-      "**/*.tsx",
-      "**/*.js"
-    ]
-  },
-  "hooks": {
-    "beforeTask": "git stash push -m 'codex-backup'",
-    "afterTask": "git stash pop",
-    "onError": "codex-rollback"
-  },
-  "output": {
-    "verbosity": "normal",
-    "format": "pretty",
-    "logFile": ".codex/logs/execution.log"
-  },
-  "mcp": {
-    "servers": {
-      "supabase": {
-        "url": "https://api.supabase.com/mcp",
-        "apiKey": "${SUPABASE_API_KEY}"
-      }
-    }
-  }
-}</code></pre>
+                            <h2>配置优先级（从高到低）</h2>
+                            <ol>
+                                <li>CLI 参数与 <code>--config</code> 临时覆盖</li>
+                                <li>通过 <code>--profile</code> 选择的 profile 值</li>
+                                <li>项目内 <code>.codex/config.toml</code>（从项目根向下，离当前目录越近优先级越高）</li>
+                                <li>用户配置 <code>~/.codex/config.toml</code></li>
+                                <li>系统配置（Unix 下通常是 <code>/etc/codex/config.toml</code>）</li>
+                                <li>内置默认值</li>
+                            </ol>
+                            <p>如果项目被标记为不受信任，Codex 会跳过项目级 <code>.codex</code> 配置层。</p>
 
-                            <h2>配置项详解</h2>
+                            <h2>常见配置项</h2>
+                            <h3>默认模型</h3>
+                            <pre><code class="language-toml">model = "gpt-5.2"</code></pre>
 
-                            <h3>模型设置</h3>
+                            <h3>审批策略</h3>
+                            <pre><code class="language-toml">approval_policy = "on-request"</code></pre>
+                            <p>行为差异见官方安全文档：<a href="https://developers.openai.com/codex/security#run-without-approval-prompts" target="_blank" rel="noopener noreferrer">run-without-approval-prompts</a>。</p>
+
+                            <h3>沙箱级别</h3>
+                            <pre><code class="language-toml">sandbox_mode = "workspace-write"</code></pre>
+                            <p>受保护路径与网络访问详见：<a href="https://developers.openai.com/codex/security#protected-paths-in-writable-roots" target="_blank" rel="noopener noreferrer">protected-paths</a>、<a href="https://developers.openai.com/codex/security#network-access" target="_blank" rel="noopener noreferrer">network-access</a>。</p>
+
+                            <h3>Web 搜索模式</h3>
+                            <pre><code class="language-toml">web_search = "cached"  # 默认，使用 OpenAI 维护的缓存索引
+# web_search = "live"  # 拉取最新网页（等价于 --search）
+# web_search = "disabled"</code></pre>
+
+                            <h3>推理强度</h3>
+                            <pre><code class="language-toml">model_reasoning_effort = "high"</code></pre>
+
+                            <h3>沟通风格</h3>
+                            <pre><code class="language-toml">personality = "friendly" # 或 "pragmatic" / "none"</code></pre>
+
+                            <h3>命令环境变量策略</h3>
+                            <pre><code class="language-toml">[shell_environment_policy]
+include_only = ["PATH", "HOME"]</code></pre>
+
+                            <h3>日志目录</h3>
+                            <pre><code class="language-toml">log_dir = "/absolute/path/to/codex-logs"</code></pre>
+
+                            <h2>Feature flags（功能开关）</h2>
+                            <p>Feature flags 用于开启实验性能力（例如多智能体）。</p>
+                            <h3>如何开启</h3>
+                            <pre><code class="language-toml">[features]
+multi_agent = true</code></pre>
+                            <p>功能成熟度与可用性见：<a href="https://developers.openai.com/codex/feature-maturity" target="_blank" rel="noopener noreferrer">Feature Maturity</a>。</p>
                             <ul>
-                                <li><code>model.name</code> - 选择使用的模型版本</li>
-                                <li><code>model.temperature</code> - 创造性程度 (0-1)，越低越保守</li>
-                                <li><code>model.maxTokens</code> - 单次响应的最大 Token 数</li>
+                                <li>Profiles：<a href="https://developers.openai.com/codex/config-advanced#profiles" target="_blank" rel="noopener noreferrer">config-advanced#profiles</a></li>
+                                <li>一次性覆盖：<a href="https://developers.openai.com/codex/config-advanced#one-off-overrides-from-the-cli" target="_blank" rel="noopener noreferrer">one-off-overrides-from-the-cli</a></li>
+                                <li>托管配置：<a href="https://developers.openai.com/codex/security#managed-configuration" target="_blank" rel="noopener noreferrer">managed-configuration</a></li>
+                                <li>管理员强制要求：<a href="https://developers.openai.com/codex/security#admin-enforced-requirements-requirementstoml" target="_blank" rel="noopener noreferrer">requirements.toml</a></li>
+                                <li>审批与沙箱组合：<a href="https://developers.openai.com/codex/security#common-sandbox-and-approval-combinations" target="_blank" rel="noopener noreferrer">common-sandbox-and-approval-combinations</a></li>
                             </ul>
-
-                            <h3>行为设置</h3>
-                            <ul>
-                                <li><code>behavior.autoApprove</code> - 是否自动应用更改（生产环境建议关闭）</li>
-                                <li><code>behavior.previewChanges</code> - 应用前显示 Diff 预览</li>
-                                <li><code>behavior.confirmBeforeExecute</code> - 执行这些命令前需要二次确认</li>
-                            </ul>
-
-                            <h3>上下文设置</h3>
-                            <ul>
-                                <li><code>context.excludePatterns</code> - 忽略这些文件（支持 glob 语法）</li>
-                                <li><code>context.includePatterns</code> - 只读取这些类型的文件</li>
-                            </ul>
-
-                            <h2>项目级配置</h2>
-                            <p>在项目根目录创建 <code>.codex.json</code>，团队共享同一套 Codex 行为规范：</p>
-                            <pre><code>{
-  "extends": "~/.codex/config.json",
-  "rules": {
-    "requireTests": true,
-    "requireTypeAnnotations": true
-  },
-  "scripts": {
-    "test": "pnpm test",
-    "lint": "pnpm lint",
-    "build": "pnpm build"
-  }
-}</code></pre>
                         </div>
                     </article>
                 </section>
@@ -888,75 +860,66 @@ codex login</code></pre>
                 <!-- RULES SECTION -->
                 <section id="rules" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>规则设定</h1>
-                        <p class="subtitle">定义 Codex 在你项目中的行为准则。</p>
+                        <h1>Rules（执行规则）</h1>
+                        <p class="subtitle">用规则控制 Codex 在沙箱外可执行的命令范围。</p>
 
                         <div class="intro-block">
-                            <h2>规则简介</h2>
-                            <p>规则是 Codex 必须遵守的硬性约束。与 AGENTS.md 中的建议不同，规则是强制性的，Codex 不会主动违反。</p>
+                            <p>Rules 用于约束“沙箱外执行”行为。团队可在 Team Config 层统一下发，个人也可在本机规则层定义默认策略。</p>
 
-                            <h2>创建规则</h2>
-                            <p>在项目中创建 <code>.codex/rules.json</code> 文件：</p>
-                            <pre><code>{
-  "rules": [
-    {
-      "id": "require-tests",
-      "description": "任何新代码文件都必须包含对应的测试文件",
-      "action": "reject",
-      "message": "检测到新代码文件缺少测试文件，请先创建测试"
-    },
-    {
-      "id": "no-console-log",
-      "description": "生产代码中禁止使用 console.log",
-      "pattern": "console\\.log\\(",
-      "action": "reject",
-      "message": "请使用 logger 工具替代 console.log"
-    },
-    {
-      "id": "type-annotations-required",
-      "description": "所有函数参数和返回值必须有类型注解",
-      "action": "modify",
-      "suggestion": "添加 TypeScript 类型注解"
-    }
-  ]
-}</code></pre>
+                            <h2>创建规则文件</h2>
+                            <ol>
+                                <li>在规则目录创建 <code>.rules</code> 文件（例如 <code>~/.codex/rules/default.rules</code>）。</li>
+                                <li>写入规则后重启 Codex。</li>
+                            </ol>
+                            <p>示例：执行 <code>gh pr view</code> 前强制提示确认。</p>
+                            <pre><code class="language-python"># 在沙箱外执行 gh pr view 前弹确认
+prefix_rule(
+    pattern=["gh", "pr", "view"],
+    decision="prompt",
+    justification="查看 PR 允许，但需要人工确认",
+    match=[
+        "gh pr view 7888",
+    ],
+    not_match=[
+        "gh pr list",
+    ],
+)</code></pre>
 
-                            <h2>规则类型</h2>
+                            <h2>理解规则字段</h2>
+                            <ul>
+                                <li><code>pattern</code>（必填）：命令前缀匹配模式。可用字面量，也可在某个参数位使用备选集合。</li>
+                                <li><code>decision</code>（默认 <code>allow</code>）：<code>allow</code> / <code>prompt</code> / <code>forbidden</code>。多条命中时取最严格（<code>forbidden &gt; prompt &gt; allow</code>）。</li>
+                                <li><code>justification</code>（可选）：给出人类可读理由。</li>
+                                <li><code>match</code> / <code>not_match</code>（可选）：内联“单元测试”，用于验证规则是否按预期匹配。</li>
+                            </ul>
 
-                            <h3>1. 拒绝型规则</h3>
-                            <p>当 Codex 生成的代码违反规则时，直接拒绝执行并要求重新生成。</p>
+                            <h2>Shell 包装与复合命令</h2>
+                            <p>例如下面这种命令，可能把多个动作藏在一个脚本字符串里：</p>
+                            <pre><code class="language-text">["bash", "-lc", "git add . &amp;&amp; rm -rf /"]</code></pre>
+                            <p>Codex 会对 <code>bash -lc</code> / <code>bash -c</code>（以及 <code>zsh</code>/<code>sh</code> 等）做特殊处理：</p>
 
-                            <h3>2. 修改型规则</h3>
-                            <p>自动修正违反规则的代码，然后重新提交审查。</p>
+                            <h3>可安全拆分时</h3>
+                            <p>若脚本是由“纯命令 + 安全连接符（<code>&amp;&amp;</code>/<code>||</code>/<code>;</code>/<code>|</code>）”组成，Codex 会先拆分再逐条套规则。</p>
+                            <p>以上示例会被视为两条命令：<code>["git","add","."]</code> 与 <code>["rm","-rf","/"]</code>，最终按最严格决策处理。</p>
 
-                            <h3>3. 警告型规则</h3>
-                            <p>生成代码后添加警告评论，但不阻止提交。</p>
+                            <h3>不可安全拆分时</h3>
+                            <p>若脚本包含重定向、变量替换、通配符、控制流等高级语法，Codex 不会尝试拆分，而是整体按一条命令处理：</p>
+                            <pre><code class="language-text">["bash", "-lc", "&lt;full script&gt;"]</code></pre>
 
-                            <h2>内置规则模板</h2>
-                            <pre><code># 代码风格规则
-{
-  "enforce": "prettier",
-  "config": "./.prettierrc"
-}
+                            <h2>测试规则文件</h2>
+                            <p>可用 <code>codex execpolicy check</code> 验证命令命中结果：</p>
+                            <pre><code class="language-shell">codex execpolicy check --pretty \
+  --rules ~/.codex/rules/default.rules \
+  -- gh pr view 7888 --json title,body,comments</code></pre>
+                            <p>输出会给出最终决策与命中的规则（含 <code>justification</code>）。</p>
 
-# 测试覆盖规则
-{
-  "minCoverage": 80,
-  "exclude": ["**/*.config.js", "**/mocks/**"]
-}
-
-# 安全规则
-{
-  "noHardcodedSecrets": true,
-  "noEvalUsage": true,
-  "requireInputValidation": true
-}</code></pre>
-
-                            <h2>规则优先级</h2>
-                            <blockquote>
-                                <p><strong>优先级顺序：</strong> 项目规则 &gt; 全局规则 &gt; 默认规则</p>
-                                <p>如果多个规则冲突，更具体的规则优先。如果仍然无法解决，Codex 会暂停并请求用户澄清。</p>
-                            </blockquote>
+                            <h2>规则语言</h2>
+                            <p><code>.rules</code> 使用 Starlark 语法，规范见：<a href="https://github.com/bazelbuild/starlark/blob/master/spec.md" target="_blank" rel="noopener noreferrer">Starlark language spec</a>。</p>
+                            <ul>
+                                <li>官方规则文档：<a href="https://developers.openai.com/codex/rules" target="_blank" rel="noopener noreferrer">developers.openai.com/codex/rules</a></li>
+                                <li>Team Config：<a href="https://developers.openai.com/codex/enterprise/admin-setup#team-config" target="_blank" rel="noopener noreferrer">team-config</a></li>
+                                <li>管理员强制要求：<a href="https://developers.openai.com/codex/security#admin-enforced-requirements-requirementstoml" target="_blank" rel="noopener noreferrer">requirements.toml</a></li>
+                            </ul>
                         </div>
                     </article>
                 </section>
@@ -964,90 +927,62 @@ codex login</code></pre>
                 <!-- AGENTS.MD SECTION -->
                 <section id="agents-md" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>AGENTS.md 指南</h1>
-                        <p class="subtitle">为你的项目定义 AI 智能体行为。</p>
+                        <h1>使用 AGENTS.md 自定义指令</h1>
+                        <p class="subtitle">通过“全局 + 项目 + 子目录覆盖”的分层方式，让 Codex 每次启动都带着正确上下文工作。</p>
 
                         <div class="intro-block">
-                            <h2>什么是 AGENTS.md？</h2>
-                            <p><code>AGENTS.md</code> 是项目根目录下的一个 Markdown 文件，用于告诉 Codex 如何理解和操作你的代码库。它包含：</p>
+                            <p>Codex 会在执行任务前读取 <code>AGENTS.md</code> 系列文件。你可以把通用偏好放在全局，把项目规则放在仓库，再用子目录覆盖处理局部差异。</p>
+
+                            <h2>Codex 如何发现指令文件</h2>
+                            <ol>
+                                <li>全局层：在 Codex Home（默认 <code>~/.codex</code>）优先读取 <code>AGENTS.override.md</code>，否则读取 <code>AGENTS.md</code>。</li>
+                                <li>项目层：从项目根目录走到当前目录；每一层最多读取一个文件，优先级为 <code>AGENTS.override.md &gt; AGENTS.md &gt; fallback 文件名</code>。</li>
+                                <li>合并顺序：从根到当前目录拼接，越靠近当前目录的内容越“后出现”，因此覆盖力更强。</li>
+                            </ol>
+                            <p>空文件会被跳过；总大小默认受 <code>project_doc_max_bytes</code> 限制（默认 32KiB）。</p>
+
+                            <h2>创建全局指令</h2>
+                            <pre><code class="language-shell">mkdir -p ~/.codex</code></pre>
+                            <pre><code class="language-markdown"># ~/.codex/AGENTS.md
+## 工作约定
+- 修改 JavaScript 文件后必须运行 `npm test`
+- 安装依赖优先使用 `pnpm`
+- 新增生产依赖前必须先确认</code></pre>
+                            <p>验证方式：</p>
+                            <pre><code class="language-shell">codex --ask-for-approval never "总结当前加载的指令"</code></pre>
+
+                            <h2>叠加项目指令</h2>
+                            <p>仓库根目录加一份基础规范，再在子目录放 override：</p>
+                            <pre><code class="language-markdown"># AGENTS.md
+## 仓库规范
+- 提交 PR 前运行 `npm run lint`
+- 修改公共工具函数时同步更新 docs/</code></pre>
+                            <pre><code class="language-markdown"># services/payments/AGENTS.override.md
+## 支付服务规则
+- 使用 `make test-payments`，不要直接跑 `npm test`
+- 轮换 API Key 前必须通知安全频道</code></pre>
+                            <pre><code class="language-shell">codex --cd services/payments --ask-for-approval never "列出你加载了哪些指令文件"</code></pre>
+
+                            <h2>自定义 fallback 文件名</h2>
+                            <p>如果你们历史上不是用 <code>AGENTS.md</code>，可在配置里声明备用文件名：</p>
+                            <pre><code class="language-toml"># ~/.codex/config.toml
+project_doc_fallback_filenames = ["TEAM_GUIDE.md", ".agents.md"]
+project_doc_max_bytes = 65536</code></pre>
+
+                            <h2>验证与排障</h2>
                             <ul>
-                                <li>项目架构和目录结构说明</li>
-                                <li>编码规范和约定</li>
-                                <li>测试和构建命令</li>
-                                <li>常见任务的执行流程</li>
-                                <li>领域特定的知识</li>
+                                <li>用 <code>codex --ask-for-approval never "Summarize the current instructions."</code> 检查加载顺序。</li>
+                                <li>指令不生效时，先确认文件非空、目录位置正确、并重启 Codex。</li>
+                                <li>如果出现“读到旧规则”，优先排查更高层目录或 <code>~/.codex</code> 下是否存在 <code>AGENTS.override.md</code>。</li>
+                                <li>若怀疑用了错误 home，先执行 <code>echo $CODEX_HOME</code>。</li>
                             </ul>
 
-                            <h2>快速开始</h2>
-                            <p>在项目根目录创建 <code>AGENTS.md</code>：</p>
-                            <pre><code># 项目概览
-
-这是一个基于 Next.js 14 + TypeScript 的电商平台。
-
-## 目录结构
-
-```
-src/
-├── app/          # Next.js App Router
-├── components/   # React 组件
-├── lib/          # 工具函数和 API 客户端
-├── stores/       # Zustand 状态管理
-└── types/        # TypeScript 类型定义
-```
-
-## 开发命令
-
-- `pnpm dev` - 启动开发服务器
-- `pnpm build` - 生产构建
-- `pnpm test` - 运行测试套件
-- `pnpm lint` - ESLint 检查
-
-## 编码规范
-
-1. 所有组件必须使用 TypeScript
-2. 使用 Tailwind CSS 进行样式编写
-3. API 调用必须包含错误处理
-4. 新组件必须编写单元测试
-
-## 架构决策
-
-- 使用 Server Components 作为默认选择
-- 客户端状态使用 Zustand 管理
-- API 使用 React Query 进行数据获取和缓存
-```</code></pre>
-
-                            <h2>AGENTS.md 最佳实践</h2>
-
-                            <h3>1. 明确测试要求</h3>
-                            <pre><code>## 测试要求
-
-- 所有新组件必须有对应的 `*.test.tsx` 文件
-- 测试覆盖率必须保持在 80% 以上
-- 运行测试：`pnpm test -- --coverage`</code></pre>
-
-                            <h3>2. 定义代码审查清单</h3>
-                            <pre><code>## PR 审查清单
-
-- [ ] 代码通过 ESLint 检查
-- [ ] 所有测试通过
-- [ ] 添加了适当的错误处理
-- [ ] 更新了相关文档</code></pre>
-
-                            <h3>3. 记录部署流程</h3>
-                            <pre><code>## 部署到生产环境
-
-1. 运行 `pnpm build` 确认无构建错误
-2. 运行 `pnpm test` 确认所有测试通过
-3. 执行 `git push origin main` 触发自动部署
-4. 部署完成后在 Vercel 控制台检查健康状态</code></pre>
-
-                            <h2>自动生成 AGENTS.md</h2>
-                            <p>让 Codex 帮你生成初始的 AGENTS.md：</p>
-                            <pre><code>codex generate:agents-md</code></pre>
-                            <p>Codex 会分析你的代码库结构、package.json 脚本和现有文档，生成一个全面的初始版本。</p>
-
-                            <h2>示例模板</h2>
-                            <p>访问 <a href="https://github.com/search?q=AGENTS.md&type=repositories" target="_blank" rel="noopener noreferrer">GitHub AGENTS.md 搜索结果</a> 查看更多社区贡献的模板。</p>
+                            <h2>下一步</h2>
+                            <ul>
+                                <li>AGENTS.md 官方站点：<a href="https://agents.md" target="_blank" rel="noopener noreferrer">agents.md</a></li>
+                                <li>Codex 指令发现机制：<a href="https://developers.openai.com/codex/config-advanced#project-instructions-discovery" target="_blank" rel="noopener noreferrer">project-instructions-discovery</a></li>
+                                <li>提示词指南：<a href="https://developers.openai.com/codex/prompting" target="_blank" rel="noopener noreferrer">Prompting Codex</a></li>
+                            </ul>
                         </div>
                     </article>
                 </section>
@@ -1055,108 +990,78 @@ src/
                 <!-- MCP SECTION -->
                 <section id="mcp" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>MCP 协议</h1>
-                        <p class="subtitle">模型上下文协议 - 让 Codex 连接外部世界。</p>
+                        <h1>Model Context Protocol（MCP）</h1>
+                        <p class="subtitle">让 Codex 连接外部工具与上下文：文档、浏览器、设计系统、监控平台等。</p>
 
                         <div class="intro-block">
-                            <h2>什么是 MCP？</h2>
-                            <p><strong>Model Context Protocol (MCP)</strong> 是一个开放标准，允许 AI 模型（如 Codex）与外部数据源和工具进行标准化通信。通过 MCP，Codex 可以：</p>
+                            <p>MCP 让模型通过统一协议接入工具和数据源。Codex 在 CLI 与 IDE 扩展里都支持 MCP，且共享同一份配置。</p>
+
+                            <h2>支持的 MCP 类型</h2>
                             <ul>
-                                <li>查询数据库获取实时数据</li>
-                                <li>调用第三方 API（如 Stripe、Supabase、Linear）</li>
-                                <li>访问企业内部系统</li>
-                                <li>执行专门的工具链操作</li>
+                                <li><strong>STDIO 服务器：</strong>本地命令拉起进程，通过标准输入输出通信。</li>
+                                <li><strong>Streamable HTTP 服务器：</strong>通过 URL 访问，支持 Bearer Token 与 OAuth（支持时可执行 <code>codex mcp login &lt;server-name&gt;</code>）。</li>
                             </ul>
 
-                            <h2>架构概览</h2>
-                            <pre><code>┌─────────────┐      ┌──────────────┐      ┌─────────────┐
-│   Codex     │◄────►│  MCP服务器   │◄────►│  外部服务   │
-│  (Client)   │      │  (Bridge)    │      │  (API/DB)   │
-└─────────────┘      └──────────────┘      └─────────────┘</code></pre>
+                            <h2>把 Codex 连接到 MCP 服务器</h2>
+                            <p>MCP 配置存放在 <code>config.toml</code>（通常是 <code>~/.codex/config.toml</code>，或项目内 <code>.codex/config.toml</code>）。</p>
+                            <h3>方式一：用 CLI 配置</h3>
+                            <pre><code class="language-shell">codex mcp add &lt;server-name&gt; --env VAR1=VALUE1 --env VAR2=VALUE2 -- &lt;stdio server-command&gt;</code></pre>
+                            <p>例如添加 Context7：</p>
+                            <pre><code class="language-shell">codex mcp add context7 -- npx -y @upstash/context7-mcp</code></pre>
+                            <p>更多命令：<code>codex mcp --help</code>；TUI 中可用 <code>/mcp</code> 查看激活服务器。</p>
 
-                            <h2>安装 MCP 服务器</h2>
-                            <h3>使用官方 MCP 服务器</h3>
-                            <pre><code># 安装 Supabase MCP 服务器
-npm install -g @mcp/supabase
-
-# 安装 Linear MCP 服务器
-npm install -g @mcp/linear
-
-# 安装 Stripe MCP 服务器
-npm install -g @mcp/stripe</code></pre>
-
-                            <h2>配置 MCP</h2>
-                            <p>在 <code>~/.codex/mcp.json</code> 中配置服务器：</p>
-                            <pre><code>{
-  "mcpServers": {
-    "supabase": {
-      "command": "npx",
-      "args": ["-y", "@mcp/supabase"],
-      "env": {
-        "SUPABASE_URL": "https://xxx.supabase.co",
-        "SUPABASE_KEY": "${SUPABASE_API_KEY}"
-      }
-    },
-    "linear": {
-      "command": "npx",
-      "args": ["-y", "@mcp/linear"],
-      "env": {
-        "LINEAR_API_KEY": "${LINEAR_API_KEY}"
-      }
-    },
-    "filesystem": {
-      "command": "npx",
-      "args": ["-y", "@mcp/filesystem"],
-      "config": {
-        "roots": ["./data", "./logs"]
-      }
-    }
-  }
-}</code></pre>
-
-                            <h2>使用 MCP</h2>
-                            <p>配置完成后，Codex 会自动发现并使用 MCP 服务器：</p>
-                            <pre><code>> 帮我查询上个月最活跃的用户
-
-[Codex 通过 Supabase MCP 查询数据库]
-✅ 查询完成：最活跃的用户是 @alice，共登录 47 次
-
-> 创建一个 Linear Issue 跟踪这个 bug
-
-[Codex 通过 Linear MCP 创建 Issue]
-✅ 已创建 Issue: LIN-1234</code></pre>
-
-                            <h2>官方 MCP 服务器列表</h2>
+                            <h3>方式二：直接编辑 config.toml</h3>
+                            <p>每个服务器使用 <code>[mcp_servers.&lt;name&gt;]</code> 配置块。</p>
+                            <h4>STDIO 常用字段</h4>
                             <ul>
-                                <li><strong>@mcp/supabase</strong> - Supabase 数据库查询</li>
-                                <li><strong>@mcp/linear</strong> - Linear 项目管理</li>
-                                <li><strong>@mcp/stripe</strong> - Stripe 支付处理</li>
-                                <li><strong>@mcp/github</strong> - GitHub API 操作</li>
-                                <li><strong>@mcp/filesystem</strong> - 文件系统访问</li>
-                                <li><strong>@mcp/postgres</strong> - PostgreSQL 数据库</li>
-                                <li><strong>@mcp/slack</strong> - Slack 消息发送</li>
+                                <li><code>command</code>（必填）：启动命令</li>
+                                <li><code>args</code> / <code>env</code> / <code>env_vars</code> / <code>cwd</code>（可选）</li>
+                            </ul>
+                            <h4>Streamable HTTP 常用字段</h4>
+                            <ul>
+                                <li><code>url</code>（必填）</li>
+                                <li><code>bearer_token_env_var</code> / <code>http_headers</code> / <code>env_http_headers</code>（可选）</li>
+                            </ul>
+                            <h4>通用字段</h4>
+                            <ul>
+                                <li><code>startup_timeout_sec</code>（默认 10）</li>
+                                <li><code>tool_timeout_sec</code>（默认 60）</li>
+                                <li><code>enabled</code>、<code>required</code>、<code>enabled_tools</code>、<code>disabled_tools</code></li>
                             </ul>
 
-                            <h2>创建自定义 MCP 服务器</h2>
-                            <pre><code>// mcp-server.js
-import { Server } from '@modelcontextprotocol/sdk/server.js';
+                            <h2>config.toml 示例</h2>
+                            <pre><code class="language-toml">[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp"]
 
-const server = new Server({
-  name: 'my-custom-server',
-  version: '1.0.0'
-});
+[mcp_servers.context7.env]
+MY_ENV_VAR = "MY_ENV_VALUE"</code></pre>
 
-server.setRequestHandler('query', async (request) => {
-  // 处理查询请求
-  return { data: 'result' };
-});
+                            <pre><code class="language-toml">[mcp_servers.figma]
+url = "https://mcp.figma.com/mcp"
+bearer_token_env_var = "FIGMA_OAUTH_TOKEN"
+http_headers = { "X-Figma-Region" = "us-east-1" }</code></pre>
 
-server.connect();</code></pre>
+                            <pre><code class="language-toml">[mcp_servers.chrome_devtools]
+url = "http://localhost:3000/mcp"
+enabled_tools = ["open", "screenshot"]
+disabled_tools = ["screenshot"] # 在 enabled_tools 之后再应用
+startup_timeout_sec = 20
+tool_timeout_sec = 45
+enabled = true</code></pre>
 
-                            <h2>MCP 安全</h2>
-                            <blockquote>
-                                <p><strong>重要：</strong> MCP 服务器运行在沙箱环境中，只能访问明确配置的资源。建议使用环境变量管理敏感凭据，而非硬编码在配置文件中。</p>
-                            </blockquote>
+                            <h2>常用 MCP 服务器</h2>
+                            <ul>
+                                <li>OpenAI Docs MCP：<a href="https://developers.openai.com/resources/docs-mcp" target="_blank" rel="noopener noreferrer">resources/docs-mcp</a></li>
+                                <li>Context7：<a href="https://github.com/upstash/context7" target="_blank" rel="noopener noreferrer">github.com/upstash/context7</a></li>
+                                <li>Figma Local / Remote：<a href="https://developers.figma.com/docs/figma-mcp-server/local-server-installation/" target="_blank" rel="noopener noreferrer">local</a> / <a href="https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/" target="_blank" rel="noopener noreferrer">remote</a></li>
+                                <li>Playwright：<a href="https://www.npmjs.com/package/@playwright/mcp" target="_blank" rel="noopener noreferrer">@playwright/mcp</a></li>
+                                <li>Chrome DevTools：<a href="https://github.com/ChromeDevTools/chrome-devtools-mcp/" target="_blank" rel="noopener noreferrer">chrome-devtools-mcp</a></li>
+                                <li>Sentry：<a href="https://docs.sentry.io/product/sentry-mcp/#codex" target="_blank" rel="noopener noreferrer">Sentry MCP</a></li>
+                                <li>GitHub：<a href="https://github.com/github/github-mcp-server" target="_blank" rel="noopener noreferrer">github-mcp-server</a></li>
+                            </ul>
+
+                            <p>官方页面：<a href="https://developers.openai.com/codex/mcp" target="_blank" rel="noopener noreferrer">developers.openai.com/codex/mcp</a></p>
                         </div>
                     </article>
                 </section>
@@ -1164,106 +1069,186 @@ server.connect();</code></pre>
                 <!-- SKILLS SECTION -->
                 <section id="skills" class="doc-section full-width">
                     <article class="document-content markdown-body">
-                        <h1>自定义技能</h1>
-                        <p class="subtitle">为 Codex 添加领域专精能力。</p>
+                        <h1>Agent Skills（技能）</h1>
+                        <p class="subtitle">把“可复用能力”打包成技能，在 CLI、IDE、App 三端复用。</p>
 
                         <div class="intro-block">
-                            <h2>什么是技能？</h2>
-                            <p>技能是封装了特定领域知识和工具用法的可插拔模块。安装一个技能后，Codex 会自动获得相关领域的专业能力。</p>
+                            <p>技能用于给 Codex 添加任务专用能力：一份技能通常包含 <code>SKILL.md</code> 指令、可选脚本与参考资料。技能遵循开放标准：<a href="https://agentskills.io" target="_blank" rel="noopener noreferrer">agentskills.io</a>。</p>
+                            <p>Codex 采用“渐进加载”：先读取技能元信息（名称、描述、路径等），只有决定要用时才加载完整 <code>SKILL.md</code>，以降低上下文负担。</p>
 
-                            <h2>技能类型</h2>
+                            <h2>Codex 如何触发技能</h2>
+                            <ol>
+                                <li><strong>显式触发：</strong>在提示词里直接点名技能（CLI/IDE 可用 <code>/skills</code> 或 <code>$skill-name</code>）。</li>
+                                <li><strong>隐式触发：</strong>任务与技能描述匹配时，Codex 自动启用。</li>
+                            </ol>
+                            <p>因此技能描述必须写清“何时触发 / 何时不触发”。</p>
 
-                            <h3>1. 知识型技能</h3>
-                            <p>提供特定领域的文档和最佳实践：</p>
-                            <ul>
-                                <li><code>aws-architect</code> - AWS 架构设计指南</li>
-                                <li><code>security-auditor</code> - OWASP 安全检查清单</li>
-                                <li><code>db-optimizer</code> - 数据库查询优化技巧</li>
-                            </ul>
+                            <h2>创建技能</h2>
+                            <p>推荐先用内置创建器：</p>
+                            <pre><code class="language-text">$skill-creator</code></pre>
+                            <p>也可以手工创建：</p>
+                            <pre><code class="language-markdown">---
+name: skill-name
+description: 说明技能的触发边界与适用场景
+---
 
-                            <h3>2. 工具型技能</h3>
-                            <p>封装常用工具链的操作：</p>
-                            <ul>
-                                <li><code>git-master</code> - 复杂 Git 操作自动化</li>
-                                <li><code>docker-builder</code> - Dockerfile 生成和优化</li>
-                                <li><code>ci-cd-expert</code> - CI/CD 流水线配置</li>
-                            </ul>
+这里写技能执行说明</code></pre>
 
-                            <h3>3. 框架型技能</h3>
-                            <p>针对特定框架的深度集成：</p>
-                            <ul>
-                                <li><code>nextjs-pro</code> - Next.js 高级用法</li>
-                                <li><code>react-native-dev</code> - React Native 开发工具链</li>
-                                <li><code>prisma-master</code> - Prisma ORM 最佳实践</li>
-                            </ul>
+                            <h2>技能存放位置</h2>
+                            <p>Codex 会在仓库层、用户层、管理员层与系统层扫描技能目录。</p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>作用域</th>
+                                        <th>位置</th>
+                                        <th>典型用途</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>REPO</td>
+                                        <td><code>$CWD/.agents/skills</code></td>
+                                        <td>当前工作目录专用技能</td>
+                                    </tr>
+                                    <tr>
+                                        <td>REPO</td>
+                                        <td><code>$CWD/../.agents/skills</code></td>
+                                        <td>父目录共享技能</td>
+                                    </tr>
+                                    <tr>
+                                        <td>REPO</td>
+                                        <td><code>$REPO_ROOT/.agents/skills</code></td>
+                                        <td>仓库级通用技能</td>
+                                    </tr>
+                                    <tr>
+                                        <td>USER</td>
+                                        <td><code>$HOME/.agents/skills</code></td>
+                                        <td>用户个人跨仓库技能</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ADMIN</td>
+                                        <td><code>/etc/codex/skills</code></td>
+                                        <td>机器/容器统一技能</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SYSTEM</td>
+                                        <td>Codex 内置</td>
+                                        <td>如 <code>skill-creator</code> 等通用技能</td>
+                                    </tr>
+                                </tbody>
+                            </table>
 
                             <h2>安装技能</h2>
-                            <pre><code># 从技能商城安装
-codex skills install aws-architect
+                            <p>可使用安装器：</p>
+                            <pre><code class="language-shell">$skill-installer install the linear skill from the .experimental folder</code></pre>
+                            <p>安装后通常自动可见，若未生效可重启 Codex。</p>
 
-# 从 GitHub 安装
-codex skills install github:user/repo
+                            <h2>禁用/启用技能</h2>
+                            <pre><code class="language-toml">[[skills.config]]
+path = "/path/to/skill/SKILL.md"
+enabled = false</code></pre>
+                            <p>修改 <code>~/.codex/config.toml</code> 后需要重启 Codex。</p>
 
-# 本地开发安装
-codex skills link ./my-skill</code></pre>
+                            <h2>可选元数据（agents/openai.yaml）</h2>
+                            <p>可为 <a href="https://developers.openai.com/codex/app" target="_blank" rel="noopener noreferrer">Codex App</a> 配置显示信息、隐式触发策略与依赖工具：</p>
+                            <pre><code class="language-yaml">interface:
+  display_name: "可选显示名"
+  short_description: "可选短描述"
+  icon_small: "./assets/small-logo.svg"
+  icon_large: "./assets/large-logo.png"
+  brand_color: "#3B82F6"
+  default_prompt: "可选默认提示词"
 
-                            <h2>管理技能</h2>
-                            <pre><code># 查看已安装的技能
-codex skills list
+policy:
+  allow_implicit_invocation: false
 
-# 查看技能详情
-codex skills info aws-architect
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "openaiDeveloperDocs"
+      description: "OpenAI Docs MCP server"
+      transport: "streamable_http"
+      url: "https://developers.openai.com/mcp"</code></pre>
 
-# 更新所有技能
-codex skills update
-
-# 卸载技能
-codex skills uninstall aws-architect</code></pre>
-
-                            <h2>创建自定义技能</h2>
-                            <pre><code># 创建技能模板
-codex skills create my-skill
-
-# 生成的目录结构
-my-skill/
-├── package.json
-├── skill.json
-├── prompts/       # 提示词模板
-├── knowledge/     # 领域知识文档
-├── tools/         # 工具函数
-└── examples/      # 使用示例</code></pre>
-
-                            <h2>技能配置文件</h2>
-                            <pre><code>// skill.json
-{
-  "name": "my-skill",
-  "version": "1.0.0",
-  "description": "我的自定义技能",
-  "capabilities": [
-    "code-generation",
-    "code-review",
-    "debugging"
-  ],
-  "triggers": [
-    "当用户提到 Kubernetes 时激活",
-    "在 .kube 目录下自动激活"
-  ],
-  "dependencies": [
-    "docker-builder@^1.0.0"
-  ]
-}</code></pre>
-
-                            <h2>技能商城</h2>
-                            <p>访问 <a href="https://developers.openai.com/codex/skills" target="_blank" rel="noopener noreferrer">developers.openai.com/codex/skills</a> 浏览和发布社区技能。发布优质技能可获得 OpenAI 点数奖励。</p>
-
-                            <h2>企业自定义技能</h2>
-                            <p>企业版用户可以创建内部技能，封装公司特有的：</p>
+                            <h2>最佳实践</h2>
                             <ul>
-                                <li>API 规范和 SDK 使用</li>
-                                <li>内部工具链操作</li>
-                                <li>业务流程和审批规则</li>
-                                <li>合规性和安全检查清单</li>
+                                <li>一个技能只做一件事，职责边界清晰。</li>
+                                <li>除非必须确定性执行，否则优先“纯指令”而不是脚本。</li>
+                                <li>步骤写成可执行指令，明确输入与输出。</li>
+                                <li>用真实提示词回归测试触发边界是否正确。</li>
                             </ul>
+
+                            <ul>
+                                <li>官方页面：<a href="https://developers.openai.com/codex/skills" target="_blank" rel="noopener noreferrer">developers.openai.com/codex/skills</a></li>
+                                <li>示例仓库：<a href="https://github.com/openai/skills" target="_blank" rel="noopener noreferrer">github.com/openai/skills</a></li>
+                                <li>规范文档：<a href="https://agentskills.io/specification" target="_blank" rel="noopener noreferrer">agentskills.io/specification</a></li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- CONFIG MULTI-AGENT SECTION -->
+                <section id="config-multi-agent" class="doc-section full-width">
+                    <article class="document-content markdown-body">
+                        <h1>多智能体（配置）</h1>
+                        <p class="subtitle">开启并配置并行子代理工作流，让复杂任务拆分执行后统一汇总。</p>
+                        <div class="intro-block">
+                            <p>Codex 支持并行拉起多个子代理执行专项任务，再由主代理统一汇总结果。这在大规模代码巡检、并行评审、多步骤改造任务中尤其有效。</p>
+
+                            <h2>开启多智能体</h2>
+                            <p>该能力属于实验性功能，可通过配置开启：</p>
+                            <pre><code class="language-toml">[features]
+multi_agent = true</code></pre>
+                            <p>也可在 CLI 中使用 <code>/experimental</code> 打开后重启会话。</p>
+
+                            <h2>典型工作流</h2>
+                            <p>Codex 负责子代理编排：拉起、路由后续指令、等待结果、合并回复。你既可以让 Codex 自动决定何时开子代理，也可以显式要求。</p>
+                            <pre><code class="language-text">I would like to review the following points on the current PR (this branch vs main). Spawn one agent per point, wait for all of them, and summarize the result for each point.
+1. Security issue
+2. Code quality
+3. Bugs
+4. Race
+5. Test flakiness
+6. Maintainability of the code</code></pre>
+
+                            <h2>管理子代理</h2>
+                            <ul>
+                                <li>CLI 中用 <code>/agent</code> 在活跃代理线程间切换并查看进度。</li>
+                                <li>可直接让 Codex 调整某个子代理、停止它，或关闭已完成线程。</li>
+                            </ul>
+
+                            <h2>审批与沙箱控制</h2>
+                            <p>子代理会继承当前沙箱策略，但以“非交互审批”方式运行。如果子代理触发新的审批需求，该动作会失败并把错误返回主流程。</p>
+
+                            <h2>Agent 角色配置</h2>
+                            <p>在 <code>[agents]</code> 下定义角色，可放在用户配置或项目配置中：</p>
+                            <pre><code class="language-toml">[agents.default]
+description = "General-purpose helper."
+
+[agents.reviewer]
+description = "Find security, correctness, and test risks in code."
+config_file = "agents/reviewer.toml"
+
+[agents.explorer]
+description = "Fast codebase explorer for read-heavy tasks."
+config_file = "agents/custom-explorer.toml"</code></pre>
+
+                            <p>角色可覆盖主会话配置，例如模型、推理强度、沙箱模式、额外开发指令：</p>
+                            <pre><code class="language-toml"># ~/.codex/agents/reviewer.toml
+model = "gpt-5.3-codex"
+model_reasoning_effort = "high"
+developer_instructions = "Focus on high priority issues, write tests to validate hypothesis before flagging an issue. When finding security issues give concrete steps on how to reproduce the vulnerability."</code></pre>
+
+                            <h2>字段速览</h2>
+                            <ul>
+                                <li><code>agents.max_threads</code>：最大并发代理线程数</li>
+                                <li><code>[agents.&lt;name&gt;]</code>：声明一个角色</li>
+                                <li><code>agents.&lt;name&gt;.description</code>：角色使用说明</li>
+                                <li><code>agents.&lt;name&gt;.config_file</code>：该角色附加 TOML 配置路径</li>
+                            </ul>
+                            <p>更多概念与权衡（如 context rot）参见：<a href="https://developers.openai.com/codex/concepts/multi-agents" target="_blank" rel="noopener noreferrer">Multi-agents concepts</a>。</p>
+                            <p>配置优先级：<a href="https://developers.openai.com/codex/config-basic#configuration-precedence" target="_blank" rel="noopener noreferrer">configuration-precedence</a>；功能开关：<a href="https://developers.openai.com/codex/config-basic#feature-flags" target="_blank" rel="noopener noreferrer">feature-flags</a>。</p>
+                            <p>官方配置页：<a href="https://developers.openai.com/codex/multi-agent" target="_blank" rel="noopener noreferrer">developers.openai.com/codex/multi-agent</a></p>
                         </div>
                     </article>
                 </section>
@@ -2005,10 +1990,132 @@ git diff | codex run "解释"</code></pre>
                 <section id="config-advanced" class="doc-section full-width">
                     <article class="document-content markdown-body">
                         <h1>高级配置</h1>
-                        <p class="subtitle">高级用户配置选项。</p>
+                        <p class="subtitle">当你需要更精细地控制 provider、策略、观测与终端行为时，从这里开始。</p>
                         <div class="intro-block">
-                            <pre><code>export CODEX_MODEL=codex-latest
-export CODEX_MAX_TOKENS=8192</code></pre>
+                            <p>如果你只需要快速上手，请先看 <a href="https://developers.openai.com/codex/config-basic" target="_blank" rel="noopener noreferrer">Config basics</a>；本页聚焦进阶选项。</p>
+
+                            <h2>Profiles</h2>
+                            <p>Profile 是“命名配置集合”，可通过 CLI 快速切换：</p>
+                            <pre><code class="language-toml">model = "gpt-5-codex"
+approval_policy = "on-request"
+
+[profiles.deep-review]
+model = "gpt-5-pro"
+model_reasoning_effort = "high"
+approval_policy = "never"
+
+[profiles.lightweight]
+model = "gpt-4.1"
+approval_policy = "untrusted"</code></pre>
+                            <p>CLI 里使用：<code>codex --profile deep-review</code>。若想默认启用，可在顶层配置 <code>profile = "deep-review"</code>。</p>
+
+                            <h2>单次 CLI 覆盖（One-off overrides）</h2>
+                            <pre><code class="language-shell"># 专用参数
+codex --model gpt-5.2
+
+# 通用 key/value 覆盖（value 按 TOML 解析）
+codex --config model='"gpt-5.2"'
+codex --config sandbox_workspace_write.network_access=true
+codex --config 'shell_environment_policy.include_only=["PATH","HOME"]'</code></pre>
+                            <p>建议优先使用专用参数；需要覆盖任意键时再用 <code>--config</code>。</p>
+
+                            <h2>配置与状态目录</h2>
+                            <p>Codex 本地状态默认在 <code>CODEX_HOME</code>（通常为 <code>~/.codex</code>）下：</p>
+                            <ul>
+                                <li><code>config.toml</code>：用户配置</li>
+                                <li><code>auth.json</code> 或系统 keychain/keyring：认证信息</li>
+                                <li><code>history.jsonl</code>：历史记录（若开启）</li>
+                                <li>日志与缓存等其他状态</li>
+                            </ul>
+
+                            <h2>项目级配置（.codex/config.toml）</h2>
+                            <p>受信任项目中，Codex 会从项目根到当前目录逐层读取 <code>.codex/config.toml</code>；越靠近当前目录优先级越高。相对路径以该 <code>.codex</code> 目录为基准解析。</p>
+
+                            <h2>Agent 角色（[agents]）</h2>
+                            <p>多智能体角色配置见：<a href="https://developers.openai.com/codex/multi-agent" target="_blank" rel="noopener noreferrer">developers.openai.com/codex/multi-agent</a>。</p>
+
+                            <h2>项目根检测</h2>
+                            <p>默认以 <code>.git</code> 作为项目根标识；可自定义：</p>
+                            <pre><code class="language-toml">project_root_markers = [".git", ".hg", ".sl"]</code></pre>
+                            <p>若设为 <code>[]</code>，则只把当前工作目录视为项目根。</p>
+
+                            <h2>自定义模型 Provider</h2>
+                            <pre><code class="language-toml">model = "gpt-5.1"
+model_provider = "proxy"
+
+[model_providers.proxy]
+name = "OpenAI using LLM proxy"
+base_url = "http://proxy.example.com"
+env_key = "OPENAI_API_KEY"</code></pre>
+
+                            <h2>OSS 模式（本地 Provider）</h2>
+                            <pre><code class="language-toml"># --oss 默认 provider
+oss_provider = "ollama" # 或 "lmstudio"</code></pre>
+
+                            <h2>Azure Provider 与每 Provider 调优</h2>
+                            <pre><code class="language-toml">[model_providers.azure]
+name = "Azure"
+base_url = "https://YOUR_PROJECT_NAME.openai.azure.com/openai"
+env_key = "AZURE_OPENAI_API_KEY"
+query_params = { api-version = "2025-04-01-preview" }
+wire_api = "responses"</code></pre>
+
+                            <h2>ChatGPT 数据驻留客户</h2>
+                            <p>如使用数据驻留，先确认模型与功能是否在适用范围，再选择对应 endpoint 与区域策略。</p>
+                            <ul>
+                                <li>帮助中心说明：<a href="https://help.openai.com/en/articles/9903489-data-residency-and-inference-residency-for-chatgpt" target="_blank" rel="noopener noreferrer">data residency</a></li>
+                                <li>数据政策说明：<a href="https://platform.openai.com/docs/guides/your-data#which-models-and-features-are-eligible-for-data-residency" target="_blank" rel="noopener noreferrer">eligible models/features</a></li>
+                            </ul>
+
+                            <h2>模型推理、冗长度与上限</h2>
+                            <p>可调 <code>model_reasoning_effort</code>、<code>model_verbosity</code>、token 相关阈值等参数，以平衡成本/速度/质量。</p>
+
+                            <h2>审批策略与沙箱模式</h2>
+                            <p>推荐与安全文档配合阅读：<a href="https://developers.openai.com/codex/security#common-sandbox-and-approval-combinations" target="_blank" rel="noopener noreferrer">common combinations</a>、<a href="https://developers.openai.com/codex/security#protected-paths-in-writable-roots" target="_blank" rel="noopener noreferrer">protected-paths</a>、<a href="https://developers.openai.com/codex/security#network-access" target="_blank" rel="noopener noreferrer">network-access</a>。</p>
+
+                            <h2>Shell 环境变量策略</h2>
+                            <p>通过 <code>shell_environment_policy</code> 控制传递给子进程的环境变量，降低意外泄露风险。</p>
+
+                            <h2>MCP 服务器</h2>
+                            <p>MCP 配置键及示例见：<a href="https://developers.openai.com/codex/mcp" target="_blank" rel="noopener noreferrer">MCP documentation</a>。</p>
+
+                            <h2>可观测性与遥测（Observability）</h2>
+                            <h3>会发出哪些数据</h3>
+                            <p>可配置事件、指标、反馈与推理事件可见性；建议结合组织安全策略统一设置。</p>
+                            <h3>OTel 指标</h3>
+                            <p>支持 OTel metrics 导出，便于接入团队监控面板。</p>
+                            <h3>反馈控制</h3>
+                            <p>可禁用或保留反馈事件上报，按合规要求处理。</p>
+                            <h3>推理事件显隐</h3>
+                            <p>可控制是否在事件流中显示 reasoning 相关内容。</p>
+
+                            <h2>通知（Notifications）</h2>
+                            <pre><code class="language-toml">notify = ["notify-send", "Codex"]</code></pre>
+
+                            <h2>历史记录持久化</h2>
+                            <pre><code class="language-toml">history = { enabled = true }</code></pre>
+
+                            <h2>可点击引用</h2>
+                            <p>可配置输出中的 citation 行为，提升“跳转到来源”体验。</p>
+
+                            <h2>项目指令发现（AGENTS.md）</h2>
+                            <pre><code class="language-toml">project_doc_fallback_filenames = ["TEAM_GUIDE.md", ".agents.md"]
+project_doc_max_bytes = 65536</code></pre>
+                            <p>详见：<a href="https://developers.openai.com/codex/guides/agents-md" target="_blank" rel="noopener noreferrer">Custom instructions with AGENTS.md</a>。</p>
+
+                            <h2>TUI 选项</h2>
+                            <p>可配置终端 UI 的若干行为（如日志、显示与交互细节）。</p>
+
+                            <ul>
+                                <li>认证：<a href="https://developers.openai.com/codex/auth" target="_blank" rel="noopener noreferrer">Authentication</a></li>
+                                <li>定制化总览：<a href="https://developers.openai.com/codex/concepts/customization" target="_blank" rel="noopener noreferrer">Customization</a></li>
+                                <li>配置参考：<a href="https://developers.openai.com/codex/config-reference" target="_blank" rel="noopener noreferrer">Configuration Reference</a></li>
+                                <li>团队配置：<a href="https://developers.openai.com/codex/enterprise/admin-setup#team-config" target="_blank" rel="noopener noreferrer">Team Config</a></li>
+                                <li>规则：<a href="https://developers.openai.com/codex/rules" target="_blank" rel="noopener noreferrer">rules</a></li>
+                                <li>托管配置：<a href="https://developers.openai.com/codex/security#managed-configuration" target="_blank" rel="noopener noreferrer">managed-configuration</a></li>
+                                <li>监控与遥测：<a href="https://developers.openai.com/codex/security#monitoring-and-telemetry" target="_blank" rel="noopener noreferrer">monitoring-and-telemetry</a></li>
+                            </ul>
+                            <p>官方页面：<a href="https://developers.openai.com/codex/config-advanced" target="_blank" rel="noopener noreferrer">developers.openai.com/codex/config-advanced</a></p>
                         </div>
                     </article>
                 </section>
@@ -2017,13 +2124,33 @@ export CODEX_MAX_TOKENS=8192</code></pre>
                 <section id="config-reference" class="doc-section full-width">
                     <article class="document-content markdown-body">
                         <h1>配置参考</h1>
-                        <p class="subtitle">完整的配置项参考手册。</p>
+                        <p class="subtitle">按键名检索 <code>config.toml</code> 与 <code>requirements.toml</code> 的权威说明。</p>
                         <div class="intro-block">
+                            <p>本页适合“查具体键”的场景。若你需要概念与实践建议，请先看 <a href="https://developers.openai.com/codex/config-basic" target="_blank" rel="noopener noreferrer">Config basics</a> 与 <a href="https://developers.openai.com/codex/config-advanced" target="_blank" rel="noopener noreferrer">Advanced Config</a>。</p>
+
+                            <h2>config.toml</h2>
+                            <p>用户级配置在 <code>~/.codex/config.toml</code>；项目级覆盖可放在 <code>.codex/config.toml</code>（仅受信任项目生效）。</p>
+                            <p>涉及审批与沙箱相关键（如 <code>approval_policy</code>、<code>sandbox_mode</code>）时，建议同时阅读：</p>
                             <ul>
-                                <li><code>model</code> - 使用的模型</li>
-                                <li><code>temperature</code> - 温度参数</li>
-                                <li><code>maxTokens</code> - 最大 Token 数</li>
+                                <li><a href="https://developers.openai.com/codex/security#sandbox-and-approvals" target="_blank" rel="noopener noreferrer">sandbox-and-approvals</a></li>
+                                <li><a href="https://developers.openai.com/codex/security#protected-paths-in-writable-roots" target="_blank" rel="noopener noreferrer">protected-paths-in-writable-roots</a></li>
+                                <li><a href="https://developers.openai.com/codex/security#network-access" target="_blank" rel="noopener noreferrer">network-access</a></li>
                             </ul>
+
+                            <p>可在文件顶端声明 schema，获得编辑器补全与诊断：</p>
+                            <pre><code class="language-toml">#:schema https://developers.openai.com/codex/config-schema.json</code></pre>
+                            <p>Schema 链接：<a href="https://developers.openai.com/codex/config-schema.json" target="_blank" rel="noopener noreferrer">config-schema.json</a>。</p>
+                            <p>VS Code/Cursor 可安装 <a href="https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml" target="_blank" rel="noopener noreferrer">Even Better TOML</a> 增强编辑体验。</p>
+                            <p><strong>迁移提示：</strong><code>experimental_instructions_file</code> 已更名为 <code>model_instructions_file</code>。</p>
+
+                            <h2>requirements.toml</h2>
+                            <p>这是管理员强制配置文件，用于约束用户不可覆盖的安全敏感选项。详情见：</p>
+                            <ul>
+                                <li><a href="https://developers.openai.com/codex/security#admin-enforced-requirements-requirementstoml" target="_blank" rel="noopener noreferrer">Admin-enforced requirements</a></li>
+                            </ul>
+                            <p>对于 ChatGPT Business / Enterprise，Codex 还可能叠加云端下发的 requirements，最终生效顺序以安全文档为准。</p>
+
+                            <p>官方页面：<a href="https://developers.openai.com/codex/config-reference" target="_blank" rel="noopener noreferrer">developers.openai.com/codex/config-reference</a></p>
                         </div>
                     </article>
                 </section>
@@ -2032,12 +2159,127 @@ export CODEX_MAX_TOKENS=8192</code></pre>
                 <section id="config-sample" class="doc-section full-width">
                     <article class="document-content markdown-body">
                         <h1>配置示例</h1>
-                        <p class="subtitle">常用的配置示例。</p>
+                        <p class="subtitle">官方 <code>config.toml</code> 样例的中文导读版，便于按需拷贝与裁剪。</p>
                         <div class="intro-block">
-                            <pre><code>{
-  "model": "codex-latest",
-  "temperature": 0.3
-}</code></pre>
+                            <p>此页对应官方 Sample Configuration。它覆盖了 Codex 会读取的大多数配置键及默认值说明。实践中请只保留你需要的键。</p>
+                            <ul>
+                                <li><a href="https://developers.openai.com/codex/config-basic" target="_blank" rel="noopener noreferrer">Config basics</a></li>
+                                <li><a href="https://developers.openai.com/codex/config-advanced" target="_blank" rel="noopener noreferrer">Advanced Config</a></li>
+                                <li><a href="https://developers.openai.com/codex/config-reference" target="_blank" rel="noopener noreferrer">Config Reference</a></li>
+                                <li><a href="https://developers.openai.com/codex/security#sandbox-and-approvals" target="_blank" rel="noopener noreferrer">Sandbox and approvals</a></li>
+                                <li><a href="https://developers.openai.com/codex/security#managed-configuration" target="_blank" rel="noopener noreferrer">Managed configuration</a></li>
+                            </ul>
+
+                            <h2>示例（可直接作为起点）</h2>
+                            <pre><code class="language-toml"># Codex 示例配置（config.toml）
+# 说明：
+# 1) 这里只展示最常用、最关键的段落；其余键请看官方完整样例
+# 2) TOML 中顶层键需出现在 table 之前
+# 3) 未设置的可选键一般沿用内置默认值
+
+################################################################################
+# 核心模型选择
+################################################################################
+model = "gpt-5.2-codex"
+model_provider = "openai"
+# personality = "friendly" # none | friendly | pragmatic
+# review_model = "gpt-5.2-codex"
+# oss_provider = "ollama"
+
+################################################################################
+# 推理与表达
+################################################################################
+model_reasoning_effort = "medium"    # minimal | low | medium | high | xhigh
+# model_reasoning_summary = "auto"   # auto | concise | detailed | none
+# model_verbosity = "medium"         # low | medium | high
+
+################################################################################
+# 指令覆盖
+################################################################################
+# developer_instructions = ""
+# model_instructions_file = "/absolute/or/relative/path/to/instructions.txt"
+# experimental_compact_prompt_file = "/absolute/or/relative/path/to/compact_prompt.txt"
+
+################################################################################
+# 通知
+################################################################################
+notify = [ ]
+
+################################################################################
+# 审批与沙箱
+################################################################################
+approval_policy = "on-request"   # untrusted | on-request | never
+sandbox_mode = "read-only"       # read-only | workspace-write | danger-full-access
+
+[sandbox_workspace_write]
+network_access = false
+# writable_roots = ["/absolute/path/to/project"]
+
+################################################################################
+# Web 搜索
+################################################################################
+web_search = "cached"            # cached | live | disabled
+
+################################################################################
+# Shell 环境变量策略
+################################################################################
+[shell_environment_policy]
+inherit = "core"                 # all | core | none
+ignore_default_excludes = false
+# exclude = ["AWS_SECRET_ACCESS_KEY"]
+# include_only = ["PATH", "HOME"]
+# set = { CI = "1" }
+
+################################################################################
+# 历史、日志、OTel
+################################################################################
+# log_dir = "/absolute/path/to/codex-logs"
+# [history]
+# enabled = true
+
+# [observability.otel]
+# enabled = false
+# endpoint = "http://localhost:4318/v1/metrics"
+
+################################################################################
+# MCP 服务器
+################################################################################
+[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp"]
+
+[mcp_servers.context7.env]
+MY_ENV_VAR = "MY_ENV_VALUE"
+
+################################################################################
+# Profiles
+################################################################################
+[profiles.deep-review]
+model = "gpt-5-pro"
+model_reasoning_effort = "high"
+approval_policy = "never"
+
+[profiles.fast]
+model = "gpt-5.2-codex"
+model_reasoning_effort = "low"
+
+################################################################################
+# Feature flags
+################################################################################
+[features]
+multi_agent = false
+
+################################################################################
+# Agent 角色（多智能体）
+################################################################################
+[agents.default]
+description = "General-purpose helper."
+
+[agents.reviewer]
+description = "Find security, correctness, and test risks in code."
+config_file = "agents/reviewer.toml"</code></pre>
+
+                            <p>官方完整样例：<a href="https://developers.openai.com/codex/config-sample" target="_blank" rel="noopener noreferrer">developers.openai.com/codex/config-sample</a>。</p>
                         </div>
                     </article>
                 </section>
@@ -2846,6 +3088,7 @@ jobs:
                 'config-advanced': '/codex/config-advanced',
                 'config-reference': '/codex/config-reference',
                 'config-sample': '/codex/config-sample',
+                'config-multi-agent': '/codex/multi-agent',
                 rules: '/codex/rules',
                 'agents-md': '/codex/guides/agents-md',
                 mcp: '/codex/mcp',
