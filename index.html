@@ -7813,6 +7813,23 @@ Create template_modernization_execplan.md that a team can copy when modernizing 
                 }
             }
 
+            function stylePromptButtons() {
+                document.querySelectorAll('.intro-block button').forEach(button => {
+                    if (button.classList.contains('quickstart-tab') || button.classList.contains('prompt-chip')) {
+                        return;
+                    }
+                    const hasColorcon = Array.from(button.querySelectorAll('img')).some(img => {
+                        const src = img.getAttribute('src') || '';
+                        return src.includes('/codex/colorcons/');
+                    });
+                    if (!hasColorcon) {
+                        return;
+                    }
+                    button.classList.add('prompt-chip');
+                    button.type = 'button';
+                });
+            }
+
             function resolveInternalTargetFromHref(rawHref) {
                 if (!rawHref) {
                     return null;
@@ -7920,6 +7937,7 @@ Create template_modernization_execplan.md that a team can copy when modernizing 
             buildHeroLayout('app-overview');
             makeQuickstartTabs();
             enhanceOverviewLinks();
+            stylePromptButtons();
             normalizeInternalLinks();
             normalizeHashLinks();
 

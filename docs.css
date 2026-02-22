@@ -447,6 +447,41 @@ body {
     font-weight: 600;
 }
 
+.prompt-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--hover-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 0.55rem 0.85rem;
+    margin: 0.45rem 0.45rem 0 0;
+    font: inherit;
+    font-size: 1rem;
+    line-height: 1.45;
+    text-align: left;
+    white-space: normal;
+    vertical-align: top;
+    cursor: default;
+}
+
+.prompt-chip img {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+}
+
+.prompt-chip:hover {
+    border-color: #52525b;
+}
+
+body.light-theme .prompt-chip {
+    background: #f4f4f5;
+    border-color: #e4e4e7;
+    color: #18181b;
+}
+
 .btn-get-started {
     background-color: var(--text-primary);
     color: var(--bg-dark);
