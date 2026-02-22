@@ -481,66 +481,40 @@ git checkout &lt;branch-name&gt;</code></pre>
 <p>需要帮助？查看 <a href="https://developers.openai.com/codex/app/troubleshooting" rel="noopener noreferrer" target="_blank">故障排除指南</a>。</p> </div></article>
 </section>
 <section class="doc-section full-width" id="app-troubleshooting">
-<article class="document-content markdown-body"><h1>故障排除</h1><p class="subtitle">Codex应用程序常见问题的常见问题解答和修复</p><div class="intro-block"> <h2>常见问题解答</h2>
-<h3>侧面板中出现Codex未编辑的文件</h3>
-<p>如果您的项目位于 Git 存储库中，审阅面板会自动
-显示基于项目 Git 状态的更改，包括 Codex 的更改
-没有做到。</p>
-<p>在审阅中，您可以在暂存更改和尚未更改之间切换
-staged，把你的分支与主分支进行比较。</p>
-<p>如果您再次查看上次 Codex 轮次的更改，请切换 diff
-同样到“最后一轮更改”视图。</p>
-<p><a href="https://developers.openai.com/codex/app/review" rel="noopener noreferrer" target="_blank">详细了解如何使用审阅窗格</a>.</p>
-<h3>从侧边栏删除项目</h3>
-<p>要从侧边栏中删除项目，请将鼠标悬停在项目名称上，然后单击
-三个点并选择“删除”。要恢复它，请重新添加
-项目使用 <strong>添加新项目</strong> 旁边的按钮 <strong>Threads</strong> 或使用</p>
-<p>Cmd+O.</p>
-<h3>查找已存档的线程</h3>
-<p>存档的线程可以在 <a href="codex://settings" rel="noopener noreferrer" target="_blank">Settings</a>。当你
-取消归档线程，它将重新出现在侧边栏的原始位置。</p>
-<h3>仅部分主题出现在侧边栏中</h3>
-<p>侧边栏允许根据项目的状态过滤线程。如果
-您缺少线程，请单击检查是否应用了任何过滤器
-旁边的过滤器图标 <strong>Threads</strong> label.</p>
-<h3>代码不在工作树上运行</h3>
-<p>工作树在不同的目录中创建，并且仅继承那些文件
-您已签入 Git。依赖管理依赖项和工具的方式
-对于您的项目，您可能必须使用以下命令在工作树上运行一些脚本设置
-<a href="https://developers.openai.com/codex/app/local-environments" rel="noopener noreferrer" target="_blank">本地环境</a>。或者您可以查看
-您常规本地项目的变化。查看
-<a href="https://developers.openai.com/codex/app/worktrees" rel="noopener noreferrer" target="_blank">工作树文档</a> 了解更多。</p>
-<h3>应用程序无法获取队友的共享本地环境</h3>
-<p>本地环境配置必须在 <code>.codex</code> 文件夹位于
-你的项目的根目录。如果您在一个有多个的单一存储库中工作
-项目，请确保在包含该项目的目录中打开该项目
-<code>.codex</code> folder.</p>
-<h3>Codex 要求访问 Apple Music</h3>
-<p>根据您的任务，Codex 可能需要导航文件系统。某些
-macOS 上的目录（包括音乐、下载或桌面）需要
-用户的额外批准。如果法典需要读取您的主目录，
-macOS 会提示您批准对这些文件夹的访问。</p>
-<h3>自动化创建许多工作树</h3>
-<p>随着时间的推移，频繁的自动化可以创建许多工作树。档案自动化
-您不再需要的运行并避免固定运行，除非您打算保留它们
-工作树。</p>
-<h3>选择错误目标后恢复提示</h3>
-<p>如果您启动了一个目标错误的线程（<strong>Local</strong>, <strong>Worktree</strong>， 或者 <strong>Cloud</strong>）意外情况下，您可以通过按编辑器中的向上箭头键取消当前运行并恢复之前的提示。</p>
-<h3>功能在 Codex CLI 中有效，但在 Codex 应用程序中无效</h3>
-<p>Codex 应用程序和 Codex CLI 使用相同的基本 Codex 代理和配置，但可能随时依赖不同版本的代理，并且某些实验性功能可能会首先登陆 Codex CLI。</p>
+<article class="document-content markdown-body"><h1>故障排除</h1><p class="subtitle">Codex 应用常见问题与修复建议</p><div class="intro-block"> <h2>常见问题解答</h2>
+<h3>侧边栏里出现了并非 Codex 修改的文件</h3>
+<p>如果你的项目在 Git 仓库中，审阅面板会根据当前 Git 状态显示改动，其中也包括不是由 Codex 产生的更改。</p>
+<p>在审阅面板中，你可以切换查看已暂存与未暂存改动，也可以将当前分支与主分支进行比较。</p>
+<p>如果你只想看 Codex 上一轮产生的改动，请切换到“上一轮改动（Last round changes）”视图。</p>
+<p><a href="https://developers.openai.com/codex/app/review" rel="noopener noreferrer" target="_blank">详细了解如何使用审阅面板</a>。</p>
+<h3>如何从侧边栏删除项目</h3>
+<p>将鼠标悬停在项目名上，点击三点菜单并选择“移除”。如需恢复，可通过 <strong>添加新项目</strong> 按钮或快捷键 <strong>Cmd+O</strong> 重新添加项目。</p>
+<h3>如何找到已归档线程</h3>
+<p>已归档线程可在 <a href="codex://settings" rel="noopener noreferrer" target="_blank">Settings</a> 中查看。取消归档后，线程会回到侧边栏原来的位置。</p>
+<h3>侧边栏只显示了部分线程</h3>
+<p>侧边栏支持按状态过滤线程。如果你发现线程缺失，请检查 <strong>Threads</strong> 旁的筛选图标是否启用了过滤条件。</p>
+<h3>代码在工作树中无法运行</h3>
+<p>工作树位于独立目录，只继承你已经提交到 Git 的文件。根据项目依赖和工具链，你可能需要先执行 <a href="https://developers.openai.com/codex/app/local-environments" rel="noopener noreferrer" target="_blank">本地环境</a> 中配置的初始化脚本。更多信息可查看 <a href="https://developers.openai.com/codex/app/worktrees" rel="noopener noreferrer" target="_blank">工作树文档</a>。</p>
+<h3>应用无法读取队友共享的本地环境</h3>
+<p>本地环境配置文件必须位于项目根目录下的 <code>.codex</code> 文件夹中。如果你在单仓多项目场景下工作，请确保打开的是包含目标项目 <code>.codex</code> 的目录。</p>
+<h3>Codex 请求访问 Apple Music / 下载 / 桌面目录</h3>
+<p>某些任务需要读取文件系统。macOS 对音乐、下载、桌面等目录有额外权限控制；当 Codex 需要访问这些位置时，系统会弹窗请求授权。</p>
+<h3>自动化创建了太多工作树</h3>
+<p>高频自动化会持续创建新的工作树。建议归档不再使用的自动化运行，避免长期保留不必要的固定运行。</p>
+<h3>选错目标后如何恢复上一次提示词</h3>
+<p>如果你误将线程目标设为 <strong>Local</strong>、<strong>Worktree</strong> 或 <strong>Cloud</strong>，可以先取消当前运行，再在编辑器中按上方向键恢复上一条提示词。</p>
+<h3>CLI 可用但 App 不可用</h3>
+<p>Codex App 与 Codex CLI 使用同一套核心代理与配置，但两者版本节奏可能不同，部分实验功能通常会先在 CLI 提供。</p>
 <p>要获取系统上 Codex CLI 的版本，请运行：</p>
 <pre><code>codex --version</code></pre>
-<p>要获取与 Codex 应用程序捆绑在一起的 Codex 版本，请运行：</p>
+<p>要获取 Codex App 内置代理版本，请运行：</p>
 <pre><code>/Applications/Codex.app/Contents/Resources/codex --version</code></pre>
 <h2>反馈和日志</h2>
-<p>在消息编辑器中输入 / 为团队提供反馈。如果
-当您在现有对话中选择触发反馈时，您可以分享
-现有的会话以及您的反馈。提交反馈后，
-您将获得一个可以与团队共享的会话 ID。</p>
+<p>在消息编辑器中输入 <code>/</code>，选择反馈相关命令即可提交问题。你可以附带当前会话上下文，提交后会得到可用于跟进的会话 ID。</p>
 <p>报告问题：</p>
 <ol>
-<li>Find <a href="https://github.com/openai/codex/issues" rel="noopener noreferrer" target="_blank">现有问题</a> 在 Codex GitHub 存储库上。</li>
-<li><a href="https://github.com/openai/codex/issues/new?template=2-bug-report.yml&amp;steps=Uploaded%20thread%3A%20019c0d37-d2b6-74c0-918f-0e64af9b6e14" rel="noopener noreferrer" target="_blank">打开一个新的 GitHub 问题</a></li>
+<li>先在 Codex GitHub 仓库中搜索 <a href="https://github.com/openai/codex/issues" rel="noopener noreferrer" target="_blank">已有问题</a>。</li>
+<li>若无相同问题，再 <a href="https://github.com/openai/codex/issues/new?template=2-bug-report.yml&amp;steps=Uploaded%20thread%3A%20019c0d37-d2b6-74c0-918f-0e64af9b6e14" rel="noopener noreferrer" target="_blank">新建 GitHub Issue</a>。</li>
 </ol>
 <p>以下位置提供了更多日志：</p>
 <ul>
