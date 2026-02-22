@@ -558,52 +558,46 @@ git checkout &lt;branch-name&gt;</code></pre></li>
 </section>
  延伸部分 
 <section class="doc-section full-width" id="extension">
-<article class="document-content markdown-body"><h1>概览</h1><p class="subtitle">与 IDE 中的 Codex 设备</p><div class="intro-block"> <p>Codex 是 OpenAI 的编码代理，可以读取、编辑和运行代码。它可以帮助您更快地构建、消除并理解不熟悉的错误代码。借助 Codex VS Code 扩展，您可以在 IDE 中使用 Codex 或将任务委托给 Codex Cloud。</p>
-<p>ChatGPT Plus、Pro、Business、Edu 和 Enterprise 计划包括 Codex。了解更多关于 <a href="https://developers.openai.com/codex/pricing" rel="noopener noreferrer" target="_blank">包含什么</a>.</p>
+<article class="document-content markdown-body"><h1>概览</h1><p class="subtitle">在 IDE 中使用 Codex</p><div class="intro-block"> <p>Codex 是 OpenAI 的编码代理，可读取、编辑并运行代码。通过 IDE 扩展，你可以在编辑器内直接协作，或将任务委托到 Codex 云端执行。</p>
+<p>ChatGPT Plus、Pro、Business、Edu 与 Enterprise 计划均包含 Codex。详情见 <a href="https://developers.openai.com/codex/pricing" rel="noopener noreferrer" target="_blank">价格说明</a>。</p>
 <br/>
 <h2>扩展设置</h2>
-<p>Codex IDE 扩展可与 Cursor 和 Windsurf 等 VS Code 分支配合使用。</p>
-<p>您可以从以下位置获取 Codex 扩展： <a href="https://marketplace.visualstudio.com/items?itemName=openai.chatgpt" rel="noopener noreferrer" target="_blank">Visual Studio 代码市场</a>，或者为您的IDE下载它：</p>
+<p>Codex IDE 扩展支持 VS Code 及其兼容编辑器（如 Cursor、Windsurf）。</p>
+<p>你可以从 <a href="https://marketplace.visualstudio.com/items?itemName=openai.chatgpt" rel="noopener noreferrer" target="_blank">VS Code Marketplace</a> 安装，或使用以下入口：</p>
 <ul>
-<li><a href="vscode:extension/openai.chatgpt" rel="noopener noreferrer" target="_blank">下载 Visual Studio Code</a></li>
-<li><a href="cursor:extension/openai.chatgpt" rel="noopener noreferrer" target="_blank">下载光标</a></li>
-<li><a href="windsurf:extension/openai.chatgpt" rel="noopener noreferrer" target="_blank">下载风帆冲浪</a></li>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=openai.chatgpt" rel="noopener noreferrer" target="_blank">供 Visual Studio Code Insider 下载</a></li>
-<li><a href="#jetbrains-ide-integration">下载 JetBrains IDE</a></li>
+<li><a href="vscode:extension/openai.chatgpt" rel="noopener noreferrer" target="_blank">安装到 Visual Studio Code</a></li>
+<li><a href="cursor:extension/openai.chatgpt" rel="noopener noreferrer" target="_blank">安装到 Cursor</a></li>
+<li><a href="windsurf:extension/openai.chatgpt" rel="noopener noreferrer" target="_blank">安装到 Windsurf</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=openai.chatgpt" rel="noopener noreferrer" target="_blank">安装到 VS Code Insiders</a></li>
+<li><a href="#jetbrains-ide-integration">JetBrains IDE 集成</a></li>
 </ul>
-<p>Codex VS Code 扩展可在 macOS 和 Linux 上使用。 Windows 支持
-是实验性的。为了获得最佳的 Windows 体验，请在 WSL 工作区中使用 Codex
-并关注我们的 <a href="https://developers.openai.com/codex/windows" rel="noopener noreferrer" target="_blank">Windows 设置指南</a>。</p>
-<p>安装后，您会在十字路口找到该扩展程序，旁边是其他扩展程序。
-如果您使用的是 VS Code，如果没有看到立即 Codex，请重新启动编辑器。</p>
-<p>如果您使用坐标，活动栏水平默认显示折叠。该项目可以隐藏 Codex，因此您可以固定它并重新组织扩展的顺序。</p>
+<p>扩展在 macOS、Linux 上稳定可用。Windows 目前偏实验性质，建议在 WSL 工作区中使用，并参考 <a href="https://developers.openai.com/codex/windows" rel="noopener noreferrer" target="_blank">Windows 设置指南</a>。</p>
+<p>安装后，Codex 会出现在编辑器侧边栏扩展列表中；若未立即显示，重启编辑器即可。</p>
+<p>在 Cursor 等编辑器中，活动栏可能折叠显示，建议将 Codex 固定到侧边栏以便快速访问。</p>
 <img alt="Codex extension" src="https://cdn.openai.com/devhub/docs/codex-extension.webp"/>
 <h2>JetBrains IDE 集成</h2>
-<p>如果您想在 Rider、IntelliJ、PyCharm 或 WebStorm 等 JetBrains IDE 中使用 Codex，请安装 JetBrains IDE 集成。它支持使用 ChatGPT、API SSH 或 JetBrains AI 订阅登录。</p>
-<a href="https://blog.jetbrains.com/ai/2026/01/codex-in-jetbrains-ides/" rel="noopener noreferrer" target="_blank"> 安装适用于 JetBrains IDE 的 Codex </a>
-<h3>将 Codex 移至右侧边栏 <a></a></h3>
-<p>在 VS Code 中，可以将 Codex 图标拖动到编辑器右侧，将其移动到右侧边栏。</p>
-<p>在某些 IDE 中，例如光标，您可能需要首先临时更改活动栏方向：</p>
+<p>如需在 Rider、IntelliJ、PyCharm、WebStorm 中使用 Codex，请安装 JetBrains 集成。支持 ChatGPT、API 密钥或 JetBrains AI 登录方式。</p>
+<a href="https://blog.jetbrains.com/ai/2026/01/codex-in-jetbrains-ides/" rel="noopener noreferrer" target="_blank">安装适用于 JetBrains IDE 的 Codex</a>
+<h3>将 Codex 移到右侧边栏 <a></a></h3>
+<p>在 VS Code 中，可将 Codex 图标拖到编辑器右侧边栏。</p>
+<p>在部分编辑器（如 Cursor）中，可能需要先临时调整活动栏方向：</p>
 <ol>
-<li>打开编辑器设置并搜索 <code>activity bar</code> （在工作台设置中）。</li>
-<li>将方向更改为 <code>vertical</code>.</li>
-<li>重新启动你的编辑器。</li>
+<li>打开设置并搜索 <code>activity bar</code>。</li>
+<li>将方向切换为 <code>vertical</code>。</li>
+<li>重启编辑器。</li>
 </ol>
 <p><img alt="codex-workbench-setting" src="https://cdn.openai.com/devhub/docs/codex-workbench-setting.webp"/></p>
-<p>现在将Codex图标拖到右边栏（例如，右边聊天）。Codex显示为侧栏的另一个选项卡。</p>
-<p>移动它后，将活动栏方向重置为 <code>horizontal</code> 恢复默认行为。</p>
-<h3>登入</h3>
-<p>安装扩展程序后，它会提示您使用 ChatGPT 帐户或 API 密钥登录。您的 ChatGPT 计划包括使用积分，因此您无需额外设置即可使用 Codex。了解更多信息 <a href="https://developers.openai.com/codex/pricing" rel="noopener noreferrer" target="_blank">定价页面</a>。</p>
+<p>将 Codex 图标拖到右侧后，它会作为侧边栏独立标签显示。完成后可将活动栏方向改回 <code>horizontal</code>。</p>
+<h3>登录</h3>
+<p>安装后按提示使用 ChatGPT 账号或 API 密钥登录即可。若使用 ChatGPT 计划，额度与计费规则见 <a href="https://developers.openai.com/codex/pricing" rel="noopener noreferrer" target="_blank">定价页面</a>。</p>
 <h3>更新扩展</h3>
-<p>该扩展会自动更新，但您也可以在 IDE 中打开扩展页面来检查更新。</p>
+<p>扩展默认自动更新，也可在扩展详情页手动检查更新。</p>
 <h3>设置键盘快捷键</h3>
-<p>Codex 包含可在 IDE 中绑定为键盘快捷键的命令（例如，切换 Codex 聊天或将项目添加到 Codex 上下文）。</p>
-<p>要查看所有可用命令将它们绑定为键盘快捷键，请Codex聊天中的设置图标，然后选择 <strong>键盘快捷键</strong>。
-您还可以参考 <a href="https://developers.openai.com/codex/ide/commands" rel="noopener noreferrer" target="_blank">Codex IDE 扩展命令</a> 页。
-有关支持的斜杠命令的列表，请参阅 <a href="https://developers.openai.com/codex/ide/slash-commands" rel="noopener noreferrer" target="_blank">Codex IDE 扩展斜杠命令</a>.</p>
+<p>你可以把 Codex 命令绑定到快捷键（例如新建线程、添加文件上下文）。</p>
+<p>在 Codex 聊天面板设置中选择 <strong>键盘快捷键</strong> 可查看并配置全部命令。也可参考 <a href="https://developers.openai.com/codex/ide/commands" rel="noopener noreferrer" target="_blank">IDE 命令文档</a> 与 <a href="https://developers.openai.com/codex/ide/slash-commands" rel="noopener noreferrer" target="_blank">斜杠命令文档</a>。</p>
 <hr/>
 <h2>使用 Codex IDE 扩展</h2>
-<a href="https://developers.openai.com/codex/ide/features#prompting-codex" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>提示编辑器上下文</h3><p>使用打开的文件、选择和 <code>@file</code> 参考以通过更短的提示获得更相关的结果。</p></article></a><a href="https://developers.openai.com/codex/ide/features#switch-between-models" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>切换型号</h3><p>使用默认模型或切换到其他模型以发挥各自的优势。</p></article></a><a href="https://developers.openai.com/codex/ide/features#adjust-reasoning-effort" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>调整推理努力</h3><p>Choose <code>low</code>, <code>medium</code>， 或者 <code>high</code> 根据任务权衡速度和深度。</p></article></a><a href="https://developers.openai.com/codex/ide/features#choose-an-approval-mode" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>选择审批方式</h3><p>之间切换 <code>Chat</code>, <code>Agent</code>， 和 <code>Agent (Full Access)</code> 这取决于您希望 Codex 拥有多少自主权。</p></article></a><a href="https://developers.openai.com/codex/ide/features#cloud-delegation" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>委托给云端</h3><p>将大量的作业转移到云环境，然后离开 IDE 即可监控详情并查看结果。</p></article></a><a href="https://developers.openai.com/codex/ide/features#cloud-task-follow-up" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>跟进云工作</h3><p>预览云更改，请求跟进，并在本地应用生成的差异以进行测试和完成。</p></article></a><a href="https://developers.openai.com/codex/ide/commands" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>IDE扩展命令</h3><p>浏览可以从命令选项板运行并绑定到键盘快捷键的命令的完整列表。</p></article></a><a href="https://developers.openai.com/codex/ide/slash-commands" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>斜杠命令</h3><p>使用斜杠命令控制 Codex 的行为方式并通过聊天快速更改常用设置。</p></article></a><a href="https://developers.openai.com/codex/ide/settings" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>扩展设置</h3><p>使用模型、批准和其他默认设置的编辑器设置来调整 Codex 以适应您的工作流程。</p></article></a> </div></article>
+<a href="https://developers.openai.com/codex/ide/features#prompting-codex" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>利用编辑器上下文提问</h3><p>结合打开文件、选中代码与 <code>@file</code> 引用，用更短提示获得更相关结果。</p></article></a><a href="https://developers.openai.com/codex/ide/features#switch-between-models" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>切换模型</h3><p>按任务复杂度在不同模型之间切换，平衡速度与能力。</p></article></a><a href="https://developers.openai.com/codex/ide/features#adjust-reasoning-effort" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>调整推理强度</h3><p>根据任务需要选择 <code>low</code>、<code>medium</code> 或 <code>high</code>。</p></article></a><a href="https://developers.openai.com/codex/ide/features#choose-an-approval-mode" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>审批模式</h3><p>在 <code>Chat</code>、<code>Agent</code> 与 <code>Agent (Full Access)</code> 之间切换。</p></article></a><a href="https://developers.openai.com/codex/ide/features#cloud-delegation" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>委托到云端</h3><p>把长任务迁移到云环境运行，在 IDE 内持续跟踪结果。</p></article></a><a href="https://developers.openai.com/codex/ide/features#cloud-task-follow-up" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>跟进云任务</h3><p>预览云端改动、追加指令，并在本地应用差异完成验证。</p></article></a><a href="https://developers.openai.com/codex/ide/commands" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>IDE 命令</h3><p>查看可在命令面板执行并绑定快捷键的全部命令。</p></article></a><a href="https://developers.openai.com/codex/ide/slash-commands" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>斜杠命令</h3><p>通过斜杠命令快速切换模式与状态，减少界面跳转。</p></article></a><a href="https://developers.openai.com/codex/ide/settings" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>扩展设置</h3><p>配置模型、审批、上下文等默认行为，匹配团队工作流。</p></article></a> </div></article>
 </section>
  CLI 部分 
 <section class="doc-section full-width" id="cli">
@@ -623,50 +617,49 @@ git checkout &lt;branch-name&gt;</code></pre></li>
 </section>
  网页部分 
 <section class="doc-section full-width" id="web">
-<article class="document-content markdown-body"><h1>概览</h1><p class="subtitle">在云端委托 Codex</p><div class="intro-block"> <p>Codex 是 OpenAI 的编码代理，可以读取、编辑和运行代码。它可以帮助您更快地构建、修复错误并理解不熟悉的代码。借助 Codex 云，Codex 可以在后台使用自己的云环境（包括木材）处理任务。</p>
-<h2>Codex 网络设置</h2>
-<p>前往 <a href="https://chatgpt.com/codex" rel="noopener noreferrer" target="_blank">Codex</a> 并连接您的 GitHub 账户。这使得 Codex 可以使用您存储库中的代码并从其工作中创建拉取请求。</p>
-<p>您的 Plus、Pro、Business、Edu 或 Enterprise 计划包含 Codex。了解更多关于 <a href="https://developers.openai.com/codex/pricing" rel="noopener noreferrer" target="_blank">包含什么</a>。某些企业工作区可能需要 <a href="https://developers.openai.com/codex/enterprise/admin-setup" rel="noopener noreferrer" target="_blank">管理设置</a> 在您之前可以访问 Codex。</p>
+<article class="document-content markdown-body"><h1>概览</h1><p class="subtitle">在云端委托 Codex</p><div class="intro-block"> <p>Codex 可以在云环境后台执行编码任务，帮助你并行推进需求、修复问题并生成可审查改动。</p>
+<h2>Codex Web 设置</h2>
+<p>前往 <a href="https://chatgpt.com/codex" rel="noopener noreferrer" target="_blank">chatgpt.com/codex</a>，连接 GitHub 账号后即可让 Codex 访问仓库并创建 PR。</p>
+<p>Plus、Pro、Business、Edu、Enterprise 计划均可使用。详情见 <a href="https://developers.openai.com/codex/pricing" rel="noopener noreferrer" target="_blank">价格说明</a>。部分企业工作区可能还需管理员完成 <a href="https://developers.openai.com/codex/enterprise/admin-setup" rel="noopener noreferrer" target="_blank">管理配置</a>。</p>
 <hr/>
 <h2>使用 Codex 网络</h2>
-<a href="https://developers.openai.com/codex/prompting#prompts" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>了解提示</h3><p>编写更清晰的提示、添加约束并选择正确的详细程度以获得更好的结果。</p></article></a><a href="https://developers.openai.com/codex/workflows" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>常见工作流程</h3><p>从委派任务、审查变更以及将结果转化为PR的经过验证的模式开始。</p></article></a><a href="https://developers.openai.com/codex/cloud/environments" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>配置环境</h3><p>在云中运行任务时选择Codex应使用的存储库、设置步骤和工具。</p></article></a><a href="https://developers.openai.com/codex/ide/features#cloud-delegation" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>从 IDE 扩展委员会派工作</h3><p>从编辑器启动云任务，然后监控进度并在本地应用生成的差异。</p></article></a><a href="https://developers.openai.com/codex/integrations/github" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>来自 GitHub 委托</h3><p>Tag <code>@codex</code> 问题和拉取请求以启动任务并直接从 GitHub 提出更改建议。</p></article></a><a href="https://developers.openai.com/codex/cloud/internet-access" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>控制互联网访问</h3><p>决定 Codex 是否可以从云环境访问公共互联网以及何时启用。</p></article></a> </div></article>
+<a href="https://developers.openai.com/codex/prompting#prompts" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>提示词写法</h3><p>学习如何写出更清晰的约束与目标，稳定获得高质量结果。</p></article></a><a href="https://developers.openai.com/codex/workflows" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>常见工作流</h3><p>从任务委托、审查改动到生成 PR，复用已验证流程。</p></article></a><a href="https://developers.openai.com/codex/cloud/environments" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>配置环境</h3><p>定义仓库、初始化步骤与可用工具，保证任务可复现。</p></article></a><a href="https://developers.openai.com/codex/ide/features#cloud-delegation" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>从 IDE 委托</h3><p>直接在编辑器发起云任务，并将结果回流到本地开发流。</p></article></a><a href="https://developers.openai.com/codex/integrations/github" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>从 GitHub 委托</h3><p>在 Issue/PR 中使用 <code>@codex</code> 触发任务并生成改动建议。</p></article></a><a href="https://developers.openai.com/codex/cloud/internet-access" rel="noopener noreferrer" target="_blank"><article class="prose-content flex h-full flex-col gap-2 prose dark:prose-invert prose-sm border border-solid border-default bg-primary-soft-alt hover:border-primary-outline-hover rounded-md p-4 !pb-4 prose-h3:my-0! prose-h3:heading-sm! prose-p:my-0! prose-p:text-sm! prose-p:text-secondary! prose-p:font-normal! prose-ul:my-0! prose-ol:my-0! prose-li:my-0! prose-li:text-sm! prose-a:no-underline!"><h3>互联网访问控制</h3><p>按任务需求配置云环境是否允许外网访问。</p></article></a> </div></article>
 </section>
  集成部分 
 <section class="doc-section full-width" id="integrations">
-<article class="document-content markdown-body"><h1>整合</h1><p class="subtitle">在拉取请求中运行 Codex 代码审查</p><div class="intro-block"> <p>使用 Codex 消耗离开 GitHub 即可审查拉取请求。添加拉取请求评论 <code>@codex review</code>，Codex会回复标准GitHub代码审查。</p>
+<article class="document-content markdown-body"><h1>集成</h1><p class="subtitle">在拉取请求中运行 Codex 代码审查</p><div class="intro-block"> <p>通过 GitHub 集成，你可以直接在 PR 中调用 Codex 审查代码。只需评论 <code>@codex review</code>，Codex 就会回帖给出审查意见。</p>
 <br/>
 <h2>设置代码审查</h2>
 <ol>
-<li>设置 <a href="https://developers.openai.com/codex/cloud" rel="noopener noreferrer" target="_blank">法典云</a>.</li>
-<li>前往 <a href="https://chatgpt.com/codex/settings/code-review" rel="noopener noreferrer" target="_blank">法典设置</a> 并打开 <strong>代码审查</strong> 为您的存储库。</li>
+<li>先完成 <a href="https://developers.openai.com/codex/cloud" rel="noopener noreferrer" target="_blank">Codex 云端配置</a>。</li>
+<li>前往 <a href="https://chatgpt.com/codex/settings/code-review" rel="noopener noreferrer" target="_blank">Codex 设置</a>，为目标仓库开启 <strong>代码审查</strong>。</li>
 </ol>
 <img alt="Codex settings showing the Code review toggle" src="https://developers.openai.com/images/codex/code-review/code-review-settings.png"/>
 <br/>
 <h2>请求审查</h2>
 <ol>
-<li>在拉取请求评论中，提及 <code>@codex review</code>.</li>
-<li>等待 Codex 作出反应 (👀) 并发表评论。</li>
+<li>在 PR 评论中输入 <code>@codex review</code>。</li>
+<li>等待 Codex 响应（👀）并发布审查结果。</li>
 </ol>
 <img alt="A pull request comment with @codex review" src="https://developers.openai.com/images/codex/code-review/review-trigger.png"/>
 <br/>
-<p>Codex 发布了对拉取请求的评论，就像蓝牙一样。</p>
+<p>Codex 会像普通审阅者一样直接在 PR 中发布评论。</p>
 <img alt="Example Codex code review on a pull request" src="https://developers.openai.com/images/codex/code-review/review-example.png"/>
 <br/>
 <h2>启用自动评论</h2>
-<p>如果您希望 Codex 自动审查每个拉取请求，请打开 <strong>自动评论</strong> in <a href="https://chatgpt.com/codex/settings/code-review" rel="noopener noreferrer" target="_blank">法典设置</a>。每当有新的PR开放供审查时，Codex都会发布审查，消耗 <code>@codex review</code> comment.</p>
+<p>如果你希望每个新 PR 自动触发审查，可在 <a href="https://chatgpt.com/codex/settings/code-review" rel="noopener noreferrer" target="_blank">Codex 设置</a> 中开启 <strong>自动评论</strong>。</p>
 <h2>自定义 Codex 的评论内容</h2>
-<p>Codex 在您的存储库中搜索 <code>AGENTS.md</code> 文件并遵循任何 <strong>审查指南</strong> 你包括。</p>
-<p>要为存储库设置准则，请添加或更新顶级 <code>AGENTS.md</code> 像这样的部分：</p>
+<p>Codex 会读取仓库中的 <code>AGENTS.md</code>，并遵循其中定义的 <strong>审查指南</strong>。</p>
+<p>你可以在仓库根目录添加或更新如下内容：</p>
 <pre><code>## Review guidelines
 
 - Don't log PII.
 - Verify that authentication middleware wraps every route.</code></pre>
-<p>食典委采用最近的指导 <code>AGENTS.md</code> 到每个更改的文件。当特定包需要额外检查时，您可以将更具体的指令放置在树的更深处。</p>
-<p>对于一次性焦点，请将其添加到您的拉取请求评论中，例如：</p>
+<p>对于单次重点检查，也可以直接在 PR 评论里附加要求：</p>
 <p><code>@codex review for security regressions</code></p>
-<p>在 GitHub 中，Codex 仅标记 P0 和 P1 问题。如果您希望 Codex 标记文档中的拼写错误，请在 <code>AGENTS.md</code> （例如，“将文档中的备注错误视为 P1。”）。</p>
-<h2>赋予法典其他任务</h2>
-<p>如果你提到 <code>@codex</code> 在评论中除了 <code>review</code>，法典委员会启动 <a href="https://developers.openai.com/codex/cloud" rel="noopener noreferrer" target="_blank">云任务</a> 使用您的拉取请求作为上下文。</p>
+<p>默认情况下，GitHub 集成主要标注高优先级问题（如 P0/P1）。如果你希望关注文档拼写等低优先级问题，可在 <code>AGENTS.md</code> 中显式说明规则。</p>
+<h2>给 Codex 其他任务</h2>
+<p>若你在评论中提到 <code>@codex</code> 但不是 <code>review</code> 指令，Codex 会基于当前 PR 上下文启动一个 <a href="https://developers.openai.com/codex/cloud" rel="noopener noreferrer" target="_blank">云任务</a>。</p>
 <pre><code>@codex fix the CI failures</code></pre> </div></article>
 </section>
  配置文件部分 
